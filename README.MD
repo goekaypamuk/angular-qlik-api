@@ -13,7 +13,7 @@ $ npm install @angular Qlik/angular-qlik-api --save
 Once you have published your library to npm, you can import your library in any Angular application by running:
 
 ```bash
-$ npm install @angular Qlik/angular-qlik-api
+$ npm install angular-qlik-api
 ```
 
 and then from your Angular `AppModule`:
@@ -25,7 +25,7 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 
 // Import your library
-import { SampleModule } from '@angular Qlik/angular-qlik-api';
+import { SampleModule } from 'angular-qlik-api';
 
 @NgModule({
   declarations: [
