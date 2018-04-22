@@ -1,0 +1,28 @@
+{
+  "name": "@angular Qlik/angular-qlik-api",
+  "version": "0.1.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/goekaypamuk/angular-engine-api"
+  },
+  "author": {
+    "name": "Gökay Pamuk",
+    "email": "goekaypamuk@gmail.com"
+  },
+  "keywords": [
+    "angular"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/goekaypamuk/angular-engine-api/issues"
+  },
+  "main": "angular-qlik-api.umd.js",
+  "module": "angular-qlik-api.js",
+  "jsnext:main": "angular-qlik-api.js",
+  "typings": "angular-qlik-api.d.ts",
+  "peerDependencies": {
+    "@angular/core": "^4.0.0",
+    "rxjs": "^5.1.0",
+    "zone.js": "^0.8.4"
+  }
+}
