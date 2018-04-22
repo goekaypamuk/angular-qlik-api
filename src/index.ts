@@ -1,14 +1,20 @@
 import { NgModule, ModuleWithProviders } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SampleComponent } from './sample.component';
-import { SampleDirective } from './sample.directive';
-import { SamplePipe } from './sample.pipe';
-import { SampleService } from './sample.service';
+
+import { QlikConfig } from './class/qlik-config.class';
+import { QlikGlobalService } from './qlik-global.service';
 
 export * from './sample.component';
-export * from './sample.directive';
-export * from './sample.pipe';
-export * from './sample.service';
+export * from './qlik-global.service';
+export * from './class/qlik-config.class';
+export * from './class/deferred.class';
+export * from './class/dimension.class';
+export * from './class/document.class';
+export * from './class/hyper-cube.class';
+export * from './class/list.class';
+export * from './class/measure.class';
+export * from './interface/qlik-config.interface';
 
 @NgModule({
   imports: [
@@ -16,20 +22,16 @@ export * from './sample.service';
   ],
   declarations: [
     SampleComponent,
-    SampleDirective,
-    SamplePipe
   ],
   exports: [
     SampleComponent,
-    SampleDirective,
-    SamplePipe
   ]
 })
-export class SampleModule {
-  static forRoot(): ModuleWithProviders {
+export class AngularQlikApiModule {
+  static forRoot(qlikConfig: QlikConfig): ModuleWithProviders {
     return {
-      ngModule: SampleModule,
-      providers: [SampleService]
+      ngModule: AngularQlikApiModule,
+      providers: [QlikGlobalService, {provide: 'qlikConfig', useValue: qlikConfig}]
     };
   }
 }

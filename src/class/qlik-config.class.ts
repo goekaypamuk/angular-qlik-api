@@ -1,4 +1,5 @@
-import {QlikConfigInterface} from '../interface/QlikConfigInterface';
+import {QlikConfigInterface} from '../';
+
 
 export class  QlikConfig {
     useWss: boolean;
@@ -12,6 +13,6 @@ export class  QlikConfig {
 
     getWebsocketConnectionLink(): string {
         const protocol = this.useWss ? 'wss' : 'ws';
-        return  protocol + '//' + this.address + ':' + this.port + '/app/';
+        return  protocol + '://' + this.address + ':' + this.port + '/app/';
     }
 }

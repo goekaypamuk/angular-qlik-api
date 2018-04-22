@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import {QlikGlobalService} from './qlik-global.service';
+
 
 @Component({
   selector: 'sample-component',
@@ -6,7 +8,7 @@ import { Component } from '@angular/core';
 })
 export class SampleComponent {
 
-  constructor() {
+  constructor(private ss: QlikGlobalService) {
   }
 
 }
