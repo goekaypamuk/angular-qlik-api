@@ -12,13 +12,7 @@
     "lite": "lite-server",
     "playground:build": "tsc -p playground -w",
     "playground": "concurrently \"npm run build:watch\" \"npm run playground:build\" \"npm run lite\"",
-    "test": "jest",
-    "test:watch": "jest --watch",
-    "test:ci": "jest --runInBand"
-  },
-  "jest": {
-    "preset": "jest-preset-angular",
-    "setupTestFrameworkScriptFile": "<rootDir>/src/jest.ts"
+    "test": "tsc && karma start"
   },
   "repository": {
     "type": "git",
@@ -29,9 +23,7 @@
     "email": "goekaypamuk@gmail.com"
   },
   "keywords": [
-    "angular",
-    "Qlik",
-    "Engine API"
+    "angular"
   ],
   "license": "MIT",
   "bugs": {
@@ -45,19 +37,24 @@
     "@angular/platform-browser": "^5.0.0",
     "@angular/platform-browser-dynamic": "^5.0.0",
     "@compodoc/compodoc": "^1.0.0-beta.10",
+    "@types/jasmine": "2.5.53",
     "@types/node": "~6.0.60",
-    "@types/jest": "^22.0.1",
     "angular-in-memory-web-api": "^0.3.2",
     "codelyzer": "~3.2.0",
     "concurrently": "^3.4.0",
     "core-js": "^2.4.1",
     "fs-extra": "^5.0.0",
-    "del": "^2.2.2",
     "gulp": "^3.9.1",
     "gulp-rename": "^1.2.2",
-    "gulp-rollup": "^2.11.0",
-    "jest": "^22.1.4",
-    "jest-preset-angular": "^5.0.0",
+    "gulp-rollup": "^2.15.0",
+    "jasmine-core": "~2.6.2",
+    "jasmine-spec-reporter": "~4.1.0",
+    "karma": "~1.7.0",
+    "karma-chrome-launcher": "~2.1.1",
+    "karma-cli": "~1.0.1",
+    "karma-coverage-istanbul-reporter": "^1.2.1",
+    "karma-jasmine": "~1.1.0",
+    "karma-jasmine-html-reporter": "^0.2.2",
     "lite-server": "^2.3.0",
     "node-sass": "^4.5.2",
     "node-sass-tilde-importer": "^1.0.0",

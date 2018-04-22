@@ -6,7 +6,7 @@ import { NgModule } from '@angular/core';
 import { Component } from '@angular/core';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 
-import { SampleModule }  from '@angular Qlik/angular-qlik-api';
+import { SampleModule }  from 'angular-qlik-api';
 
 @Component({
   selector: 'app',

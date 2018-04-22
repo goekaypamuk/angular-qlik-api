@@ -1,11 +1,11 @@
-# @angular Qlik/angular-qlik-api
+# angular-qlik-api
 
 ## Installation
 
 To install this library, run:
 
 ```bash
-$ npm install @angular Qlik/angular-qlik-api --save
+$ npm install angular-qlik-api --save
 ```
 
 ## Consuming your library

@@ -22,7 +22,7 @@
     "strictMetadataEmit": true,
     "skipTemplateCodegen": true,
     "flatModuleOutFile": "angular-qlik-api.js",
-    "flatModuleId": "@angular Qlik/angular-qlik-api"
+    "flatModuleId": "angular-qlik-api"
   },
   "files": [
     "./index.ts"
