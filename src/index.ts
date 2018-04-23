@@ -15,6 +15,7 @@ export * from './class/hyper-cube.class';
 export * from './class/list.class';
 export * from './class/measure.class';
 export * from './interface/qlik-config.interface';
+export * from './enum/qbnftype.enum';
 
 @NgModule({
   imports: [
