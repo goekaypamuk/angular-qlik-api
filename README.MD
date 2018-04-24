@@ -71,11 +71,25 @@ export class AppModule { }
 Once your library is imported, you can use its components, directives and pipes in your Angular application:
 
 ```xml
-<!-- You can now use your library component in app.component.html -->
-<h1>
-  {{title}}
-</h1>
-<sampleComponent></sampleComponent>
+@Component({
+  selector: 'app-root'
+})
+export class MyApp implements OnDestroy {
+  myHyperCube: HyperCube;
+  constructor(qlikGlobal: QlikGlobalService ) {
+    this.myHyperCube = this.qlikGlobal.openDoc('sales.qvf')
+         .createHyperCube()
+         .addDimension(new Dimension('=name'))
+         .addMeasure(new Measure('sum(cost'))
+         .subscribe( reply => {
+            console.log(reply);
+         });
+  }
+
+  ngOnDestroy() {
+    this.myHyperCube.unsubscribe();
+  }
+}
 ```
 
 ## Development
