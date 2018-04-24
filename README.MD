@@ -107,7 +107,7 @@ $ npm run lint
 ```
 ## Contribution
 This library is still under cunstruction and we are looking for contributors. 
-If you like to contribute plase contact send me and email: goekaypamuk@gmai.com
+If you like to contribute plase contact me: goekaypamuk@gmai.com
 
 ## License
 
