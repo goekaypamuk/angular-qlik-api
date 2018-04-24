@@ -3,6 +3,9 @@ import { Deferred } from './class/deferred.class';
 import { QlikConfig } from './class/qlik-config.class';
 import { Document } from './class/document.class';
 import {QBnfType} from './enum/qbnftype.enum';
+import {Connection} from './class/connection.class';
+import {QGroup} from './enum/qGroup';
+
 
 @Injectable()
 export class QlikGlobalService {
@@ -353,16 +356,54 @@ export class QlikGlobalService {
         return deferred.promise;
     }
 
-    /**
-     *
 
-     GetCustomConnectors method
+    getCustomConnectors(qReloadList: boolean): Promise<any> {
+        const deferred = new Deferred<any>();
+        this.wsSend({
+            'jsonrpc': '2.0',
+            'id': this.getNextEnumerator(),
+            'method': 'GetCustomConnectors',
+            'handle': -1,
+            'params': {
+                qReloadList: qReloadList
+            }
+        }, (message: any) => {
+            deferred.resolve(message);
+        });
+        return deferred.promise;
+    }
 
-     GetDatabasesFromConnectionString method
+    getDatabasesFromConnectionString(qConnection: Connection): Promise<any> {
+        const deferred = new Deferred<any>();
+        this.wsSend({
+            'jsonrpc': '2.0',
+            'id': this.getNextEnumerator(),
+            'method': 'GetDatabasesFromConnectionString',
+            'handle': -1,
+            'params': {
+                qConnection: qConnection
+            }
+        }, (message: any) => {
+            deferred.resolve(message);
+        });
+        return deferred.promise;
+    }
 
-     GetDefaultAppFolder method
+    getDefaultAppFolder(): Promise<any> {
+        const deferred = new Deferred<any>();
+        this.wsSend({
+            'jsonrpc': '2.0',
+            'id': this.getNextEnumerator(),
+            'method': 'getDefaultAppFolder',
+            'handle': -1,
+            'params': {
+            }
+        }, (message: any) => {
+            deferred.resolve(message);
+        });
+        return deferred.promise;
+    }
 
-     */
     getDocList(): Promise<any> {
         const deferred = new Deferred<any>();
         this.wsSend({
@@ -377,23 +418,141 @@ export class QlikGlobalService {
         return deferred.promise;
     }
 
+    getFolderItemsForPath (qPath: string): Promise<any> {
+        const deferred = new Deferred<any>();
+        this.wsSend({
+            'jsonrpc': '2.0',
+            'id': this.getNextEnumerator(),
+            'method': 'getFolderItemsForPath',
+            'handle': -1,
+            'params': {
+                qPath: qPath
+            }
+        }, (message: any) => {
+            deferred.resolve(message);
+        });
+        return deferred.promise;
+    }
+
+    getFunctions (qGroup?: QGroup): Promise<any> {
+        const deferred = new Deferred<any>();
+        this.wsSend({
+            'jsonrpc': '2.0',
+            'id': this.getNextEnumerator(),
+            'method': 'GetFunctions',
+            'handle': -1,
+            'params': {
+                qGroup: qGroup || QGroup.ALL
+            }
+        }, (message: any) => {
+            deferred.resolve(message);
+        });
+        return deferred.promise;
+    }
+
+    getInteract (qRequestId: number): Promise<any> {
+        const deferred = new Deferred<any>();
+        this.wsSend({
+            'jsonrpc': '2.0',
+            'id': this.getNextEnumerator(),
+            'method': 'GetInteract',
+            'handle': -1,
+            'params': {
+                qRequestId: qRequestId
+            }
+        }, (message: any) => {
+            deferred.resolve(message);
+        });
+        return deferred.promise;
+    }
+
+    getLogicalDriveStrings (): Promise<any> {
+        const deferred = new Deferred<any>();
+        this.wsSend({
+            'jsonrpc': '2.0',
+            'id': this.getNextEnumerator(),
+            'method': 'GetLogicalDriveStrings',
+            'handle': -1,
+            'params': {}
+        }, (message: any) => {
+            deferred.resolve(message);
+        });
+        return deferred.promise;
+    }
+
+    getOdbcDsns (): Promise<any> {
+        const deferred = new Deferred<any>();
+        this.wsSend({
+            'jsonrpc': '2.0',
+            'id': this.getNextEnumerator(),
+            'method': 'GetOdbcDsns',
+            'handle': -1,
+            'params': {}
+        }, (message: any) => {
+            deferred.resolve(message);
+        });
+        return deferred.promise;
+    }
+
+    getOleDbProviders (): Promise<any> {
+        const deferred = new Deferred<any>();
+        this.wsSend({
+            'jsonrpc': '2.0',
+            'id': this.getNextEnumerator(),
+            'method': 'GetOleDbProviders',
+            'handle': -1,
+            'params': {}
+        }, (message: any) => {
+            deferred.resolve(message);
+        });
+        return deferred.promise;
+    }
+
+    getProgress (qRequestId: number): Promise<any> {
+        const deferred = new Deferred<any>();
+        this.wsSend({
+            'jsonrpc': '2.0',
+            'id': this.getNextEnumerator(),
+            'method': 'GetProgress',
+            'handle': -1,
+            'params': {
+                qRequestId: qRequestId
+            }
+        }, (message: any) => {
+            deferred.resolve(message);
+        });
+        return deferred.promise;
+    }
+
+    getSupportedCodePages (): Promise<any> {
+        const deferred = new Deferred<any>();
+        this.wsSend({
+            'jsonrpc': '2.0',
+            'id': this.getNextEnumerator(),
+            'method': 'GetSupportedCodePages',
+            'handle': -1,
+            'params': {}
+        }, (message: any) => {
+            deferred.resolve(message);
+        });
+        return deferred.promise;
+    }
+
+    getUniqueID (): Promise<any> {
+        const deferred = new Deferred<any>();
+        this.wsSend({
+            'jsonrpc': '2.0',
+            'id': this.getNextEnumerator(),
+            'method': 'GetUniqueID',
+            'handle': -1,
+            'params': {}
+        }, (message: any) => {
+            deferred.resolve(message);
+        });
+        return deferred.promise;
+    }
+
     /*
-
-    GetFolderItemsForPath method
-
-    GetFunctions method
-
-    GetInteract method
-
-    GetLogicalDriveStrings method
-
-    GetOdbcDsns method
-
-    GetOleDbProviders method
-
-    GetProgress method
-
-    GetStreamList method
 
     GetSupportedCodePages method
 

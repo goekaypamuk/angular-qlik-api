@@ -80,7 +80,7 @@ export class MyApp implements OnDestroy {
     this.myHyperCube = this.qlikGlobal.openDoc('sales.qvf')
          .createHyperCube()
          .addDimension(new Dimension('=name'))
-         .addMeasure(new Measure('sum(cost'))
+         .addMeasure(new Measure('sum(cost)'))
          .subscribe( reply => {
             console.log(reply);
          });
