@@ -552,42 +552,188 @@ export class QlikGlobalService {
         return deferred.promise;
     }
 
-    /*
+    interactDone (qRequestId: number, qResult: number ): Promise<any> {
+        const deferred = new Deferred<any>();
+        this.wsSend({
+            'jsonrpc': '2.0',
+            'id': this.getNextEnumerator(),
+            'method': 'InteractDone',
+            'handle': -1,
+            'params': {
+                InteractDef: {
+                    qResult: qResult
+                }
+            }
+        }, (message: any) => {
+            deferred.resolve(message);
+        });
+        return deferred.promise;
+    }
 
-    GetSupportedCodePages method
+    isDesktopMode (): Promise<any> {
+        const deferred = new Deferred<any>();
+        this.wsSend({
+            'jsonrpc': '2.0',
+            'id': this.getNextEnumerator(),
+            'method': 'IsDesktopMode',
+            'handle': -1,
+            'params': {}
+        }, (message: any) => {
+            deferred.resolve(message);
+        });
+        return deferred.promise;
+    }
 
-    GetUniqueID method
+    IsPersonalMode (): Promise<any> {
+        const deferred = new Deferred<any>();
+        this.wsSend({
+            'jsonrpc': '2.0',
+            'id': this.getNextEnumerator(),
+            'method': 'IsPersonalMode',
+            'handle': -1,
+            'params': {}
+        }, (message: any) => {
+            deferred.resolve(message);
+        });
+        return deferred.promise;
+    }
 
-    InteractDone method
+    isValidConnectionString (qConnection: Connection): Promise<any> {
+        const deferred = new Deferred<any>();
+        this.wsSend({
+            'jsonrpc': '2.0',
+            'id': this.getNextEnumerator(),
+            'method': 'IsValidConnectionString',
+            'handle': -1,
+            'params': {
+                qConnection: qConnection
+            }
+        }, (message: any) => {
+            deferred.resolve(message);
+        });
+        return deferred.promise;
+    }
 
-    IsDesktopMode method
-
-    IsPersonalMode method
-
-    IsValidConnectionString method
-*/
     openDoc(id: string): Document {
         if (this.docList[id] === undefined) {
             this.docList[id] = new Document(id, this);
         }
         return this.docList[id];
     }
-    /*
-    OSName method
 
-    OSVersion method
+    oSName (): Promise<any> {
+        const deferred = new Deferred<any>();
+        this.wsSend({
+            'jsonrpc': '2.0',
+            'id': this.getNextEnumerator(),
+            'method': 'OSName',
+            'handle': -1,
+            'params': {}
+        }, (message: any) => {
+            deferred.resolve(message);
+        });
+        return deferred.promise;
+    }
 
-    ProductVersion method
+    oSVersion (): Promise<any> {
+        const deferred = new Deferred<any>();
+        this.wsSend({
+            'jsonrpc': '2.0',
+            'id': this.getNextEnumerator(),
+            'method': 'OSVersion',
+            'handle': -1,
+            'params': {}
+        }, (message: any) => {
+            deferred.resolve(message);
+        });
+        return deferred.promise;
+    }
 
-    QTProduct method
+    productVersion (): Promise<any> {
+        const deferred = new Deferred<any>();
+        this.wsSend({
+            'jsonrpc': '2.0',
+            'id': this.getNextEnumerator(),
+            'method': 'ProductVersion',
+            'handle': -1,
+            'params': {}
+        }, (message: any) => {
+            deferred.resolve(message);
+        });
+        return deferred.promise;
+    }
 
-    QvVersion method
+    qTProduct (): Promise<any> {
+        const deferred = new Deferred<any>();
+        this.wsSend({
+            'jsonrpc': '2.0',
+            'id': this.getNextEnumerator(),
+            'method': 'QTProduct',
+            'handle': -1,
+            'params': {}
+        }, (message: any) => {
+            deferred.resolve(message);
+        });
+        return deferred.promise;
+    }
 
-    ReloadExtensionList method
+    qvVersion (): Promise<any> {
+        const deferred = new Deferred<any>();
+        this.wsSend({
+            'jsonrpc': '2.0',
+            'id': this.getNextEnumerator(),
+            'method': 'qvVersion',
+            'handle': -1,
+            'params': {}
+        }, (message: any) => {
+            deferred.resolve(message);
+        });
+        return deferred.promise;
+    }
 
-    ReplaceAppFromID method
+    reloadExtensionList (): Promise<any> {
+        const deferred = new Deferred<any>();
+        this.wsSend({
+            'jsonrpc': '2.0',
+            'id': this.getNextEnumerator(),
+            'method': 'ReloadExtensionList',
+            'handle': -1,
+            'params': {}
+        }, (message: any) => {
+            deferred.resolve(message);
+        });
+        return deferred.promise;
+    }
 
-    ShutdownProcess method
-    */
+    replaceAppFromID (qTargetAppId: string, qSrcAppID: string, qIds?: Array<string>): Promise<any> {
+        const deferred = new Deferred<any>();
+        this.wsSend({
+            'jsonrpc': '2.0',
+            'id': this.getNextEnumerator(),
+            'method': 'ReplaceAppFromID',
+            'handle': -1,
+            'params': {
+                qTargetAppId: qTargetAppId,
+                qSrcAppID: qSrcAppID,
+                qIds: qIds || []
+            }
+        }, (message: any) => {
+            deferred.resolve(message);
+        });
+        return deferred.promise;
+    }
 
+    shutdownProcess (): Promise<any> {
+        const deferred = new Deferred<any>();
+        this.wsSend({
+            'jsonrpc': '2.0',
+            'id': this.getNextEnumerator(),
+            'method': 'shutdownProcess',
+            'handle': -1,
+            'params': {}
+        }, (message: any) => {
+            deferred.resolve(message);
+        });
+        return deferred.promise;
+    }
 }
