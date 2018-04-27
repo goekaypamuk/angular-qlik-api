@@ -27,7 +27,7 @@ To install this library, run:
 $ npm install angular-qlik-api --save
 ```
 
-## Consuming your library
+## Consuming AngulerQlikEngineApi library
 
 Once you have published your library to npm, you can import your library in any Angular application by running:
 
@@ -46,6 +46,7 @@ import { AppComponent } from './app.component';
 // Import AngularQlikApiModule library
 import {AngularQlikApiModule, QlikConfig} from './angular-qlik-api';
 
+// Define your connection to Qlik Sense Server or Qlik Sense Desktop
 const qlikConfig = new QlikConfig({
   useWss: false,
   address: 'localhost',

@@ -2,9 +2,9 @@ import { Inject, Injectable } from '@angular/core';
 import { Deferred } from './class/deferred.class';
 import { QlikConfig } from './class/qlik-config.class';
 import { Document } from './class/document.class';
-import {QBnfType} from './enum/qbnftype.enum';
+import {QBnfType} from './enum/q-bnf-type.enum';
 import {Connection} from './class/connection.class';
-import {QGroup} from './enum/qGroup';
+import {QGroup} from './enum/q-group.enum';
 
 
 @Injectable()
@@ -16,7 +16,6 @@ export class QlikGlobalService {
     private wsQue: any = {};
 
     constructor(@Inject('qlikConfig') private qlikConfig: QlikConfig) {
-        console.log(qlikConfig.getWebsocketConnectionLink());
         let webSocketLink = qlikConfig.getWebsocketConnectionLink();
 
         this.docList = {};
@@ -30,12 +29,15 @@ export class QlikGlobalService {
         this.ws.onmessage = (ev) => {
             const data = JSON.parse(ev.data);
             if (this.wsQue[data.id] !== undefined) {
-                this.wsQue[data.id](data);
+                // this.wsQue[data.id](data);
+                this.wsQue[data.id].forEach( (func) => {
+                    func(data);
+                });
             }
         };
     }
 
-    wsSend(obj: any, callback: any) {
+    wsSend(obj: any, callback: Array<Function>) {
         this.wsQue[obj.id] = callback;
         this.wsPromise.promise.then( _ => {
             this.ws.send(JSON.stringify(obj));
@@ -58,9 +60,9 @@ export class QlikGlobalService {
             'method': 'AbortAll',
             'handle': -1,
             'params': []
-        }, (message: any) => {
+        }, [(message: any) => {
             deferred.resolve(true);
-        });
+        }]);
         return deferred.promise;
     }
 
@@ -72,9 +74,9 @@ export class QlikGlobalService {
             'method': 'AllowCreateApp',
             'handle': -1,
             'params': []
-        }, (message: any) => {
+        }, [(message: any) => {
             deferred.resolve(message);
-        });
+        }]);
         return deferred.promise;
     }
 
@@ -86,9 +88,9 @@ export class QlikGlobalService {
             'method': 'CancelReload',
             'handle': -1,
             'params': []
-        }, (message: any) => {
+        }, [(message: any) => {
             deferred.resolve(message);
-        });
+        }]);
         return deferred.promise;
     }
 
@@ -102,9 +104,9 @@ export class QlikGlobalService {
             'params': [
                 qRequestId
             ]
-        }, (message: any) => {
+        }, [(message: any) => {
             deferred.resolve(message);
-        });
+        }]);
         return deferred.promise;
     }
 
@@ -116,9 +118,9 @@ export class QlikGlobalService {
             'method': 'ConfigureReload',
             'handle': -1,
             'params': []
-        }, (message: any) => {
+        }, [(message: any) => {
             deferred.resolve(message);
-        });
+        }]);
         return deferred.promise;
     }
 
@@ -134,9 +136,9 @@ export class QlikGlobalService {
                 qSrcAppId,
                 qIds
             ]
-        }, (message: any) => {
+        }, [(message: any) => {
             deferred.resolve(message);
-        });
+        }]);
         return deferred.promise;
     }
 
@@ -151,9 +153,9 @@ export class QlikGlobalService {
                 qAppName,
                 qLocalizedScriptMainSection || null
             ]
-        }, (message: any) => {
+        }, [(message: any) => {
             deferred.resolve(message);
-        });
+        }]);
         return deferred.promise;
     }
 
@@ -175,9 +177,9 @@ export class QlikGlobalService {
                 'qSerial': qSerial || '',
                 'qLocalizedScriptMainSection': qLocalizedScriptMainSection || ''
             }
-        }, (message: any) => {
+        }, [(message: any) => {
             deferred.resolve(message);
-        });
+        }]);
         return deferred.promise;
     }
 
@@ -190,9 +192,9 @@ export class QlikGlobalService {
             'handle': -1,
             'params': [
             ]
-        }, (message: any) => {
+        }, [(message: any) => {
             deferred.resolve(message);
-        });
+        }]);
         return deferred.promise;
     }
 
@@ -206,9 +208,9 @@ export class QlikGlobalService {
             'params': [
                 qSrcAppId
             ]
-        }, (message: any) => {
+        }, [(message: any) => {
             deferred.resolve(message);
-        });
+        }]);
         return deferred.promise;
     }
 
@@ -222,9 +224,9 @@ export class QlikGlobalService {
             'params': [
                 qAppId
             ]
-        }, (message: any) => {
+        }, [(message: any) => {
             deferred.resolve(message);
-        });
+        }]);
         return deferred.promise;
     }
 
@@ -237,9 +239,9 @@ export class QlikGlobalService {
             'handle': -1,
             'params': [
             ]
-        }, (message: any) => {
+        }, [(message: any) => {
             deferred.resolve(message);
-        });
+        }]);
         return deferred.promise;
     }
 
@@ -257,9 +259,9 @@ export class QlikGlobalService {
                 'qSrcAppId': qSrcAppId,
                 'qIds': qIds
             }
-        }, (message: any) => {
+        }, [(message: any) => {
             deferred.resolve(message);
-        });
+        }]);
         return deferred.promise;
     }
 
@@ -272,9 +274,9 @@ export class QlikGlobalService {
             'handle': -1,
             'params': [
             ]
-        }, (message: any) => {
+        }, [(message: any) => {
             deferred.resolve(message);
-        });
+        }]);
         return deferred.promise;
     }
 
@@ -288,9 +290,9 @@ export class QlikGlobalService {
             'params': {
                 'qAppID': qAppID
             }
-        }, (message: any) => {
+        }, [(message: any) => {
             deferred.resolve(message);
-        });
+        }]);
         return deferred.promise;
     }
 
@@ -302,9 +304,9 @@ export class QlikGlobalService {
             'method': 'GetAuthenticatedUser',
             'handle': -1,
             'params': []
-        }, (message: any) => {
+        }, [(message: any) => {
             deferred.resolve(message);
-        });
+        }]);
         return deferred.promise;
     }
 
@@ -318,9 +320,9 @@ export class QlikGlobalService {
             'params': [
                 qBnfType
             ]
-        }, (message: any) => {
+        }, [(message: any) => {
             deferred.resolve(message);
-        });
+        }]);
         return deferred.promise;
     }
 
@@ -334,9 +336,9 @@ export class QlikGlobalService {
             'params': [
                 qBnfType
             ]
-        }, (message: any) => {
+        }, [(message: any) => {
             deferred.resolve(message);
-        });
+        }]);
         return deferred.promise;
     }
 
@@ -350,9 +352,9 @@ export class QlikGlobalService {
             'params': [
                 qBnfType
             ]
-        }, (message: any) => {
+        }, [(message: any) => {
             deferred.resolve(message);
-        });
+        }]);
         return deferred.promise;
     }
 
@@ -367,9 +369,9 @@ export class QlikGlobalService {
             'params': {
                 qReloadList: qReloadList
             }
-        }, (message: any) => {
+        }, [(message: any) => {
             deferred.resolve(message);
-        });
+        }]);
         return deferred.promise;
     }
 
@@ -383,9 +385,9 @@ export class QlikGlobalService {
             'params': {
                 qConnection: qConnection
             }
-        }, (message: any) => {
+        }, [(message: any) => {
             deferred.resolve(message);
-        });
+        }]);
         return deferred.promise;
     }
 
@@ -398,9 +400,9 @@ export class QlikGlobalService {
             'handle': -1,
             'params': {
             }
-        }, (message: any) => {
+        }, [(message: any) => {
             deferred.resolve(message);
-        });
+        }]);
         return deferred.promise;
     }
 
@@ -412,9 +414,9 @@ export class QlikGlobalService {
             'method': 'GetDocList',
             'handle': -1,
             'params': []
-        }, (message: any) => {
+        }, [(message: any) => {
             deferred.resolve(message);
-        });
+        }]);
         return deferred.promise;
     }
 
@@ -428,9 +430,9 @@ export class QlikGlobalService {
             'params': {
                 qPath: qPath
             }
-        }, (message: any) => {
+        }, [(message: any) => {
             deferred.resolve(message);
-        });
+        }]);
         return deferred.promise;
     }
 
@@ -444,9 +446,9 @@ export class QlikGlobalService {
             'params': {
                 qGroup: qGroup || QGroup.ALL
             }
-        }, (message: any) => {
+        }, [(message: any) => {
             deferred.resolve(message);
-        });
+        }]);
         return deferred.promise;
     }
 
@@ -460,9 +462,9 @@ export class QlikGlobalService {
             'params': {
                 qRequestId: qRequestId
             }
-        }, (message: any) => {
+        }, [(message: any) => {
             deferred.resolve(message);
-        });
+        }]);
         return deferred.promise;
     }
 
@@ -474,9 +476,9 @@ export class QlikGlobalService {
             'method': 'GetLogicalDriveStrings',
             'handle': -1,
             'params': {}
-        }, (message: any) => {
+        }, [(message: any) => {
             deferred.resolve(message);
-        });
+        }]);
         return deferred.promise;
     }
 
@@ -488,9 +490,9 @@ export class QlikGlobalService {
             'method': 'GetOdbcDsns',
             'handle': -1,
             'params': {}
-        }, (message: any) => {
+        }, [(message: any) => {
             deferred.resolve(message);
-        });
+        }]);
         return deferred.promise;
     }
 
@@ -502,9 +504,9 @@ export class QlikGlobalService {
             'method': 'GetOleDbProviders',
             'handle': -1,
             'params': {}
-        }, (message: any) => {
+        }, [(message: any) => {
             deferred.resolve(message);
-        });
+        }]);
         return deferred.promise;
     }
 
@@ -518,9 +520,9 @@ export class QlikGlobalService {
             'params': {
                 qRequestId: qRequestId
             }
-        }, (message: any) => {
+        }, [(message: any) => {
             deferred.resolve(message);
-        });
+        }]);
         return deferred.promise;
     }
 
@@ -532,9 +534,9 @@ export class QlikGlobalService {
             'method': 'GetSupportedCodePages',
             'handle': -1,
             'params': {}
-        }, (message: any) => {
+        }, [(message: any) => {
             deferred.resolve(message);
-        });
+        }]);
         return deferred.promise;
     }
 
@@ -546,9 +548,9 @@ export class QlikGlobalService {
             'method': 'GetUniqueID',
             'handle': -1,
             'params': {}
-        }, (message: any) => {
+        }, [(message: any) => {
             deferred.resolve(message);
-        });
+        }]);
         return deferred.promise;
     }
 
@@ -564,9 +566,9 @@ export class QlikGlobalService {
                     qResult: qResult
                 }
             }
-        }, (message: any) => {
+        }, [(message: any) => {
             deferred.resolve(message);
-        });
+        }]);
         return deferred.promise;
     }
 
@@ -578,9 +580,9 @@ export class QlikGlobalService {
             'method': 'IsDesktopMode',
             'handle': -1,
             'params': {}
-        }, (message: any) => {
+        }, [(message: any) => {
             deferred.resolve(message);
-        });
+        }]);
         return deferred.promise;
     }
 
@@ -592,9 +594,9 @@ export class QlikGlobalService {
             'method': 'IsPersonalMode',
             'handle': -1,
             'params': {}
-        }, (message: any) => {
+        }, [(message: any) => {
             deferred.resolve(message);
-        });
+        }]);
         return deferred.promise;
     }
 
@@ -608,9 +610,9 @@ export class QlikGlobalService {
             'params': {
                 qConnection: qConnection
             }
-        }, (message: any) => {
+        }, [(message: any) => {
             deferred.resolve(message);
-        });
+        }]);
         return deferred.promise;
     }
 
@@ -629,9 +631,9 @@ export class QlikGlobalService {
             'method': 'OSName',
             'handle': -1,
             'params': {}
-        }, (message: any) => {
+        }, [(message: any) => {
             deferred.resolve(message);
-        });
+        }]);
         return deferred.promise;
     }
 
@@ -643,9 +645,9 @@ export class QlikGlobalService {
             'method': 'OSVersion',
             'handle': -1,
             'params': {}
-        }, (message: any) => {
+        }, [(message: any) => {
             deferred.resolve(message);
-        });
+        }]);
         return deferred.promise;
     }
 
@@ -657,9 +659,9 @@ export class QlikGlobalService {
             'method': 'ProductVersion',
             'handle': -1,
             'params': {}
-        }, (message: any) => {
+        }, [(message: any) => {
             deferred.resolve(message);
-        });
+        }]);
         return deferred.promise;
     }
 
@@ -671,9 +673,9 @@ export class QlikGlobalService {
             'method': 'QTProduct',
             'handle': -1,
             'params': {}
-        }, (message: any) => {
+        }, [(message: any) => {
             deferred.resolve(message);
-        });
+        }]);
         return deferred.promise;
     }
 
@@ -685,9 +687,9 @@ export class QlikGlobalService {
             'method': 'qvVersion',
             'handle': -1,
             'params': {}
-        }, (message: any) => {
+        }, [(message: any) => {
             deferred.resolve(message);
-        });
+        }]);
         return deferred.promise;
     }
 
@@ -699,9 +701,9 @@ export class QlikGlobalService {
             'method': 'ReloadExtensionList',
             'handle': -1,
             'params': {}
-        }, (message: any) => {
+        }, [(message: any) => {
             deferred.resolve(message);
-        });
+        }]);
         return deferred.promise;
     }
 
@@ -717,9 +719,9 @@ export class QlikGlobalService {
                 qSrcAppID: qSrcAppID,
                 qIds: qIds || []
             }
-        }, (message: any) => {
+        }, [(message: any) => {
             deferred.resolve(message);
-        });
+        }]);
         return deferred.promise;
     }
 
@@ -731,9 +733,9 @@ export class QlikGlobalService {
             'method': 'shutdownProcess',
             'handle': -1,
             'params': {}
-        }, (message: any) => {
+        }, [(message: any) => {
             deferred.resolve(message);
-        });
+        }]);
         return deferred.promise;
     }
 }

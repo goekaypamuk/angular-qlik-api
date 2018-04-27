@@ -14,9 +14,15 @@ export * from './class/document.class';
 export * from './class/hyper-cube.class';
 export * from './class/list.class';
 export * from './class/measure.class';
+export * from './interface/q-connection.interface';
+export * from './interface/q-info.interface';
+export * from './interface/q-meta.interface';
+export * from './interface/q-generic-bookmark-properties.interface';
 export * from './interface/qlik-config.interface';
-export * from './enum/qbnftype.enum';
-
+export * from './enum/q-bnf-type.enum';
+export * from './enum/q-connection-type.enum';
+export * from './enum/q-group.enum';
+export * from './enum/q-logon.enum';
 @NgModule({
   imports: [
     CommonModule
