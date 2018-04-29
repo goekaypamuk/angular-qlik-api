@@ -29,7 +29,6 @@ export class QlikGlobalService {
         this.ws.onmessage = (ev) => {
             const data = JSON.parse(ev.data);
             if (this.wsQue[data.id] !== undefined) {
-                // this.wsQue[data.id](data);
                 this.wsQue[data.id].forEach( (func) => {
                     func(data);
                 });
@@ -396,7 +395,7 @@ export class QlikGlobalService {
         this.wsSend({
             'jsonrpc': '2.0',
             'id': this.getNextEnumerator(),
-            'method': 'getDefaultAppFolder',
+            'method': 'GetDefaultAppFolder',
             'handle': -1,
             'params': {
             }
@@ -425,7 +424,7 @@ export class QlikGlobalService {
         this.wsSend({
             'jsonrpc': '2.0',
             'id': this.getNextEnumerator(),
-            'method': 'getFolderItemsForPath',
+            'method': 'GetFolderItemsForPath',
             'handle': -1,
             'params': {
                 qPath: qPath
@@ -586,7 +585,7 @@ export class QlikGlobalService {
         return deferred.promise;
     }
 
-    IsPersonalMode (): Promise<any> {
+    isPersonalMode (): Promise<any> {
         const deferred = new Deferred<any>();
         this.wsSend({
             'jsonrpc': '2.0',
@@ -684,7 +683,7 @@ export class QlikGlobalService {
         this.wsSend({
             'jsonrpc': '2.0',
             'id': this.getNextEnumerator(),
-            'method': 'qvVersion',
+            'method': 'QvVersion',
             'handle': -1,
             'params': {}
         }, [(message: any) => {
@@ -730,7 +729,7 @@ export class QlikGlobalService {
         this.wsSend({
             'jsonrpc': '2.0',
             'id': this.getNextEnumerator(),
-            'method': 'shutdownProcess',
+            'method': 'ShutdownProcess',
             'handle': -1,
             'params': {}
         }, [(message: any) => {

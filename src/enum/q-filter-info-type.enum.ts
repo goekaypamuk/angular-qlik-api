@@ -1,0 +1,4 @@
+export enum QFilterInfoType {
+    FILTER_TYPE_NONE = 'FILTER_TYPE_NONE',
+    FILTER_TYPE_RAW = 'FILTER_TYPE_RAW'
+}

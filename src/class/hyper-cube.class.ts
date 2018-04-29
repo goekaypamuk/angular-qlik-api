@@ -35,10 +35,11 @@ export class HyperCube {
     globalService: any;
     doc: Deferred<number>;
     deferred: Deferred<number>;
-    callback: any;
+    callback: Array<Function>;
     outerDoc: Document;
     cubeOuterId: string;
     constructor(deferred: Deferred<number>, globalService: any, doc: Document, cubeOuterId: string) {
+        this.callback = [];
         this.outerDoc = doc;
         this.deferred = new Deferred();
         this.doc = deferred;
@@ -47,11 +48,11 @@ export class HyperCube {
     }
 
     subscribe(cb: any): HyperCube {
-        this.callback = cb;
+        this.callback.push(cb);
         this.doc.promise.then( h => {
             this.setHandle(h);
             this.setDefinitionId(this.globalService.getNextEnumerator());
-            this.globalService.wsSend(this.definition, this.onMessageCubeCreated.bind(this));
+            this.globalService.wsSend(this.definition, [this.onMessageCubeCreated.bind(this)]);
         });
         return this;
     }
@@ -70,7 +71,7 @@ export class HyperCube {
                 'method': 'GetLayout',
                 'handle': d,
                 'params': []
-            }, this.onMessageLayout.bind(this));
+            }, [this.onMessageLayout.bind(this)]);
         });
     }
 
@@ -88,7 +89,9 @@ export class HyperCube {
         if (m.error) {
             console.error(m.error.message);
         } else {
-            this.callback(m);
+            this.callback.forEach( f => {
+              f(m);
+            });
         }
     }
 
@@ -132,7 +135,7 @@ export class HyperCube {
         return this;
     }
 
-    select(pos: number, index: number): HyperCube {
+    select(dimensionIndex: number, rowIndex: number): HyperCube {
         this.deferred.promise.then((d) => {
             this.globalService.wsSend({
                     'jsonrpc': '2.0',
@@ -141,14 +144,14 @@ export class HyperCube {
                     'handle': d,
                     'params': [
                         '/qHyperCubeDef',
-                        pos,
+                        dimensionIndex,
                         [
-                            index
+                            rowIndex
                         ],
                         true
                     ]
                 },
-                () => {this.outerDoc.refreshAll(); }
+                [() => {this.outerDoc.refreshAll(); }]
             );
         });
         return this;

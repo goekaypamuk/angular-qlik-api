@@ -1,4 +1,4 @@
-import {QGrouping} from '../enum/q-grouping';
+import {QGrouping} from '../enum/q-grouping.enum';
 
 export interface QLibraryDimensionDef {
     qGrouping?: QGrouping;

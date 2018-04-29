@@ -9,6 +9,8 @@ import {QGenericObjectProperties} from '../interface/q-generic-object-properties
 import {QGenericVariableProperties} from '../interface/q-generic-variable-properties.interface';
 import {QMode} from '../enum/q-mode.enum';
 import {QInfo} from '../interface/q-info.interface';
+import {QFilterInfo} from '../interface/q-filter-info.interface';
+import {QFileDataFormat} from '../interface/q-file-data-format.interface';
 
 export class Document {
     globalService: any;
@@ -30,7 +32,7 @@ export class Document {
             ],
             'outKey': -1,
             'id': this.id
-        }, this.onMessage.bind(this));
+        }, [this.onDocumentOpened.bind(this)]);
     }
 
     createHyperCube(): HyperCube {
@@ -49,21 +51,21 @@ export class Document {
         return this.listList[Id];
     }
 
-    private refreshAll() {
-        for (const hc in Object.keys(this.hyperCubeList)) {
+    refreshAll() {
+        for (const hc in this.hyperCubeList) {
             if (this.hyperCubeList.hasOwnProperty(hc)) {
                 this.hyperCubeList[hc].getLayout();
             }
         }
 
-        for (const l in Object.keys(this.listList)) {
+        for (const l in this.listList) {
             if (this.hyperCubeList.hasOwnProperty(l)) {
                 this.listList[l].getLayout();
             }
         }
     }
 
-    private onMessage(m: any) {
+    private onDocumentOpened(m: any) {
         if (m.error) {
             this.deferred.reject(m.error.message);
             console.error(m.error.message);
@@ -71,8 +73,6 @@ export class Document {
             this.deferred.resolve(m.result.qReturn.qHandle);
         }
     }
-
-
 
     abortModal(qAccept: boolean): Promise<any> {
         const deferred = new Deferred<any>();
@@ -978,40 +978,359 @@ export class Document {
         });
         return deferred.promise;
     }
+
+    getConnection(qConnectionId: string): Promise<any>  {
+        const deferred = new Deferred<any>();
+        this.deferred.promise.then( handle => {
+            this.globalService.wsSend({
+                'jsonrpc': '2.0',
+                'id': this.globalService.getNextEnumerator(),
+                'method': 'GetConnection',
+                'handle': handle,
+                'params': {
+                    qConnectionId: qConnectionId
+                }
+            }, [this.refreshAll.bind(this),
+                (message: any) => {
+                    deferred.resolve(message);
+                }]);
+        });
+        return deferred.promise;
+    }
+
+    getConnections(): Promise<any>  {
+        const deferred = new Deferred<any>();
+        this.deferred.promise.then( handle => {
+            this.globalService.wsSend({
+                'jsonrpc': '2.0',
+                'id': this.globalService.getNextEnumerator(),
+                'method': 'GetConnections',
+                'handle': handle,
+                'params': {
+                }
+            }, [this.refreshAll.bind(this),
+                (message: any) => {
+                    deferred.resolve(message);
+                }]);
+        });
+        return deferred.promise;
+    }
+
+    getContentLibraries(): Promise<any>  {
+        const deferred = new Deferred<any>();
+        this.deferred.promise.then( handle => {
+            this.globalService.wsSend({
+                'jsonrpc': '2.0',
+                'id': this.globalService.getNextEnumerator(),
+                'method': 'GetContentLibraries',
+                'handle': handle,
+                'params': {
+                }
+            }, [this.refreshAll.bind(this),
+                (message: any) => {
+                    deferred.resolve(message);
+                }]);
+        });
+        return deferred.promise;
+    }
+
+    getDatabaseInfo(qConnectionId: string): Promise<any>  {
+        const deferred = new Deferred<any>();
+        this.deferred.promise.then( handle => {
+            this.globalService.wsSend({
+                'jsonrpc': '2.0',
+                'id': this.globalService.getNextEnumerator(),
+                'method': 'GetDatabaseInfo',
+                'handle': handle,
+                'params': {
+                    qConnectionId: qConnectionId
+                }
+            }, [this.refreshAll.bind(this),
+                (message: any) => {
+                    deferred.resolve(message);
+                }]);
+        });
+        return deferred.promise;
+    }
+
+    getDatabaseOwners(qConnectionId: string, qDatabase?: string): Promise<any>  {
+        const deferred = new Deferred<any>();
+        this.deferred.promise.then( handle => {
+            this.globalService.wsSend({
+                'jsonrpc': '2.0',
+                'id': this.globalService.getNextEnumerator(),
+                'method': 'GetDatabaseOwners',
+                'handle': handle,
+                'params': {
+                    qConnectionId: qConnectionId,
+                    qDatabase: qDatabase
+                }
+            }, [this.refreshAll.bind(this),
+                (message: any) => {
+                    deferred.resolve(message);
+                }]);
+        });
+        return deferred.promise;
+    }
+
+    getDatabaseTableFields(qConnectionId: string, qTable: string, qDatabase?: string, qOwner?: string): Promise<any>  {
+        const deferred = new Deferred<any>();
+        this.deferred.promise.then( handle => {
+            this.globalService.wsSend({
+                'jsonrpc': '2.0',
+                'id': this.globalService.getNextEnumerator(),
+                'method': 'GetDatabaseTableFields',
+                'handle': handle,
+                'params': {
+                    qConnectionId: qConnectionId,
+                    qDatabase: qDatabase,
+                    qTable: qTable,
+                    qOwner: qOwner
+                }
+            }, [this.refreshAll.bind(this),
+                (message: any) => {
+                    deferred.resolve(message);
+                }]);
+        });
+        return deferred.promise;
+    }
+
+    getDatabaseTablePreview(qConnectionId: string,
+                            qTable: string,
+                            qDatabase?: string,
+                            qOwner?: string,
+                            qConditions?: QFilterInfo): Promise<any>  {
+        const deferred = new Deferred<any>();
+        this.deferred.promise.then( handle => {
+            this.globalService.wsSend({
+                'jsonrpc': '2.0',
+                'id': this.globalService.getNextEnumerator(),
+                'method': 'GetDatabaseTablePreview',
+                'handle': handle,
+                'params': {
+                    qConnectionId: qConnectionId,
+                    qDatabase: qDatabase,
+                    qTable: qTable,
+                    qOwner: qOwner,
+                    qConditions: qConditions
+                }
+            }, [this.refreshAll.bind(this),
+                (message: any) => {
+                    deferred.resolve(message);
+                }]);
+        });
+        return deferred.promise;
+    }
+
+    getDatabaseTables(qConnectionId: string,
+                            qDatabase?: string,
+                            qOwner?: string): Promise<any>  {
+        const deferred = new Deferred<any>();
+        this.deferred.promise.then( handle => {
+            this.globalService.wsSend({
+                'jsonrpc': '2.0',
+                'id': this.globalService.getNextEnumerator(),
+                'method': 'GetDatabaseTables',
+                'handle': handle,
+                'params': {
+                    qConnectionId: qConnectionId,
+                    qDatabase: qDatabase,
+                    qOwner: qOwner,
+                }
+            }, [this.refreshAll.bind(this),
+                (message: any) => {
+                    deferred.resolve(message);
+                }]);
+        });
+        return deferred.promise;
+    }
+
+    getDatabases(qConnectionId: string,
+                      qDatabase?: string,
+                      qOwner?: string): Promise<any>  {
+        const deferred = new Deferred<any>();
+        this.deferred.promise.then( handle => {
+            this.globalService.wsSend({
+                'jsonrpc': '2.0',
+                'id': this.globalService.getNextEnumerator(),
+                'method': 'GetDatabases',
+                'handle': handle,
+                'params': {
+                    qConnectionId: qConnectionId,
+                }
+            }, [this.refreshAll.bind(this),
+                (message: any) => {
+                    deferred.resolve(message);
+                }]);
+        });
+        return deferred.promise;
+    }
+
+    /**
+     * s
+     */
+    getDimension(qId: string): Promise<any>  {
+        const deferred = new Deferred<any>();
+        this.deferred.promise.then( handle => {
+            this.globalService.wsSend({
+                'jsonrpc': '2.0',
+                'id': this.globalService.getNextEnumerator(),
+                'method': 'GetDimension',
+                'handle': handle,
+                'params': {
+                    qId: qId,
+                }
+            }, [this.refreshAll.bind(this),
+                (message: any) => {
+                    deferred.resolve(message);
+                }]);
+        });
+        return deferred.promise;
+    }
+
+    getEmptyScript(qLocalizedMainSection?: string): Promise<any>  {
+        const deferred = new Deferred<any>();
+        this.deferred.promise.then( handle => {
+            this.globalService.wsSend({
+                'jsonrpc': '2.0',
+                'id': this.globalService.getNextEnumerator(),
+                'method': 'GetEmptyScript',
+                'handle': handle,
+                'params': {
+                    qLocalizedMainSection: qLocalizedMainSection,
+                }
+            }, [this.refreshAll.bind(this),
+                (message: any) => {
+                    deferred.resolve(message);
+                }]);
+        });
+        return deferred.promise;
+    }
+
+    getFavoriteVariables(): Promise<any>  {
+        const deferred = new Deferred<any>();
+        this.deferred.promise.then( handle => {
+            this.globalService.wsSend({
+                'jsonrpc': '2.0',
+                'id': this.globalService.getNextEnumerator(),
+                'method': 'GetFavoriteVariables',
+                'handle': handle,
+                'params': {
+                }
+            }, [this.refreshAll.bind(this),
+                (message: any) => {
+                    deferred.resolve(message);
+                }]);
+        });
+        return deferred.promise;
+    }
+
+    /**
+     *
+     */
+    getField(qFieldName: string, qStateName?: string): Promise<any>  {
+        const deferred = new Deferred<any>();
+        this.deferred.promise.then( handle => {
+            this.globalService.wsSend({
+                'jsonrpc': '2.0',
+                'id': this.globalService.getNextEnumerator(),
+                'method': 'GetField',
+                'handle': handle,
+                'params': {
+                    qFieldName: qFieldName,
+                    qStateName: qStateName
+                }
+            }, [this.refreshAll.bind(this),
+                (message: any) => {
+                    deferred.resolve(message);
+                }]);
+        });
+        return deferred.promise;
+    }
+
+    getFieldDescription(qFieldName: string): Promise<any>  {
+        const deferred = new Deferred<any>();
+        this.deferred.promise.then( handle => {
+            this.globalService.wsSend({
+                'jsonrpc': '2.0',
+                'id': this.globalService.getNextEnumerator(),
+                'method': 'GetFieldDescription',
+                'handle': handle,
+                'params': {
+                    qFieldName: qFieldName
+                }
+            }, [this.refreshAll.bind(this),
+                (message: any) => {
+                    deferred.resolve(message);
+                }]);
+        });
+        return deferred.promise;
+    }
+
+    getFieldOnTheFlyByName(qFieldName: string): Promise<any>  {
+        const deferred = new Deferred<any>();
+        this.deferred.promise.then( handle => {
+            this.globalService.wsSend({
+                'jsonrpc': '2.0',
+                'id': this.globalService.getNextEnumerator(),
+                'method': 'GetFieldOnTheFlyByName',
+                'handle': handle,
+                'params': {
+                    qFieldName: qFieldName
+                }
+            }, [this.refreshAll.bind(this),
+                (message: any) => {
+                    deferred.resolve(message);
+                }]);
+        });
+        return deferred.promise;
+    }
+
+    /**
+     *
+     * QFileDataFormat not completed
+     */
+    getFileTableFields(qConnectionId: string, qDataFormat: QFileDataFormat , qTable: string, qRelativePath?: string): Promise<any>  {
+        const deferred = new Deferred<any>();
+        this.deferred.promise.then( handle => {
+            this.globalService.wsSend({
+                'jsonrpc': '2.0',
+                'id': this.globalService.getNextEnumerator(),
+                'method': 'GetFileTableFields',
+                'handle': handle,
+                'params': {
+                    qConnectionId: qConnectionId
+                }
+            }, [this.refreshAll.bind(this),
+                (message: any) => {
+                    deferred.resolve(message);
+                }]);
+        });
+        return deferred.promise;
+    }
+
+    getFileTablePreview(qReadableName: string): Promise<any>  {
+        const deferred = new Deferred<any>();
+        this.deferred.promise.then( handle => {
+            this.globalService.wsSend({
+                'jsonrpc': '2.0',
+                'id': this.globalService.getNextEnumerator(),
+                'method': 'GetFileTablePreview',
+                'handle': handle,
+                'params': {
+                    qReadableName: qReadableName
+                }
+            }, [this.refreshAll.bind(this),
+                (message: any) => {
+                    deferred.resolve(message);
+                }]);
+        });
+        return deferred.promise;
+    }
+
     /* To be implemented !!
 
-
  method
-
-GetBookmarks method
-
-GetConnection method
-
-GetConnections method
-
-GetContentLibraries method
-
-GetDatabaseInfo method
-
-GetDatabaseOwners method
-
-GetDatabases method
-
-GetDatabaseTableFields method
-
-GetDatabaseTablePreview method
-
-GetDatabaseTables method
-
-GetDimension method
-
-GetEmptyScript method
-
-GetFavoriteVariables method
-
-GetFieldDescription method
-
-GetField method
 
 GetFileTableFields method
 

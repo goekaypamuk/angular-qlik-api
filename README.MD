@@ -24,7 +24,7 @@ To work with the Qlik Engine API, you can use any language or tool that supports
 To install this library, run:
 
 ```bash
-$ npm install angular-qlik-api --save
+$ npm install angular-qlik-api -save
 ```
 
 ## Consuming AngulerQlikEngineApi library
@@ -50,7 +50,7 @@ import {AngularQlikApiModule, QlikConfig} from './angular-qlik-api';
 const qlikConfig = new QlikConfig({
   useWss: false,
   address: 'localhost',
-  port: 4248
+  port: 4848
 });
 
 
@@ -78,10 +78,10 @@ Once your library is imported, you can use its components, directives and pipes 
 export class MyApp implements OnDestroy {
   myHyperCube: HyperCube;
   constructor(qlikGlobal: QlikGlobalService ) {
-    this.myHyperCube = this.qlikGlobal.openDoc('sales.qvf')
+    this.myHyperCube = this.qlikGlobal.openDoc('sales discovery.qvf')
          .createHyperCube()
-         .addDimension(new Dimension('=name'))
-         .addMeasure(new Measure('sum(cost)'))
+         .addDimension(new Dimension('Region Name'))
+         .addMeasure(new Measure('Sum([YTD Sales Amount])'))
          .subscribe( reply => {
             console.log(reply);
          });
