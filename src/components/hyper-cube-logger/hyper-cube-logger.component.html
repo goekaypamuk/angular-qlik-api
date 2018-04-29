@@ -1,0 +1,28 @@
+<table [class]="tableClass">
+    <tr>
+        <th *ngFor="let dim of result?.qLayout.qHyperCube.qDimensionInfo">
+           {{dim.qFallbackTitle}}
+        </th>
+        <th *ngFor="let mes of result?.qLayout.qHyperCube.qMeasureInfo">
+            {{mes.qFallbackTitle}}
+        </th>
+    </tr>
+    <tr *ngFor="let row of result?.qLayout.qHyperCube.qDataPages[0].qMatrix; let rowIndex = index;">
+        <td *ngFor="let col of row;let colIndex = index;">
+            <a style="cursor: pointer" (click)="myHyperCube.select(colIndex, col.qElemNumber)" *ngIf="colIndex < result?.qLayout.qHyperCube.qDimensionInfo.length">
+                {{col.qText}}
+            </a>
+            <div *ngIf="colIndex >= result?.qLayout.qHyperCube.qDimensionInfo.length">
+                {{col.qText}}
+            </div>
+        </td>
+    </tr>
+  <tr>
+    <th *ngFor="let dim of result?.qLayout.qHyperCube.qDimensionInfo">
+      Total
+    </th>
+    <th *ngFor="let gt of result?.qLayout.qHyperCube.qGrandTotalRow">
+      {{gt.qText}}
+    </th>
+  </tr>
+</table>

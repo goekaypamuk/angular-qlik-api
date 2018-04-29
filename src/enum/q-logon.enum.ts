@@ -1,0 +1,4 @@
+export enum QLogon {
+    LOG_ON_SERVICE_USER = 'LOG_ON_SERVICE_USER',
+    LOG_ON_CURRENT_USER = 'LOG_ON_CURRENT_USER'
+}

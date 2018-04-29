@@ -79,7 +79,7 @@ export class List {
         this.doc.promise.then( h => {
             this.setHandle(h);
             this.setDefinitionId(this.globalService.getNextEnumerator());
-            this.globalService.wsSend(this.definition, this.onMessageListCreated.bind(this));
+            this.globalService.wsSend(this.definition, [this.onMessageListCreated.bind(this)]);
         });
         return this;
     }
@@ -108,7 +108,7 @@ export class List {
                 'method': 'GetLayout',
                 'handle': d,
                 'params': []
-            }, this.onMessageLayout.bind(this));
+            }, [this.onMessageLayout.bind(this)]);
         });
     }
 
@@ -141,7 +141,7 @@ export class List {
                         true
                     ]
                 },
-                () => {this.outerDoc.refreshAll(); }
+                [() => {this.outerDoc.refreshAll(); }]
             );
         });
         return this;
