@@ -18,16 +18,18 @@ Typical situations where you would use the Qlik Engine API include:
 
 To work with the Qlik Engine API, you can use any language or tool that supports WebSockets and can parse JSON. JavaScript is a common and obvious choice, because of its built-in JSON support, and because there are a number of libraries available to make it easier to work with WebSockets.
 
+###### Methods
+- [Use global methods](https://github.com/goekaypamuk/angular-qlik-api/blob/pag-develop/docs/Global.md)
 
 ## Installation
 
 To install this library, run:
 
 ```bash
-$ npm install angular-qlik-api --save
+$ npm install angular-qlik-api -save
 ```
 
-## Consuming your library
+## Consuming AngulerQlikEngineApi library
 
 Once you have published your library to npm, you can import your library in any Angular application by running:
 
@@ -46,10 +48,11 @@ import { AppComponent } from './app.component';
 // Import AngularQlikApiModule library
 import {AngularQlikApiModule, QlikConfig} from './angular-qlik-api';
 
+// Define your connection to Qlik Sense Server or Qlik Sense Desktop
 const qlikConfig = new QlikConfig({
   useWss: false,
   address: 'localhost',
-  port: 4248
+  port: 4848
 });
 
 
@@ -77,10 +80,10 @@ Once your library is imported, you can use its components, directives and pipes 
 export class MyApp implements OnDestroy {
   myHyperCube: HyperCube;
   constructor(qlikGlobal: QlikGlobalService ) {
-    this.myHyperCube = this.qlikGlobal.openDoc('sales.qvf')
+    this.myHyperCube = this.qlikGlobal.openDoc('sales discovery.qvf')
          .createHyperCube()
-         .addDimension(new Dimension('=name'))
-         .addMeasure(new Measure('sum(cost)'))
+         .addDimension(new Dimension('Region Name'))
+         .addMeasure(new Measure('Sum([YTD Sales Amount])'))
          .subscribe( reply => {
             console.log(reply);
          });
@@ -91,6 +94,21 @@ export class MyApp implements OnDestroy {
   }
 }
 ```
+
+## Development Progress
+
+- [x] Global Class Methods
+- [x] App Class Methods
+- [ ] GenericBookmark Methods
+- [ ] GenericDimension Class Methods
+- [ ] GenericObject Class Methods
+- [ ] GenericMeasure Class Methods
+- [ ] GenericDimension Class Methods
+- [ ] GenericVariable Class Methods
+- [ ] Field Class Methods
+- [ ] Variable Class Methods
+
+Initially, a hypercube builder has been added to the library but it may change completely in future releases!
 
 ## Development
 

@@ -2,9 +2,9 @@ import { Inject, Injectable } from '@angular/core';
 import { Deferred } from './class/deferred.class';
 import { QlikConfig } from './class/qlik-config.class';
 import { Document } from './class/document.class';
-import {QBnfType} from './enum/qbnftype.enum';
+import {QBnfType} from './enum/q-bnf-type.enum';
 import {Connection} from './class/connection.class';
-import {QGroup} from './enum/qGroup';
+import {QGroup} from './enum/q-group.enum';
 
 
 @Injectable()
@@ -16,7 +16,6 @@ export class QlikGlobalService {
     private wsQue: any = {};
 
     constructor(@Inject('qlikConfig') private qlikConfig: QlikConfig) {
-        console.log(qlikConfig.getWebsocketConnectionLink());
         let webSocketLink = qlikConfig.getWebsocketConnectionLink();
 
         this.docList = {};
@@ -30,12 +29,14 @@ export class QlikGlobalService {
         this.ws.onmessage = (ev) => {
             const data = JSON.parse(ev.data);
             if (this.wsQue[data.id] !== undefined) {
-                this.wsQue[data.id](data);
+                this.wsQue[data.id].forEach( (func) => {
+                    func(data);
+                });
             }
         };
     }
 
-    wsSend(obj: any, callback: any) {
+    wsSend(obj: any, callback: Array<Function>) {
         this.wsQue[obj.id] = callback;
         this.wsPromise.promise.then( _ => {
             this.ws.send(JSON.stringify(obj));
@@ -58,9 +59,9 @@ export class QlikGlobalService {
             'method': 'AbortAll',
             'handle': -1,
             'params': []
-        }, (message: any) => {
+        }, [(message: any) => {
             deferred.resolve(true);
-        });
+        }]);
         return deferred.promise;
     }
 
@@ -72,9 +73,9 @@ export class QlikGlobalService {
             'method': 'AllowCreateApp',
             'handle': -1,
             'params': []
-        }, (message: any) => {
+        }, [(message: any) => {
             deferred.resolve(message);
-        });
+        }]);
         return deferred.promise;
     }
 
@@ -86,9 +87,9 @@ export class QlikGlobalService {
             'method': 'CancelReload',
             'handle': -1,
             'params': []
-        }, (message: any) => {
+        }, [(message: any) => {
             deferred.resolve(message);
-        });
+        }]);
         return deferred.promise;
     }
 
@@ -102,9 +103,9 @@ export class QlikGlobalService {
             'params': [
                 qRequestId
             ]
-        }, (message: any) => {
+        }, [(message: any) => {
             deferred.resolve(message);
-        });
+        }]);
         return deferred.promise;
     }
 
@@ -116,9 +117,9 @@ export class QlikGlobalService {
             'method': 'ConfigureReload',
             'handle': -1,
             'params': []
-        }, (message: any) => {
+        }, [(message: any) => {
             deferred.resolve(message);
-        });
+        }]);
         return deferred.promise;
     }
 
@@ -134,9 +135,9 @@ export class QlikGlobalService {
                 qSrcAppId,
                 qIds
             ]
-        }, (message: any) => {
+        }, [(message: any) => {
             deferred.resolve(message);
-        });
+        }]);
         return deferred.promise;
     }
 
@@ -151,9 +152,9 @@ export class QlikGlobalService {
                 qAppName,
                 qLocalizedScriptMainSection || null
             ]
-        }, (message: any) => {
+        }, [(message: any) => {
             deferred.resolve(message);
-        });
+        }]);
         return deferred.promise;
     }
 
@@ -175,9 +176,9 @@ export class QlikGlobalService {
                 'qSerial': qSerial || '',
                 'qLocalizedScriptMainSection': qLocalizedScriptMainSection || ''
             }
-        }, (message: any) => {
+        }, [(message: any) => {
             deferred.resolve(message);
-        });
+        }]);
         return deferred.promise;
     }
 
@@ -190,9 +191,9 @@ export class QlikGlobalService {
             'handle': -1,
             'params': [
             ]
-        }, (message: any) => {
+        }, [(message: any) => {
             deferred.resolve(message);
-        });
+        }]);
         return deferred.promise;
     }
 
@@ -206,9 +207,9 @@ export class QlikGlobalService {
             'params': [
                 qSrcAppId
             ]
-        }, (message: any) => {
+        }, [(message: any) => {
             deferred.resolve(message);
-        });
+        }]);
         return deferred.promise;
     }
 
@@ -222,9 +223,9 @@ export class QlikGlobalService {
             'params': [
                 qAppId
             ]
-        }, (message: any) => {
+        }, [(message: any) => {
             deferred.resolve(message);
-        });
+        }]);
         return deferred.promise;
     }
 
@@ -237,9 +238,9 @@ export class QlikGlobalService {
             'handle': -1,
             'params': [
             ]
-        }, (message: any) => {
+        }, [(message: any) => {
             deferred.resolve(message);
-        });
+        }]);
         return deferred.promise;
     }
 
@@ -257,9 +258,9 @@ export class QlikGlobalService {
                 'qSrcAppId': qSrcAppId,
                 'qIds': qIds
             }
-        }, (message: any) => {
+        }, [(message: any) => {
             deferred.resolve(message);
-        });
+        }]);
         return deferred.promise;
     }
 
@@ -272,9 +273,9 @@ export class QlikGlobalService {
             'handle': -1,
             'params': [
             ]
-        }, (message: any) => {
+        }, [(message: any) => {
             deferred.resolve(message);
-        });
+        }]);
         return deferred.promise;
     }
 
@@ -288,9 +289,9 @@ export class QlikGlobalService {
             'params': {
                 'qAppID': qAppID
             }
-        }, (message: any) => {
+        }, [(message: any) => {
             deferred.resolve(message);
-        });
+        }]);
         return deferred.promise;
     }
 
@@ -302,9 +303,9 @@ export class QlikGlobalService {
             'method': 'GetAuthenticatedUser',
             'handle': -1,
             'params': []
-        }, (message: any) => {
+        }, [(message: any) => {
             deferred.resolve(message);
-        });
+        }]);
         return deferred.promise;
     }
 
@@ -318,9 +319,9 @@ export class QlikGlobalService {
             'params': [
                 qBnfType
             ]
-        }, (message: any) => {
+        }, [(message: any) => {
             deferred.resolve(message);
-        });
+        }]);
         return deferred.promise;
     }
 
@@ -334,9 +335,9 @@ export class QlikGlobalService {
             'params': [
                 qBnfType
             ]
-        }, (message: any) => {
+        }, [(message: any) => {
             deferred.resolve(message);
-        });
+        }]);
         return deferred.promise;
     }
 
@@ -350,9 +351,9 @@ export class QlikGlobalService {
             'params': [
                 qBnfType
             ]
-        }, (message: any) => {
+        }, [(message: any) => {
             deferred.resolve(message);
-        });
+        }]);
         return deferred.promise;
     }
 
@@ -367,9 +368,9 @@ export class QlikGlobalService {
             'params': {
                 qReloadList: qReloadList
             }
-        }, (message: any) => {
+        }, [(message: any) => {
             deferred.resolve(message);
-        });
+        }]);
         return deferred.promise;
     }
 
@@ -383,9 +384,9 @@ export class QlikGlobalService {
             'params': {
                 qConnection: qConnection
             }
-        }, (message: any) => {
+        }, [(message: any) => {
             deferred.resolve(message);
-        });
+        }]);
         return deferred.promise;
     }
 
@@ -394,13 +395,13 @@ export class QlikGlobalService {
         this.wsSend({
             'jsonrpc': '2.0',
             'id': this.getNextEnumerator(),
-            'method': 'getDefaultAppFolder',
+            'method': 'GetDefaultAppFolder',
             'handle': -1,
             'params': {
             }
-        }, (message: any) => {
+        }, [(message: any) => {
             deferred.resolve(message);
-        });
+        }]);
         return deferred.promise;
     }
 
@@ -412,9 +413,9 @@ export class QlikGlobalService {
             'method': 'GetDocList',
             'handle': -1,
             'params': []
-        }, (message: any) => {
+        }, [(message: any) => {
             deferred.resolve(message);
-        });
+        }]);
         return deferred.promise;
     }
 
@@ -423,14 +424,14 @@ export class QlikGlobalService {
         this.wsSend({
             'jsonrpc': '2.0',
             'id': this.getNextEnumerator(),
-            'method': 'getFolderItemsForPath',
+            'method': 'GetFolderItemsForPath',
             'handle': -1,
             'params': {
                 qPath: qPath
             }
-        }, (message: any) => {
+        }, [(message: any) => {
             deferred.resolve(message);
-        });
+        }]);
         return deferred.promise;
     }
 
@@ -444,9 +445,9 @@ export class QlikGlobalService {
             'params': {
                 qGroup: qGroup || QGroup.ALL
             }
-        }, (message: any) => {
+        }, [(message: any) => {
             deferred.resolve(message);
-        });
+        }]);
         return deferred.promise;
     }
 
@@ -460,9 +461,9 @@ export class QlikGlobalService {
             'params': {
                 qRequestId: qRequestId
             }
-        }, (message: any) => {
+        }, [(message: any) => {
             deferred.resolve(message);
-        });
+        }]);
         return deferred.promise;
     }
 
@@ -474,9 +475,9 @@ export class QlikGlobalService {
             'method': 'GetLogicalDriveStrings',
             'handle': -1,
             'params': {}
-        }, (message: any) => {
+        }, [(message: any) => {
             deferred.resolve(message);
-        });
+        }]);
         return deferred.promise;
     }
 
@@ -488,9 +489,9 @@ export class QlikGlobalService {
             'method': 'GetOdbcDsns',
             'handle': -1,
             'params': {}
-        }, (message: any) => {
+        }, [(message: any) => {
             deferred.resolve(message);
-        });
+        }]);
         return deferred.promise;
     }
 
@@ -502,9 +503,9 @@ export class QlikGlobalService {
             'method': 'GetOleDbProviders',
             'handle': -1,
             'params': {}
-        }, (message: any) => {
+        }, [(message: any) => {
             deferred.resolve(message);
-        });
+        }]);
         return deferred.promise;
     }
 
@@ -518,9 +519,9 @@ export class QlikGlobalService {
             'params': {
                 qRequestId: qRequestId
             }
-        }, (message: any) => {
+        }, [(message: any) => {
             deferred.resolve(message);
-        });
+        }]);
         return deferred.promise;
     }
 
@@ -532,9 +533,9 @@ export class QlikGlobalService {
             'method': 'GetSupportedCodePages',
             'handle': -1,
             'params': {}
-        }, (message: any) => {
+        }, [(message: any) => {
             deferred.resolve(message);
-        });
+        }]);
         return deferred.promise;
     }
 
@@ -546,48 +547,194 @@ export class QlikGlobalService {
             'method': 'GetUniqueID',
             'handle': -1,
             'params': {}
-        }, (message: any) => {
+        }, [(message: any) => {
             deferred.resolve(message);
-        });
+        }]);
         return deferred.promise;
     }
 
-    /*
+    interactDone (qRequestId: number, qResult: number ): Promise<any> {
+        const deferred = new Deferred<any>();
+        this.wsSend({
+            'jsonrpc': '2.0',
+            'id': this.getNextEnumerator(),
+            'method': 'InteractDone',
+            'handle': -1,
+            'params': {
+                InteractDef: {
+                    qResult: qResult
+                }
+            }
+        }, [(message: any) => {
+            deferred.resolve(message);
+        }]);
+        return deferred.promise;
+    }
 
-    GetSupportedCodePages method
+    isDesktopMode (): Promise<any> {
+        const deferred = new Deferred<any>();
+        this.wsSend({
+            'jsonrpc': '2.0',
+            'id': this.getNextEnumerator(),
+            'method': 'IsDesktopMode',
+            'handle': -1,
+            'params': {}
+        }, [(message: any) => {
+            deferred.resolve(message);
+        }]);
+        return deferred.promise;
+    }
 
-    GetUniqueID method
+    isPersonalMode (): Promise<any> {
+        const deferred = new Deferred<any>();
+        this.wsSend({
+            'jsonrpc': '2.0',
+            'id': this.getNextEnumerator(),
+            'method': 'IsPersonalMode',
+            'handle': -1,
+            'params': {}
+        }, [(message: any) => {
+            deferred.resolve(message);
+        }]);
+        return deferred.promise;
+    }
 
-    InteractDone method
+    isValidConnectionString (qConnection: Connection): Promise<any> {
+        const deferred = new Deferred<any>();
+        this.wsSend({
+            'jsonrpc': '2.0',
+            'id': this.getNextEnumerator(),
+            'method': 'IsValidConnectionString',
+            'handle': -1,
+            'params': {
+                qConnection: qConnection
+            }
+        }, [(message: any) => {
+            deferred.resolve(message);
+        }]);
+        return deferred.promise;
+    }
 
-    IsDesktopMode method
-
-    IsPersonalMode method
-
-    IsValidConnectionString method
-*/
     openDoc(id: string): Document {
         if (this.docList[id] === undefined) {
             this.docList[id] = new Document(id, this);
         }
         return this.docList[id];
     }
-    /*
-    OSName method
 
-    OSVersion method
+    oSName (): Promise<any> {
+        const deferred = new Deferred<any>();
+        this.wsSend({
+            'jsonrpc': '2.0',
+            'id': this.getNextEnumerator(),
+            'method': 'OSName',
+            'handle': -1,
+            'params': {}
+        }, [(message: any) => {
+            deferred.resolve(message);
+        }]);
+        return deferred.promise;
+    }
 
-    ProductVersion method
+    oSVersion (): Promise<any> {
+        const deferred = new Deferred<any>();
+        this.wsSend({
+            'jsonrpc': '2.0',
+            'id': this.getNextEnumerator(),
+            'method': 'OSVersion',
+            'handle': -1,
+            'params': {}
+        }, [(message: any) => {
+            deferred.resolve(message);
+        }]);
+        return deferred.promise;
+    }
 
-    QTProduct method
+    productVersion (): Promise<any> {
+        const deferred = new Deferred<any>();
+        this.wsSend({
+            'jsonrpc': '2.0',
+            'id': this.getNextEnumerator(),
+            'method': 'ProductVersion',
+            'handle': -1,
+            'params': {}
+        }, [(message: any) => {
+            deferred.resolve(message);
+        }]);
+        return deferred.promise;
+    }
 
-    QvVersion method
+    qTProduct (): Promise<any> {
+        const deferred = new Deferred<any>();
+        this.wsSend({
+            'jsonrpc': '2.0',
+            'id': this.getNextEnumerator(),
+            'method': 'QTProduct',
+            'handle': -1,
+            'params': {}
+        }, [(message: any) => {
+            deferred.resolve(message);
+        }]);
+        return deferred.promise;
+    }
 
-    ReloadExtensionList method
+    qvVersion (): Promise<any> {
+        const deferred = new Deferred<any>();
+        this.wsSend({
+            'jsonrpc': '2.0',
+            'id': this.getNextEnumerator(),
+            'method': 'QvVersion',
+            'handle': -1,
+            'params': {}
+        }, [(message: any) => {
+            deferred.resolve(message);
+        }]);
+        return deferred.promise;
+    }
 
-    ReplaceAppFromID method
+    reloadExtensionList (): Promise<any> {
+        const deferred = new Deferred<any>();
+        this.wsSend({
+            'jsonrpc': '2.0',
+            'id': this.getNextEnumerator(),
+            'method': 'ReloadExtensionList',
+            'handle': -1,
+            'params': {}
+        }, [(message: any) => {
+            deferred.resolve(message);
+        }]);
+        return deferred.promise;
+    }
 
-    ShutdownProcess method
-    */
+    replaceAppFromID (qTargetAppId: string, qSrcAppID: string, qIds?: Array<string>): Promise<any> {
+        const deferred = new Deferred<any>();
+        this.wsSend({
+            'jsonrpc': '2.0',
+            'id': this.getNextEnumerator(),
+            'method': 'ReplaceAppFromID',
+            'handle': -1,
+            'params': {
+                qTargetAppId: qTargetAppId,
+                qSrcAppID: qSrcAppID,
+                qIds: qIds || []
+            }
+        }, [(message: any) => {
+            deferred.resolve(message);
+        }]);
+        return deferred.promise;
+    }
 
+    shutdownProcess (): Promise<any> {
+        const deferred = new Deferred<any>();
+        this.wsSend({
+            'jsonrpc': '2.0',
+            'id': this.getNextEnumerator(),
+            'method': 'ShutdownProcess',
+            'handle': -1,
+            'params': {}
+        }, [(message: any) => {
+            deferred.resolve(message);
+        }]);
+        return deferred.promise;
+    }
 }

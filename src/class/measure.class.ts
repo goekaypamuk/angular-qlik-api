@@ -15,4 +15,9 @@ export class Measure {
     constructor(qFieldDef: string) {
         this.definition.qDef.qDef = qFieldDef;
     }
+
+    setQLabel(qLabel?: string): Measure {
+        this.definition.qDef.qLabel = qLabel || '';
+        return this;
+    }
 }
