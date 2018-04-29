@@ -93,6 +93,25 @@ export class MyApp implements OnDestroy {
 }
 ```
 
+## Object Hierarchy 
+
+```puml
+A -> B
+```
+
+## Development Progress
+
+- [x] Global Class Methods
+- [x] App Class Methods
+- [ ] GenericBookmark Methods
+- [ ] GenericDimension Class Methods
+- [ ] GenericObject Class Methods
+- [ ] GenericMeasure Class Methods
+- [ ] GenericDimension Class Methods
+- [ ] GenericVariable Class Methods
+- [ ] Field Class Methods
+- [ ] Variable Class Methods
+
 ## Development
 
 To generate all `*.js`, `*.d.ts` and `*.metadata.json` files:
