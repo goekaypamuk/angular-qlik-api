@@ -18,6 +18,8 @@ Typical situations where you would use the Qlik Engine API include:
 
 To work with the Qlik Engine API, you can use any language or tool that supports WebSockets and can parse JSON. JavaScript is a common and obvious choice, because of its built-in JSON support, and because there are a number of libraries available to make it easier to work with WebSockets.
 
+###### Methods
+- [Use global methods](https://help.qlik.com/en-US/sense-developer/April2018/apis/EngineAPI/index.html)
 
 ## Installation
 
@@ -93,12 +95,6 @@ export class MyApp implements OnDestroy {
 }
 ```
 
-## Object Hierarchy 
-
-```puml
-A -> B
-```
-
 ## Development Progress
 
 - [x] Global Class Methods
@@ -111,6 +107,8 @@ A -> B
 - [ ] GenericVariable Class Methods
 - [ ] Field Class Methods
 - [ ] Variable Class Methods
+
+Initially, a hypercube builder has been added to the library but it may change completely in future releases!
 
 ## Development
 
