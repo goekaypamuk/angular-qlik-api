@@ -26,7 +26,10 @@ export * from './interface/q-generic-variable-properties.interface';
 export * from './interface/q-info.interface';
 export * from './interface/q-library-dimension-def.interface';
 export * from './interface/q-library-measure-def.interface';
+export * from './interface/q-lineage-info.interface';
 export * from './interface/q-meta.interface';
+export * from './interface/q-object-options.interface';
+export * from './interface/q-size.interface';
 export * from './interface/qlik-config.interface';
 export * from './enum/q-bnf-type.enum';
 export * from './enum/q-connection-type.enum';
@@ -35,6 +38,7 @@ export * from './enum/q-filter-info-type.enum';
 export * from './enum/q-group.enum';
 export * from './enum/q-grouping.enum';
 export * from './enum/q-logon.enum';
+export * from './enum/q-matching-field-mode.enum';
 export * from './enum/q-mode.enum';
 @NgModule({
   imports: [
