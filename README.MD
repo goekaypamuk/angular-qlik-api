@@ -1,3 +1,12 @@
+<p align="center">
+  <div align="center">
+  <img src="https://github.com/goekaypamuk/angular-qlik-api/blob/pag-develop/docs/Logo_informatec_RGB_6cm.jpg">
+  </h1>
+  <p align="center">The official library for Firebase and Angular</p>
+</p>
+
+
+
 # angular-qlik-api
 
 AngulerQlikEngineApi is the angular wrapper for Qlik Engine API. It facilitates the usage and handles the synchronization.
@@ -18,8 +27,9 @@ Typical situations where you would use the Qlik Engine API include:
 
 To work with the Qlik Engine API, you can use any language or tool that supports WebSockets and can parse JSON. JavaScript is a common and obvious choice, because of its built-in JSON support, and because there are a number of libraries available to make it easier to work with WebSockets.
 
-###### Methods
-- [Use global methods](https://github.com/goekaypamuk/angular-qlik-api/blob/pag-develop/docs/Global.md)
+###### Qlik Classes
+- [Use Global class methods](https://github.com/goekaypamuk/angular-qlik-api/blob/pag-develop/docs/Global.md)
+- [Use Doc class methods](https://github.com/goekaypamuk/angular-qlik-api/blob/pag-develop/docs/Doc.md)
 
 ## Installation
 

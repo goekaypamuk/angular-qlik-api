@@ -1698,6 +1698,189 @@ export class Document {
         });
         return deferred.promise;
     }
+
+    guessFileType(qConnectionId: string, qRelativePath?: string ): Promise<any>  {
+        const deferred = new Deferred<any>();
+        this.deferred.promise.then( handle => {
+            this.globalService.wsSend({
+                'jsonrpc': '2.0',
+                'id': this.globalService.getNextEnumerator(),
+                'method': 'GuessFileType',
+                'handle': handle,
+                'params': {
+                    qConnectionId: qConnectionId,
+                    qRelativePath: qRelativePath
+                }
+            }, [(message: any) => {
+                deferred.resolve(message);
+            }]);
+        });
+        return deferred.promise;
+    }
+
+    lockAll (qStateName?: string): Promise<any>  {
+        const deferred = new Deferred<any>();
+        this.deferred.promise.then( handle => {
+            this.globalService.wsSend({
+                'jsonrpc': '2.0',
+                'id': this.globalService.getNextEnumerator(),
+                'method': 'LockAll',
+                'handle': handle,
+                'params': {
+                    qStateName: qStateName
+                }
+            }, [(message: any) => {
+                deferred.resolve(message);
+            }]);
+        });
+        return deferred.promise;
+    }
+
+    modifyConnection (qConnectionId: string, qConnection?: QConnection, qOverrideCredentials?: boolean): Promise<any>  {
+        const deferred = new Deferred<any>();
+        this.deferred.promise.then( handle => {
+            this.globalService.wsSend({
+                'jsonrpc': '2.0',
+                'id': this.globalService.getNextEnumerator(),
+                'method': 'ModifyConnection',
+                'handle': handle,
+                'params': {
+                    qConnectionId: qConnectionId,
+                    qConnection: qConnection,
+                    qOverrideCredentials: qOverrideCredentials
+                }
+            }, [(message: any) => {
+                deferred.resolve(message);
+            }]);
+        });
+        return deferred.promise;
+    }
+
+    publish (qStreamId: string, qName?: string): Promise<any>  {
+        const deferred = new Deferred<any>();
+        this.deferred.promise.then( handle => {
+            this.globalService.wsSend({
+                'jsonrpc': '2.0',
+                'id': this.globalService.getNextEnumerator(),
+                'method': 'Publish',
+                'handle': handle,
+                'params': {
+                    qStreamId: qStreamId,
+                    qName: qName
+                }
+            }, [(message: any) => {
+                deferred.resolve(message);
+            }]);
+        });
+        return deferred.promise;
+    }
+
+    redo (): Promise<any>  {
+        const deferred = new Deferred<any>();
+        this.deferred.promise.then( handle => {
+            this.globalService.wsSend({
+                'jsonrpc': '2.0',
+                'id': this.globalService.getNextEnumerator(),
+                'method': 'Redo',
+                'handle': handle,
+                'params': {
+                }
+            }, [(message: any) => {
+                deferred.resolve(message);
+            }]);
+        });
+        return deferred.promise;
+    }
+
+    removeAlternateState (qStateName: string): Promise<any>  {
+        const deferred = new Deferred<any>();
+        this.deferred.promise.then( handle => {
+            this.globalService.wsSend({
+                'jsonrpc': '2.0',
+                'id': this.globalService.getNextEnumerator(),
+                'method': 'RemoveAlternateState',
+                'handle': handle,
+                'params': {
+                    qStateName: qStateName
+                }
+            }, [(message: any) => {
+                deferred.resolve(message);
+            }]);
+        });
+        return deferred.promise;
+    }
+
+    resume(): Promise<any>  {
+        const deferred = new Deferred<any>();
+        this.deferred.promise.then( handle => {
+            this.globalService.wsSend({
+                'jsonrpc': '2.0',
+                'id': this.globalService.getNextEnumerator(),
+                'method': 'Resume',
+                'handle': handle,
+                'params': {
+                }
+            }, [(message: any) => {
+                deferred.resolve(message);
+            }]);
+        });
+        return deferred.promise;
+    }
+
+    saveObjects(): Promise<any>  {
+        const deferred = new Deferred<any>();
+        this.deferred.promise.then( handle => {
+            this.globalService.wsSend({
+                'jsonrpc': '2.0',
+                'id': this.globalService.getNextEnumerator(),
+                'method': 'SaveObjects',
+                'handle': handle,
+                'params': {
+                }
+            }, [(message: any) => {
+                deferred.resolve(message);
+            }]);
+        });
+        return deferred.promise;
+    }
+
+    scramble(qFieldName: string): Promise<any>  {
+        const deferred = new Deferred<any>();
+        this.deferred.promise.then( handle => {
+            this.globalService.wsSend({
+                'jsonrpc': '2.0',
+                'id': this.globalService.getNextEnumerator(),
+                'method': 'Scramble',
+                'handle': handle,
+                'params': {
+                    qFieldName: qFieldName
+                }
+            }, [(message: any) => {
+                deferred.resolve(message);
+            }]);
+        });
+        return deferred.promise;
+    }
+
+    /*
+    searchAssociations(qOptions: string): Promise<any>  {
+        const deferred = new Deferred<any>();
+        this.deferred.promise.then( handle => {
+            this.globalService.wsSend({
+                'jsonrpc': '2.0',
+                'id': this.globalService.getNextEnumerator(),
+                'method': 'SearchAssociations',
+                'handle': handle,
+                'params': {
+                    qFieldName: qOptions
+                }
+            }, [(message: any) => {
+                deferred.resolve(message);
+            }]);
+        });
+        return deferred.promise;
+    }
+    */
     /* To be implemented !!
 
 
