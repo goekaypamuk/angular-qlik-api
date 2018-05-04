@@ -1,12 +1,3 @@
-<p align="center">
-  <div align="center">
-  <img src="https://github.com/goekaypamuk/angular-qlik-api/blob/pag-develop/docs/Logo_informatec_RGB_6cm.jpg">
-  </h1>
-  <p align="center">The official library for Firebase and Angular</p>
-</p>
-
-
-
 # angular-qlik-api
 
 AngulerQlikEngineApi is the angular wrapper for Qlik Engine API. It facilitates the usage and handles the synchronization.
@@ -56,7 +47,7 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 
 // Import AngularQlikApiModule library
-import {AngularQlikApiModule, QlikConfig} from './angular-qlik-api';
+import {AngularQlikApiModule, QlikConfig} from 'angular-qlik-api';
 
 // Define your connection to Qlik Sense Server or Qlik Sense Desktop
 const qlikConfig = new QlikConfig({
@@ -81,7 +72,7 @@ const qlikConfig = new QlikConfig({
 export class AppModule { }
 ```
 
-Once your library is imported, you can use its components, directives and pipes in your Angular application:
+Once the library is imported, you can use its components and services in your Angular application:
 
 ```typescript
 @Component({

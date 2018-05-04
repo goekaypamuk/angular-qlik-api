@@ -14,7 +14,13 @@ import {QFileDataFormat} from '../interface/q-file-data-format.interface';
 import {QLineageInfo} from '../interface/q-lineage-info.interface';
 import {QMatchingFieldMode} from '../enum/q-matching-field-mode.enum';
 import {QObjectOptions} from '../interface/q-object-options.interface';
-import {QSize} from '../';
+import { QSearchCombinationOptions} from '../interface/q-search-combination.interface';
+import {QSize} from '../interface/q-size.interface';
+import {QSearchPage} from '../interface/q-search-page.interface';
+import {QSearchObjectOptions} from '../interface/q-search-object-options.interface';
+import {QCommand} from '../enum/q-command.enum';
+import {QAppProperties} from '../interface/q-app-properties.interface';
+import {QEditorBreakpoint} from '../interface/q-editor-breakpoint.interface';
 
 export class Document {
     globalService: any;
@@ -1862,8 +1868,8 @@ export class Document {
         return deferred.promise;
     }
 
-    /*
-    searchAssociations(qOptions: string): Promise<any>  {
+
+    searchAssociations(qOptions: QSearchCombinationOptions, qTerms: Array<string>, qPage: QSearchPage): Promise<any>  {
         const deferred = new Deferred<any>();
         this.deferred.promise.then( handle => {
             this.globalService.wsSend({
@@ -1872,7 +1878,9 @@ export class Document {
                 'method': 'SearchAssociations',
                 'handle': handle,
                 'params': {
-                    qFieldName: qOptions
+                    qOptions: qOptions,
+                    qTerms: qTerms,
+                    qPage: qPage
                 }
             }, [(message: any) => {
                 deferred.resolve(message);
@@ -1880,72 +1888,236 @@ export class Document {
         });
         return deferred.promise;
     }
-    */
-    /* To be implemented !!
+
+    searchObjects(qOptions: QSearchObjectOptions, qTerms: Array<string>, qPage: QSearchPage): Promise<any>  {
+        const deferred = new Deferred<any>();
+        this.deferred.promise.then( handle => {
+            this.globalService.wsSend({
+                'jsonrpc': '2.0',
+                'id': this.globalService.getNextEnumerator(),
+                'method': 'SearchObjects',
+                'handle': handle,
+                'params': {
+                    qOptions: qOptions,
+                    qTerms: qTerms,
+                    qPage: qPage
+                }
+            }, [(message: any) => {
+                deferred.resolve(message);
+            }]);
+        });
+        return deferred.promise;
+    }
+
+    searchResults(qOptions: QSearchCombinationOptions, qTerms: Array<string>, qPage: QSearchPage): Promise<any>  {
+        const deferred = new Deferred<any>();
+        this.deferred.promise.then( handle => {
+            this.globalService.wsSend({
+                'jsonrpc': '2.0',
+                'id': this.globalService.getNextEnumerator(),
+                'method': 'SearchResults',
+                'handle': handle,
+                'params': {
+                    qOptions: qOptions,
+                    qTerms: qTerms,
+                    qPage: qPage
+                }
+            }, [(message: any) => {
+                deferred.resolve(message);
+            }]);
+        });
+        return deferred.promise;
+    }
+
+    searchSuggest(qOptions: QSearchCombinationOptions, qTerms: Array<string>): Promise<any>  {
+        const deferred = new Deferred<any>();
+        this.deferred.promise.then( handle => {
+            this.globalService.wsSend({
+                'jsonrpc': '2.0',
+                'id': this.globalService.getNextEnumerator(),
+                'method': 'SearchSuggest',
+                'handle': handle,
+                'params': {
+                    qOptions: qOptions,
+                    qTerms: qTerms
+                }
+            }, [(message: any) => {
+                deferred.resolve(message);
+            }]);
+        });
+        return deferred.promise;
+    }
+
+    selectAssociations(qOptions: QSearchCombinationOptions, qTerms: Array<string>, qMatchIx: number, qSoftLock?: boolean): Promise<any>  {
+        const deferred = new Deferred<any>();
+        this.deferred.promise.then( handle => {
+            this.globalService.wsSend({
+                'jsonrpc': '2.0',
+                'id': this.globalService.getNextEnumerator(),
+                'method': 'SelectAssociations',
+                'handle': handle,
+                'params': {
+                    qOptions: qOptions,
+                    qTerms: qTerms,
+                    qMatchIx: qMatchIx,
+                    qSoftLock: qSoftLock
+                }
+            }, [(message: any) => {
+                deferred.resolve(message);
+            }]);
+        });
+        return deferred.promise;
+    }
+
+    GendGenericCommandToCustomConnector(qProvider: string,
+                                        qCommand: QCommand,
+                                        qMethod: string,
+                                        qParameters: Array<string>,
+                                        qAppendConnection: string): Promise<any>  {
+        const deferred = new Deferred<any>();
+        this.deferred.promise.then( handle => {
+            this.globalService.wsSend({
+                'jsonrpc': '2.0',
+                'id': this.globalService.getNextEnumerator(),
+                'method': 'SendGenericCommandToCustomConnector',
+                'handle': handle,
+                'params': {
+                    qProvider: qProvider,
+                    qCommand: qCommand,
+                    qMethod: qMethod,
+                    qParameters: qParameters,
+                    qAppendConnection: qAppendConnection
+                }
+            }, [(message: any) => {
+                deferred.resolve(message);
+            }]);
+        });
+        return deferred.promise;
+    }
+
+    setAppProperties(qProp: QAppProperties): Promise<any>  {
+        const deferred = new Deferred<any>();
+        this.deferred.promise.then( handle => {
+            this.globalService.wsSend({
+                'jsonrpc': '2.0',
+                'id': this.globalService.getNextEnumerator(),
+                'method': 'SetAppProperties',
+                'handle': handle,
+                'params': {
+                    qProp: qProp
+                }
+            }, [(message: any) => {
+                deferred.resolve(message);
+            }]);
+        });
+        return deferred.promise;
+    }
 
 
+    setFavoriteVariables(qNames: Array<string>): Promise<any>  {
+        const deferred = new Deferred<any>();
+        this.deferred.promise.then( handle => {
+            this.globalService.wsSend({
+                'jsonrpc': '2.0',
+                'id': this.globalService.getNextEnumerator(),
+                'method': 'SetFavoriteVariables',
+                'handle': handle,
+                'params': {
+                    qNames: qNames
+                }
+            }, [(message: any) => {
+                deferred.resolve(message);
+            }]);
+        });
+        return deferred.promise;
+    }
 
-GetTableData method
+    setFetchLimit(qLimit: number): Promise<any>  {
+        const deferred = new Deferred<any>();
+        this.deferred.promise.then( handle => {
+            this.globalService.wsSend({
+                'jsonrpc': '2.0',
+                'id': this.globalService.getNextEnumerator(),
+                'method': 'SetFetchLimit',
+                'handle': handle,
+                'params': {
+                    qLimit: qLimit
+                }
+            }, [(message: any) => {
+                deferred.resolve(message);
+            }]);
+        });
+        return deferred.promise;
+    }
 
-GetTablesAndKeys method
+    setScript(qScript: string): Promise<any>  {
+        const deferred = new Deferred<any>();
+        this.deferred.promise.then( handle => {
+            this.globalService.wsSend({
+                'jsonrpc': '2.0',
+                'id': this.globalService.getNextEnumerator(),
+                'method': 'SetScript',
+                'handle': handle,
+                'params': {
+                    qScript: qScript
+                }
+            }, [(message: any) => {
+                deferred.resolve(message);
+            }]);
+        });
+        return deferred.promise;
+    }
 
-GetTextMacros method
+    setScriptBreakpoints(qBreakpoints: Array<QEditorBreakpoint>): Promise<any>  {
+        const deferred = new Deferred<any>();
+        this.deferred.promise.then( handle => {
+            this.globalService.wsSend({
+                'jsonrpc': '2.0',
+                'id': this.globalService.getNextEnumerator(),
+                'method': 'SetScriptBreakpoints',
+                'handle': handle,
+                'params': {
+                    qBreakpoints: qBreakpoints
+                }
+            }, [(message: any) => {
+                deferred.resolve(message);
+            }]);
+        });
+        return deferred.promise;
+    }
 
-GetVariable method
+    undo(): Promise<any>  {
+        const deferred = new Deferred<any>();
+        this.deferred.promise.then( handle => {
+            this.globalService.wsSend({
+                'jsonrpc': '2.0',
+                'id': this.globalService.getNextEnumerator(),
+                'method': 'Undo',
+                'handle': handle,
+                'params': {
+                }
+            }, [(message: any) => {
+                deferred.resolve(message);
+            }]);
+        });
+        return deferred.promise;
+    }
 
-GetVariableById method
-
-GetVariableByName method
-
-GetViewDlgSaveInfo method
-
-GuessFileType method
-
-LockAll method
-
-ModifyConnection method
-
-Publish method
-
-Redo method
-
-RemoveAlternateState method
-
-RemoveVariable method
-
-Resume method
-
-SaveObjects method
-
-SearchAssociations method
-
-SearchObjects method
-
-SearchResults method
-
-SearchSuggest method
-
-SelectAssociations method
-
-SendGenericCommandToCustomConnector method
-
-SetAppProperties method
-
-SetFavoriteVariables method
-
-SetFetchLimit method
-
-SetLooselyCoupledVector method
-
-SetScriptBreakpoints method
-
-SetScript method
-
-SetViewDlgSaveInfo method
-
-Undo method
-
-UnlockAll method
-
-     */
+    unlockAll(qStateName: string): Promise<any>  {
+        const deferred = new Deferred<any>();
+        this.deferred.promise.then( handle => {
+            this.globalService.wsSend({
+                'jsonrpc': '2.0',
+                'id': this.globalService.getNextEnumerator(),
+                'method': 'UnlockAll',
+                'handle': handle,
+                'params': {
+                    qStateName: qStateName
+                }
+            }, [(message: any) => {
+                deferred.resolve(message);
+            }]);
+        });
+        return deferred.promise;
+    }
 }

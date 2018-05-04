@@ -22,7 +22,7 @@ export class MyApp  {
   constructor(qlikGlobal: QlikGlobalService ) {
       
         // Opens and returns a Document Class. 
-        // _this.myDoc variable references to a Doc object where you can invoke from now on doc class methods.  
+        // this.myDoc variable references to a Doc object where you can invoke from now on doc class methods.  
         this.myDoc = qlikGlobal.openDoc('sales discovery.qvf');
     
         // Clear all selection in sales discovery.qvf
