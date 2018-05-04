@@ -9,6 +9,8 @@ You can find full detail of all global methods on [Qlik Help Website](https://he
 All methods on GlobalService except _openDoc_ will return a promise when method call is resolved. The _openDoc_ method will return a _Document_ class, enabling from there on to invoke methods on _Document_ level. 
 
 ```typescript
+import {QlikGlobalService} from 'angular-qlik-api';
+
 @Component({
   selector: 'app-root'
 })

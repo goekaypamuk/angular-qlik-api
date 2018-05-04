@@ -18,8 +18,9 @@ Typical situations where you would use the Qlik Engine API include:
 
 To work with the Qlik Engine API, you can use any language or tool that supports WebSockets and can parse JSON. JavaScript is a common and obvious choice, because of its built-in JSON support, and because there are a number of libraries available to make it easier to work with WebSockets.
 
-###### Methods
-- [Use global methods](https://github.com/goekaypamuk/angular-qlik-api/blob/pag-develop/docs/Global.md)
+###### Qlik Classes
+- [Use Global class methods](https://github.com/goekaypamuk/angular-qlik-api/blob/pag-develop/docs/Global.md)
+- [Use Doc class methods](https://github.com/goekaypamuk/angular-qlik-api/blob/pag-develop/docs/Doc.md)
 
 ## Installation
 
@@ -46,7 +47,7 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 
 // Import AngularQlikApiModule library
-import {AngularQlikApiModule, QlikConfig} from './angular-qlik-api';
+import {AngularQlikApiModule, QlikConfig} from 'angular-qlik-api';
 
 // Define your connection to Qlik Sense Server or Qlik Sense Desktop
 const qlikConfig = new QlikConfig({
@@ -71,7 +72,7 @@ const qlikConfig = new QlikConfig({
 export class AppModule { }
 ```
 
-Once your library is imported, you can use its components, directives and pipes in your Angular application:
+Once the library is imported, you can use its components and services in your Angular application:
 
 ```typescript
 @Component({

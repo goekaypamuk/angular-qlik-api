@@ -11,6 +11,16 @@ import {QMode} from '../enum/q-mode.enum';
 import {QInfo} from '../interface/q-info.interface';
 import {QFilterInfo} from '../interface/q-filter-info.interface';
 import {QFileDataFormat} from '../interface/q-file-data-format.interface';
+import {QLineageInfo} from '../interface/q-lineage-info.interface';
+import {QMatchingFieldMode} from '../enum/q-matching-field-mode.enum';
+import {QObjectOptions} from '../interface/q-object-options.interface';
+import { QSearchCombinationOptions} from '../interface/q-search-combination.interface';
+import {QSize} from '../interface/q-size.interface';
+import {QSearchPage} from '../interface/q-search-page.interface';
+import {QSearchObjectOptions} from '../interface/q-search-object-options.interface';
+import {QCommand} from '../enum/q-command.enum';
+import {QAppProperties} from '../interface/q-app-properties.interface';
+import {QEditorBreakpoint} from '../interface/q-editor-breakpoint.interface';
 
 export class Document {
     globalService: any;
@@ -85,8 +95,7 @@ export class Document {
                 'params': {
                     qAccept: qAccept
                 }
-            }, [this.refreshAll.bind(this),
-                (message: any) => {
+            }, [(message: any) => {
                     deferred.resolve(message);
             }]);
         });
@@ -123,8 +132,7 @@ export class Document {
                 'params': {
                     qId: qId
                 }
-            }, [this.refreshAll.bind(this),
-                (message: any) => {
+            }, [(message: any) => {
                 deferred.resolve(message);
             }]);
         });
@@ -177,8 +185,7 @@ export class Document {
                     qExpr: qExpr,
                     qLabels: qLabels
                 }
-            }, [this.refreshAll.bind(this),
-                (message: any) => {
+            }, [(message: any) => {
                     deferred.resolve(message);
                 }]);
         });
@@ -196,8 +203,7 @@ export class Document {
                 'params': {
                     qExpr: qExpr
                 }
-            }, [this.refreshAll.bind(this),
-                (message: any) => {
+            }, [(message: any) => {
                     deferred.resolve(message);
                 }]);
         });
@@ -214,8 +220,7 @@ export class Document {
                 'handle': handle,
                 'params': {
                 }
-            }, [this.refreshAll.bind(this),
-                (message: any) => {
+            }, [(message: any) => {
                     deferred.resolve(message);
                 }]);
         });
@@ -228,7 +233,7 @@ export class Document {
             this.globalService.wsSend({
                 'jsonrpc': '2.0',
                 'id': this.globalService.getNextEnumerator(),
-                'method': 'Back',
+                'method': 'ClearAll',
                 'handle': handle,
                 'params': {
                     qLockedAlso: qLockedAlso,
@@ -252,8 +257,7 @@ export class Document {
                 'handle': handle,
                 'params': {
                 }
-            }, [this.refreshAll.bind(this),
-                (message: any) => {
+            }, [(message: any) => {
                     deferred.resolve(message);
                 }]);
         });
@@ -270,8 +274,7 @@ export class Document {
                 'handle': handle,
                 'params': {
                 }
-            }, [this.refreshAll.bind(this),
-                (message: any) => {
+            }, [(message: any) => {
                     deferred.resolve(message);
                 }]);
         });
@@ -288,8 +291,7 @@ export class Document {
                 'handle': handle,
                 'params': {
                 }
-            }, [this.refreshAll.bind(this),
-                (message: any) => {
+            }, [(message: any) => {
                     deferred.resolve(message);
                 }]);
         });
@@ -306,8 +308,7 @@ export class Document {
                 'handle': handle,
                 'params': {
                 }
-            }, [this.refreshAll.bind(this),
-                (message: any) => {
+            }, [(message: any) => {
                     deferred.resolve(message);
                 }]);
         });
@@ -324,8 +325,7 @@ export class Document {
                 'handle': handle,
                 'params': {
                 }
-            }, [this.refreshAll.bind(this),
-                (message: any) => {
+            }, [(message: any) => {
                     deferred.resolve(message);
                 }]);
         });
@@ -342,8 +342,7 @@ export class Document {
                 'handle': handle,
                 'params': {
                 }
-            }, [this.refreshAll.bind(this),
-                (message: any) => {
+            }, [(message: any) => {
                     deferred.resolve(message);
                 }]);
         });
@@ -361,8 +360,7 @@ export class Document {
                 'params': {
                     qProp: qGenericBookmarkProperties
                 }
-            }, [this.refreshAll.bind(this),
-                (message: any) => {
+            }, [(message: any) => {
                     deferred.resolve(message);
                 }]);
         });
@@ -380,8 +378,7 @@ export class Document {
                 'params': {
                     qConnection: qConnection
                 }
-            }, [this.refreshAll.bind(this),
-                (message: any) => {
+            }, [(message: any) => {
                     deferred.resolve(message);
                 }]);
         });
@@ -399,8 +396,7 @@ export class Document {
                 'params': {
                     qProp: qGenericDimensionProperties
                 }
-            }, [this.refreshAll.bind(this),
-                (message: any) => {
+            }, [(message: any) => {
                     deferred.resolve(message);
                 }]);
         });
@@ -418,8 +414,7 @@ export class Document {
                 'params': {
                     qId: qId
                 }
-            }, [this.refreshAll.bind(this),
-                (message: any) => {
+            }, [(message: any) => {
                     deferred.resolve(message);
                 }]);
         });
@@ -437,8 +432,7 @@ export class Document {
                 'params': {
                     qProp: qGenericMeasureProperties
                 }
-            }, [this.refreshAll.bind(this),
-                (message: any) => {
+            }, [(message: any) => {
                     deferred.resolve(message);
                 }]);
         });
@@ -456,8 +450,7 @@ export class Document {
                 'params': {
                     qProp: qGenericObjectProperties
                 }
-            }, [this.refreshAll.bind(this),
-                (message: any) => {
+            }, [(message: any) => {
                     deferred.resolve(message);
                 }]);
         });
@@ -475,8 +468,7 @@ export class Document {
                 'params': {
                     qProp: qGenericObjectProperties
                 }
-            }, [this.refreshAll.bind(this),
-                (message: any) => {
+            }, [(message: any) => {
                     deferred.resolve(message);
                 }]);
         });
@@ -493,8 +485,7 @@ export class Document {
                 'params': {
                     qProp: qGenericVariableProperties
                 }
-            }, [this.refreshAll.bind(this),
-                (message: any) => {
+            }, [(message: any) => {
                     deferred.resolve(message);
                 }]);
         });
@@ -512,8 +503,7 @@ export class Document {
                 'params': {
                     qProp: qGenericVariableProperties
                 }
-            }, [this.refreshAll.bind(this),
-                (message: any) => {
+            }, [(message: any) => {
                     deferred.resolve(message);
                 }]);
         });
@@ -531,8 +521,7 @@ export class Document {
                 'params': {
                     qConnectionId: qConnectionId
                 }
-            }, [this.refreshAll.bind(this),
-                (message: any) => {
+            }, [(message: any) => {
                     deferred.resolve(message);
                 }]);
         });
@@ -550,8 +539,7 @@ export class Document {
                 'params': {
                     qId: qId
                 }
-            }, [this.refreshAll.bind(this),
-                (message: any) => {
+            }, [(message: any) => {
                     deferred.resolve(message);
                 }]);
         });
@@ -569,8 +557,7 @@ export class Document {
                 'params': {
                     qId: qId
                 }
-            }, [this.refreshAll.bind(this),
-                (message: any) => {
+            }, [(message: any) => {
                     deferred.resolve(message);
                 }]);
         });
@@ -589,8 +576,7 @@ export class Document {
                     qId: qId,
                     qSourceId: qSourceId
                 }
-            }, [this.refreshAll.bind(this),
-                (message: any) => {
+            }, [(message: any) => {
                     deferred.resolve(message);
                 }]);
         });
@@ -608,8 +594,7 @@ export class Document {
                 'params': {
                     qId: qId
                 }
-            }, [this.refreshAll.bind(this),
-                (message: any) => {
+            }, [(message: any) => {
                     deferred.resolve(message);
                 }]);
         });
@@ -627,8 +612,7 @@ export class Document {
                 'params': {
                     qId: qId
                 }
-            }, [this.refreshAll.bind(this),
-                (message: any) => {
+            }, [(message: any) => {
                     deferred.resolve(message);
                 }]);
         });
@@ -646,8 +630,7 @@ export class Document {
                 'params': {
                     qId: qId
                 }
-            }, [this.refreshAll.bind(this),
-                (message: any) => {
+            }, [(message: any) => {
                     deferred.resolve(message);
                 }]);
         });
@@ -665,8 +648,7 @@ export class Document {
                 'params': {
                     qId: qId
                 }
-            }, [this.refreshAll.bind(this),
-                (message: any) => {
+            }, [(message: any) => {
                     deferred.resolve(message);
                 }]);
         });
@@ -684,8 +666,7 @@ export class Document {
                 'params': {
                     qId: qId
                 }
-            }, [this.refreshAll.bind(this),
-                (message: any) => {
+            }, [(message: any) => {
                     deferred.resolve(message);
                 }]);
         });
@@ -703,8 +684,7 @@ export class Document {
                 'params': {
                     qName: qName
                 }
-            }, [this.refreshAll.bind(this),
-                (message: any) => {
+            }, [(message: any) => {
                     deferred.resolve(message);
                 }]);
         });
@@ -766,8 +746,7 @@ export class Document {
                 'params': {
                     qFileName: qFileName
                 }
-            }, [this.refreshAll.bind(this),
-                (message: any) => {
+            }, [(message: any) => {
                     deferred.resolve(message);
                 }]);
         });
@@ -785,8 +764,7 @@ export class Document {
                 'params': {
                     qExpression: qExpression
                 }
-            }, [this.refreshAll.bind(this),
-                (message: any) => {
+            }, [(message: any) => {
                     deferred.resolve(message);
                 }]);
         });
@@ -804,8 +782,7 @@ export class Document {
                 'params': {
                     qExpression: qExpression
                 }
-            }, [this.refreshAll.bind(this),
-                (message: any) => {
+            }, [(message: any) => {
                     deferred.resolve(message);
                 }]);
         });
@@ -824,8 +801,7 @@ export class Document {
                     qFieldName: qFieldName,
                     qTags: qTags
                 }
-            }, [this.refreshAll.bind(this),
-                (message: any) => {
+            }, [(message: any) => {
                     deferred.resolve(message);
                 }]);
         });
@@ -858,8 +834,7 @@ export class Document {
                 'method': 'ForwardCount',
                 'handle': handle,
                 'params': []
-            }, [this.refreshAll.bind(this),
-                (message: any) => {
+            }, [(message: any) => {
                     deferred.resolve(message);
                 }]);
         });
@@ -877,8 +852,7 @@ export class Document {
                 'params': {
                     qInfos: qInfos
                 }
-            }, [this.refreshAll.bind(this),
-                (message: any) => {
+            }, [(message: any) => {
                     deferred.resolve(message);
                 }]);
         });
@@ -895,8 +869,7 @@ export class Document {
                 'handle': handle,
                 'params': {
                 }
-            }, [this.refreshAll.bind(this),
-                (message: any) => {
+            }, [(message: any) => {
                     deferred.resolve(message);
                 }]);
         });
@@ -913,8 +886,7 @@ export class Document {
                 'handle': handle,
                 'params': {
                 }
-            }, [this.refreshAll.bind(this),
-                (message: any) => {
+            }, [(message: any) => {
                     deferred.resolve(message);
                 }]);
         });
@@ -933,8 +905,7 @@ export class Document {
                     qTable1: qTable1,
                     qTable2: qTable2
                 }
-            }, [this.refreshAll.bind(this),
-                (message: any) => {
+            }, [(message: any) => {
                     deferred.resolve(message);
                 }]);
         });
@@ -952,8 +923,7 @@ export class Document {
                 'params': {
                     qId: qId
                 }
-            }, [this.refreshAll.bind(this),
-                (message: any) => {
+            }, [(message: any) => {
                     deferred.resolve(message);
                 }]);
         });
@@ -971,8 +941,7 @@ export class Document {
                 'params': {
                     qId: qId
                 }
-            }, [this.refreshAll.bind(this),
-                (message: any) => {
+            }, [(message: any) => {
                     deferred.resolve(message);
                 }]);
         });
@@ -990,8 +959,7 @@ export class Document {
                 'params': {
                     qConnectionId: qConnectionId
                 }
-            }, [this.refreshAll.bind(this),
-                (message: any) => {
+            }, [(message: any) => {
                     deferred.resolve(message);
                 }]);
         });
@@ -1008,8 +976,7 @@ export class Document {
                 'handle': handle,
                 'params': {
                 }
-            }, [this.refreshAll.bind(this),
-                (message: any) => {
+            }, [(message: any) => {
                     deferred.resolve(message);
                 }]);
         });
@@ -1026,8 +993,7 @@ export class Document {
                 'handle': handle,
                 'params': {
                 }
-            }, [this.refreshAll.bind(this),
-                (message: any) => {
+            }, [(message: any) => {
                     deferred.resolve(message);
                 }]);
         });
@@ -1045,8 +1011,7 @@ export class Document {
                 'params': {
                     qConnectionId: qConnectionId
                 }
-            }, [this.refreshAll.bind(this),
-                (message: any) => {
+            }, [(message: any) => {
                     deferred.resolve(message);
                 }]);
         });
@@ -1065,8 +1030,7 @@ export class Document {
                     qConnectionId: qConnectionId,
                     qDatabase: qDatabase
                 }
-            }, [this.refreshAll.bind(this),
-                (message: any) => {
+            }, [(message: any) => {
                     deferred.resolve(message);
                 }]);
         });
@@ -1087,8 +1051,7 @@ export class Document {
                     qTable: qTable,
                     qOwner: qOwner
                 }
-            }, [this.refreshAll.bind(this),
-                (message: any) => {
+            }, [(message: any) => {
                     deferred.resolve(message);
                 }]);
         });
@@ -1114,8 +1077,7 @@ export class Document {
                     qOwner: qOwner,
                     qConditions: qConditions
                 }
-            }, [this.refreshAll.bind(this),
-                (message: any) => {
+            }, [(message: any) => {
                     deferred.resolve(message);
                 }]);
         });
@@ -1137,8 +1099,7 @@ export class Document {
                     qDatabase: qDatabase,
                     qOwner: qOwner,
                 }
-            }, [this.refreshAll.bind(this),
-                (message: any) => {
+            }, [(message: any) => {
                     deferred.resolve(message);
                 }]);
         });
@@ -1158,8 +1119,7 @@ export class Document {
                 'params': {
                     qConnectionId: qConnectionId,
                 }
-            }, [this.refreshAll.bind(this),
-                (message: any) => {
+            }, [(message: any) => {
                     deferred.resolve(message);
                 }]);
         });
@@ -1180,8 +1140,7 @@ export class Document {
                 'params': {
                     qId: qId,
                 }
-            }, [this.refreshAll.bind(this),
-                (message: any) => {
+            }, [(message: any) => {
                     deferred.resolve(message);
                 }]);
         });
@@ -1199,8 +1158,7 @@ export class Document {
                 'params': {
                     qLocalizedMainSection: qLocalizedMainSection,
                 }
-            }, [this.refreshAll.bind(this),
-                (message: any) => {
+            }, [(message: any) => {
                     deferred.resolve(message);
                 }]);
         });
@@ -1217,8 +1175,7 @@ export class Document {
                 'handle': handle,
                 'params': {
                 }
-            }, [this.refreshAll.bind(this),
-                (message: any) => {
+            }, [(message: any) => {
                     deferred.resolve(message);
                 }]);
         });
@@ -1240,8 +1197,7 @@ export class Document {
                     qFieldName: qFieldName,
                     qStateName: qStateName
                 }
-            }, [this.refreshAll.bind(this),
-                (message: any) => {
+            }, [(message: any) => {
                     deferred.resolve(message);
                 }]);
         });
@@ -1259,8 +1215,7 @@ export class Document {
                 'params': {
                     qFieldName: qFieldName
                 }
-            }, [this.refreshAll.bind(this),
-                (message: any) => {
+            }, [(message: any) => {
                     deferred.resolve(message);
                 }]);
         });
@@ -1278,8 +1233,7 @@ export class Document {
                 'params': {
                     qFieldName: qFieldName
                 }
-            }, [this.refreshAll.bind(this),
-                (message: any) => {
+            }, [(message: any) => {
                     deferred.resolve(message);
                 }]);
         });
@@ -1299,10 +1253,12 @@ export class Document {
                 'method': 'GetFileTableFields',
                 'handle': handle,
                 'params': {
-                    qConnectionId: qConnectionId
+                    qConnectionId: qConnectionId,
+                    qDataFormat: qDataFormat,
+                    qTable: qTable,
+                    qRelativePath: qRelativePath
                 }
-            }, [this.refreshAll.bind(this),
-                (message: any) => {
+            }, [(message: any) => {
                     deferred.resolve(message);
                 }]);
         });
@@ -1320,111 +1276,848 @@ export class Document {
                 'params': {
                     qReadableName: qReadableName
                 }
-            }, [this.refreshAll.bind(this),
-                (message: any) => {
+            }, [(message: any) => {
                     deferred.resolve(message);
                 }]);
         });
         return deferred.promise;
     }
 
-    /* To be implemented !!
+    getFileTables(qConnectionId: string, qDataFormat: QFileDataFormat , qRelativePath?: string): Promise<any>  {
+        const deferred = new Deferred<any>();
+        this.deferred.promise.then( handle => {
+            this.globalService.wsSend({
+                'jsonrpc': '2.0',
+                'id': this.globalService.getNextEnumerator(),
+                'method': 'GetFileTables',
+                'handle': handle,
+                'params': {
+                    qConnectionId: qConnectionId,
+                    qDataFormat: qDataFormat,
+                    qRelativePath: qRelativePath
+                }
+            }, [(message: any) => {
+                deferred.resolve(message);
+            }]);
+        });
+        return deferred.promise;
+    }
 
- method
+    getFileTablesEx(qConnectionId: string, qDataFormat: QFileDataFormat , qRelativePath?: string): Promise<any>  {
+        const deferred = new Deferred<any>();
+        this.deferred.promise.then( handle => {
+            this.globalService.wsSend({
+                'jsonrpc': '2.0',
+                'id': this.globalService.getNextEnumerator(),
+                'method': 'GetFileTablesEx',
+                'handle': handle,
+                'params': {
+                    qConnectionId: qConnectionId,
+                    qDataFormat: qDataFormat,
+                    qRelativePath: qRelativePath
+                }
+            }, [(message: any) => {
+                deferred.resolve(message);
+            }]);
+        });
+        return deferred.promise;
+    }
 
-GetFileTableFields method
+    getFolderItemsForConnection(qConnectionId: string,  qRelativePath?: string): Promise<any>  {
+        const deferred = new Deferred<any>();
+        this.deferred.promise.then( handle => {
+            this.globalService.wsSend({
+                'jsonrpc': '2.0',
+                'id': this.globalService.getNextEnumerator(),
+                'method': 'GetFolderItemsForConnection',
+                'handle': handle,
+                'params': {
+                    qConnectionId: qConnectionId,
+                    qRelativePath: qRelativePath
+                }
+            }, [(message: any) => {
+                deferred.resolve(message);
+            }]);
+        });
+        return deferred.promise;
+    }
 
-GetFileTablePreview method
+    getIncludeFileContent(qPath: string): Promise<any>  {
+        const deferred = new Deferred<any>();
+        this.deferred.promise.then( handle => {
+            this.globalService.wsSend({
+                'jsonrpc': '2.0',
+                'id': this.globalService.getNextEnumerator(),
+                'method': 'GetIncludeFileContent',
+                'handle': handle,
+                'params': {
+                    qPath: qPath
+                }
+            }, [(message: any) => {
+                deferred.resolve(message);
+            }]);
+        });
+        return deferred.promise;
+    }
 
-GetFileTablesEx method
+    getLibraryContent(qName: string): Promise<any>  {
+        const deferred = new Deferred<any>();
+        this.deferred.promise.then( handle => {
+            this.globalService.wsSend({
+                'jsonrpc': '2.0',
+                'id': this.globalService.getNextEnumerator(),
+                'method': 'GetLibraryContent',
+                'handle': handle,
+                'params': {
+                    qName: qName
+                }
+            }, [(message: any) => {
+                deferred.resolve(message);
+            }]);
+        });
+        return deferred.promise;
+    }
 
-GetFileTables method
+    getLineage(qLineage: Array<QLineageInfo>): Promise<any>  {
+        const deferred = new Deferred<any>();
+        this.deferred.promise.then( handle => {
+            this.globalService.wsSend({
+                'jsonrpc': '2.0',
+                'id': this.globalService.getNextEnumerator(),
+                'method': 'GetLineage',
+                'handle': handle,
+                'params': {
+                    qLineage: qLineage
+                }
+            }, [(message: any) => {
+                deferred.resolve(message);
+            }]);
+        });
+        return deferred.promise;
+    }
 
-GetFolderItemsForConnection method
+    getLocaleInfo(): Promise<any>  {
+        const deferred = new Deferred<any>();
+        this.deferred.promise.then( handle => {
+            this.globalService.wsSend({
+                'jsonrpc': '2.0',
+                'id': this.globalService.getNextEnumerator(),
+                'method': 'GetLocaleInfo',
+                'handle': handle,
+                'params': {
+                }
+            }, [(message: any) => {
+                deferred.resolve(message);
+            }]);
+        });
+        return deferred.promise;
+    }
 
-GetIncludeFileContent method
+    getLooselyCoupledVector(): Promise<any>  {
+        const deferred = new Deferred<any>();
+        this.deferred.promise.then( handle => {
+            this.globalService.wsSend({
+                'jsonrpc': '2.0',
+                'id': this.globalService.getNextEnumerator(),
+                'method': 'GetLooselyCoupledVector',
+                'handle': handle,
+                'params': {
+                }
+            }, [(message: any) => {
+                deferred.resolve(message);
+            }]);
+        });
+        return deferred.promise;
+    }
 
-GetLibraryContent method
+    getMatchingFields(qTags: Array<string>, qMatchingFieldMode?: QMatchingFieldMode): Promise<any>  {
+        const deferred = new Deferred<any>();
+        this.deferred.promise.then( handle => {
+            this.globalService.wsSend({
+                'jsonrpc': '2.0',
+                'id': this.globalService.getNextEnumerator(),
+                'method': 'getMatchingFields',
+                'handle': handle,
+                'params': {
+                    qTags: qTags,
+                    qMatchingFieldMode: qMatchingFieldMode
+                }
+            }, [(message: any) => {
+                deferred.resolve(message);
+            }]);
+        });
+        return deferred.promise;
+    }
 
-GetLocaleInfo method
+    getMeasure(qId: string): Promise<any>  {
+        const deferred = new Deferred<any>();
+        this.deferred.promise.then( handle => {
+            this.globalService.wsSend({
+                'jsonrpc': '2.0',
+                'id': this.globalService.getNextEnumerator(),
+                'method': 'GetMeasure',
+                'handle': handle,
+                'params': {
+                    qId: qId
+                }
+            }, [(message: any) => {
+                deferred.resolve(message);
+            }]);
+        });
+        return deferred.promise;
+    }
 
-GetLooselyCoupledVector method
+    getMediaList(): Promise<any>  {
+        const deferred = new Deferred<any>();
+        this.deferred.promise.then( handle => {
+            this.globalService.wsSend({
+                'jsonrpc': '2.0',
+                'id': this.globalService.getNextEnumerator(),
+                'method': 'GetMediaList',
+                'handle': handle,
+                'params': {
+                }
+            }, [(message: any) => {
+                deferred.resolve(message);
+            }]);
+        });
+        return deferred.promise;
+    }
 
-GetMatchingFields method
+    getObject(qId: string): Promise<any>  {
+        const deferred = new Deferred<any>();
+        this.deferred.promise.then( handle => {
+            this.globalService.wsSend({
+                'jsonrpc': '2.0',
+                'id': this.globalService.getNextEnumerator(),
+                'method': 'GetObject',
+                'handle': handle,
+                'params': {
+                }
+            }, [(message: any) => {
+                deferred.resolve(message);
+            }]);
+        });
+        return deferred.promise;
+    }
 
-GetMediaList method
+    getObjects(qObjectOptions: QObjectOptions): Promise<any>  {
+        const deferred = new Deferred<any>();
+        this.deferred.promise.then( handle => {
+            this.globalService.wsSend({
+                'jsonrpc': '2.0',
+                'id': this.globalService.getNextEnumerator(),
+                'method': 'GetObjects',
+                'handle': handle,
+                'params': {
+                    qOptions: qObjectOptions
+                }
+            }, [(message: any) => {
+                deferred.resolve(message);
+            }]);
+        });
+        return deferred.promise;
+    }
 
-GetMeasure method
+    getScript(): Promise<any>  {
+        const deferred = new Deferred<any>();
+        this.deferred.promise.then( handle => {
+            this.globalService.wsSend({
+                'jsonrpc': '2.0',
+                'id': this.globalService.getNextEnumerator(),
+                'method': 'GetScript',
+                'handle': handle,
+                'params': {
+                }
+            }, [(message: any) => {
+                deferred.resolve(message);
+            }]);
+        });
+        return deferred.promise;
+    }
 
-GetObject method
+    getScriptBreakpoints(): Promise<any>  {
+        const deferred = new Deferred<any>();
+        this.deferred.promise.then( handle => {
+            this.globalService.wsSend({
+                'jsonrpc': '2.0',
+                'id': this.globalService.getNextEnumerator(),
+                'method': 'GetScriptBreakpoints',
+                'handle': handle,
+                'params': {
+                }
+            }, [(message: any) => {
+                deferred.resolve(message);
+            }]);
+        });
+        return deferred.promise;
+    }
 
-GetObjects method
+    getScriptEx(): Promise<any>  {
+        const deferred = new Deferred<any>();
+        this.deferred.promise.then( handle => {
+            this.globalService.wsSend({
+                'jsonrpc': '2.0',
+                'id': this.globalService.getNextEnumerator(),
+                'method': 'GetScriptEx',
+                'handle': handle,
+                'params': {
+                }
+            }, [(message: any) => {
+                deferred.resolve(message);
+            }]);
+        });
+        return deferred.promise;
+    }
 
-GetScriptBreakpoints method
+    getTableData(qOffset: number, qRows: number, qSyntheticMode: boolean, qTableName: string): Promise<any>  {
+        const deferred = new Deferred<any>();
+        this.deferred.promise.then( handle => {
+            this.globalService.wsSend({
+                'jsonrpc': '2.0',
+                'id': this.globalService.getNextEnumerator(),
+                'method': 'GetTableData',
+                'handle': handle,
+                'params': {
+                    qOffset: qOffset,
+                    qRows: qRows,
+                    qSyntheticMode: qSyntheticMode,
+                    qTableName: qTableName
+                }
+            }, [(message: any) => {
+                deferred.resolve(message);
+            }]);
+        });
+        return deferred.promise;
+    }
 
-GetScript method
+    getTablesAndKeys(qWindowSize: QSize,
+                     qNullSize: QSize,
+                     qCellHeight: number,
+                     qSyntheticMode: boolean,
+                     qIncludeSysVars: boolean): Promise<any>  {
+        const deferred = new Deferred<any>();
+        this.deferred.promise.then( handle => {
+            this.globalService.wsSend({
+                'jsonrpc': '2.0',
+                'id': this.globalService.getNextEnumerator(),
+                'method': 'GetTablesAndKeys',
+                'handle': handle,
+                'params': {
+                    qWindowSize: qWindowSize,
+                    qNullSize: qNullSize,
+                    qCellHeight: qCellHeight,
+                    qSyntheticMode: qSyntheticMode,
+                    qIncludeSysVars: qIncludeSysVars
+                }
+            }, [(message: any) => {
+                deferred.resolve(message);
+            }]);
+        });
+        return deferred.promise;
+    }
 
-GetTableData method
+    getTextMacros(): Promise<any>  {
+        const deferred = new Deferred<any>();
+        this.deferred.promise.then( handle => {
+            this.globalService.wsSend({
+                'jsonrpc': '2.0',
+                'id': this.globalService.getNextEnumerator(),
+                'method': 'GetTextMacros',
+                'handle': handle,
+                'params': {
+                }
+            }, [(message: any) => {
+                deferred.resolve(message);
+            }]);
+        });
+        return deferred.promise;
+    }
 
-GetTablesAndKeys method
+    getVariable(qName: string): Promise<any>  {
+        const deferred = new Deferred<any>();
+        this.deferred.promise.then( handle => {
+            this.globalService.wsSend({
+                'jsonrpc': '2.0',
+                'id': this.globalService.getNextEnumerator(),
+                'method': 'GetVariable',
+                'handle': handle,
+                'params': {
+                    qName: qName
+                }
+            }, [(message: any) => {
+                deferred.resolve(message);
+            }]);
+        });
+        return deferred.promise;
+    }
 
-GetTextMacros method
+    getVariableById(qId: string): Promise<any>  {
+        const deferred = new Deferred<any>();
+        this.deferred.promise.then( handle => {
+            this.globalService.wsSend({
+                'jsonrpc': '2.0',
+                'id': this.globalService.getNextEnumerator(),
+                'method': 'GetVariableById',
+                'handle': handle,
+                'params': {
+                    qName: qId
+                }
+            }, [(message: any) => {
+                deferred.resolve(message);
+            }]);
+        });
+        return deferred.promise;
+    }
 
-GetVariable method
+    getVariableByName(qName: string): Promise<any>  {
+        const deferred = new Deferred<any>();
+        this.deferred.promise.then( handle => {
+            this.globalService.wsSend({
+                'jsonrpc': '2.0',
+                'id': this.globalService.getNextEnumerator(),
+                'method': 'GetVariableByName',
+                'handle': handle,
+                'params': {
+                    qName: qName
+                }
+            }, [(message: any) => {
+                deferred.resolve(message);
+            }]);
+        });
+        return deferred.promise;
+    }
 
-GetVariableById method
+    getViewDlgSaveInfo(): Promise<any>  {
+        const deferred = new Deferred<any>();
+        this.deferred.promise.then( handle => {
+            this.globalService.wsSend({
+                'jsonrpc': '2.0',
+                'id': this.globalService.getNextEnumerator(),
+                'method': 'GetViewDlgSaveInfo',
+                'handle': handle,
+                'params': {
+                }
+            }, [(message: any) => {
+                deferred.resolve(message);
+            }]);
+        });
+        return deferred.promise;
+    }
 
-GetVariableByName method
+    guessFileType(qConnectionId: string, qRelativePath?: string ): Promise<any>  {
+        const deferred = new Deferred<any>();
+        this.deferred.promise.then( handle => {
+            this.globalService.wsSend({
+                'jsonrpc': '2.0',
+                'id': this.globalService.getNextEnumerator(),
+                'method': 'GuessFileType',
+                'handle': handle,
+                'params': {
+                    qConnectionId: qConnectionId,
+                    qRelativePath: qRelativePath
+                }
+            }, [(message: any) => {
+                deferred.resolve(message);
+            }]);
+        });
+        return deferred.promise;
+    }
 
-GetViewDlgSaveInfo method
+    lockAll (qStateName?: string): Promise<any>  {
+        const deferred = new Deferred<any>();
+        this.deferred.promise.then( handle => {
+            this.globalService.wsSend({
+                'jsonrpc': '2.0',
+                'id': this.globalService.getNextEnumerator(),
+                'method': 'LockAll',
+                'handle': handle,
+                'params': {
+                    qStateName: qStateName
+                }
+            }, [(message: any) => {
+                deferred.resolve(message);
+            }]);
+        });
+        return deferred.promise;
+    }
 
-GuessFileType method
+    modifyConnection (qConnectionId: string, qConnection?: QConnection, qOverrideCredentials?: boolean): Promise<any>  {
+        const deferred = new Deferred<any>();
+        this.deferred.promise.then( handle => {
+            this.globalService.wsSend({
+                'jsonrpc': '2.0',
+                'id': this.globalService.getNextEnumerator(),
+                'method': 'ModifyConnection',
+                'handle': handle,
+                'params': {
+                    qConnectionId: qConnectionId,
+                    qConnection: qConnection,
+                    qOverrideCredentials: qOverrideCredentials
+                }
+            }, [(message: any) => {
+                deferred.resolve(message);
+            }]);
+        });
+        return deferred.promise;
+    }
 
-LockAll method
+    publish (qStreamId: string, qName?: string): Promise<any>  {
+        const deferred = new Deferred<any>();
+        this.deferred.promise.then( handle => {
+            this.globalService.wsSend({
+                'jsonrpc': '2.0',
+                'id': this.globalService.getNextEnumerator(),
+                'method': 'Publish',
+                'handle': handle,
+                'params': {
+                    qStreamId: qStreamId,
+                    qName: qName
+                }
+            }, [(message: any) => {
+                deferred.resolve(message);
+            }]);
+        });
+        return deferred.promise;
+    }
 
-ModifyConnection method
+    redo (): Promise<any>  {
+        const deferred = new Deferred<any>();
+        this.deferred.promise.then( handle => {
+            this.globalService.wsSend({
+                'jsonrpc': '2.0',
+                'id': this.globalService.getNextEnumerator(),
+                'method': 'Redo',
+                'handle': handle,
+                'params': {
+                }
+            }, [(message: any) => {
+                deferred.resolve(message);
+            }]);
+        });
+        return deferred.promise;
+    }
 
-Publish method
+    removeAlternateState (qStateName: string): Promise<any>  {
+        const deferred = new Deferred<any>();
+        this.deferred.promise.then( handle => {
+            this.globalService.wsSend({
+                'jsonrpc': '2.0',
+                'id': this.globalService.getNextEnumerator(),
+                'method': 'RemoveAlternateState',
+                'handle': handle,
+                'params': {
+                    qStateName: qStateName
+                }
+            }, [(message: any) => {
+                deferred.resolve(message);
+            }]);
+        });
+        return deferred.promise;
+    }
 
-Redo method
+    resume(): Promise<any>  {
+        const deferred = new Deferred<any>();
+        this.deferred.promise.then( handle => {
+            this.globalService.wsSend({
+                'jsonrpc': '2.0',
+                'id': this.globalService.getNextEnumerator(),
+                'method': 'Resume',
+                'handle': handle,
+                'params': {
+                }
+            }, [(message: any) => {
+                deferred.resolve(message);
+            }]);
+        });
+        return deferred.promise;
+    }
 
-RemoveAlternateState method
+    saveObjects(): Promise<any>  {
+        const deferred = new Deferred<any>();
+        this.deferred.promise.then( handle => {
+            this.globalService.wsSend({
+                'jsonrpc': '2.0',
+                'id': this.globalService.getNextEnumerator(),
+                'method': 'SaveObjects',
+                'handle': handle,
+                'params': {
+                }
+            }, [(message: any) => {
+                deferred.resolve(message);
+            }]);
+        });
+        return deferred.promise;
+    }
 
-RemoveVariable method
+    scramble(qFieldName: string): Promise<any>  {
+        const deferred = new Deferred<any>();
+        this.deferred.promise.then( handle => {
+            this.globalService.wsSend({
+                'jsonrpc': '2.0',
+                'id': this.globalService.getNextEnumerator(),
+                'method': 'Scramble',
+                'handle': handle,
+                'params': {
+                    qFieldName: qFieldName
+                }
+            }, [(message: any) => {
+                deferred.resolve(message);
+            }]);
+        });
+        return deferred.promise;
+    }
 
-Resume method
 
-SaveObjects method
+    searchAssociations(qOptions: QSearchCombinationOptions, qTerms: Array<string>, qPage: QSearchPage): Promise<any>  {
+        const deferred = new Deferred<any>();
+        this.deferred.promise.then( handle => {
+            this.globalService.wsSend({
+                'jsonrpc': '2.0',
+                'id': this.globalService.getNextEnumerator(),
+                'method': 'SearchAssociations',
+                'handle': handle,
+                'params': {
+                    qOptions: qOptions,
+                    qTerms: qTerms,
+                    qPage: qPage
+                }
+            }, [(message: any) => {
+                deferred.resolve(message);
+            }]);
+        });
+        return deferred.promise;
+    }
 
-SearchAssociations method
+    searchObjects(qOptions: QSearchObjectOptions, qTerms: Array<string>, qPage: QSearchPage): Promise<any>  {
+        const deferred = new Deferred<any>();
+        this.deferred.promise.then( handle => {
+            this.globalService.wsSend({
+                'jsonrpc': '2.0',
+                'id': this.globalService.getNextEnumerator(),
+                'method': 'SearchObjects',
+                'handle': handle,
+                'params': {
+                    qOptions: qOptions,
+                    qTerms: qTerms,
+                    qPage: qPage
+                }
+            }, [(message: any) => {
+                deferred.resolve(message);
+            }]);
+        });
+        return deferred.promise;
+    }
 
-SearchObjects method
+    searchResults(qOptions: QSearchCombinationOptions, qTerms: Array<string>, qPage: QSearchPage): Promise<any>  {
+        const deferred = new Deferred<any>();
+        this.deferred.promise.then( handle => {
+            this.globalService.wsSend({
+                'jsonrpc': '2.0',
+                'id': this.globalService.getNextEnumerator(),
+                'method': 'SearchResults',
+                'handle': handle,
+                'params': {
+                    qOptions: qOptions,
+                    qTerms: qTerms,
+                    qPage: qPage
+                }
+            }, [(message: any) => {
+                deferred.resolve(message);
+            }]);
+        });
+        return deferred.promise;
+    }
 
-SearchResults method
+    searchSuggest(qOptions: QSearchCombinationOptions, qTerms: Array<string>): Promise<any>  {
+        const deferred = new Deferred<any>();
+        this.deferred.promise.then( handle => {
+            this.globalService.wsSend({
+                'jsonrpc': '2.0',
+                'id': this.globalService.getNextEnumerator(),
+                'method': 'SearchSuggest',
+                'handle': handle,
+                'params': {
+                    qOptions: qOptions,
+                    qTerms: qTerms
+                }
+            }, [(message: any) => {
+                deferred.resolve(message);
+            }]);
+        });
+        return deferred.promise;
+    }
 
-SearchSuggest method
+    selectAssociations(qOptions: QSearchCombinationOptions, qTerms: Array<string>, qMatchIx: number, qSoftLock?: boolean): Promise<any>  {
+        const deferred = new Deferred<any>();
+        this.deferred.promise.then( handle => {
+            this.globalService.wsSend({
+                'jsonrpc': '2.0',
+                'id': this.globalService.getNextEnumerator(),
+                'method': 'SelectAssociations',
+                'handle': handle,
+                'params': {
+                    qOptions: qOptions,
+                    qTerms: qTerms,
+                    qMatchIx: qMatchIx,
+                    qSoftLock: qSoftLock
+                }
+            }, [(message: any) => {
+                deferred.resolve(message);
+            }]);
+        });
+        return deferred.promise;
+    }
 
-SelectAssociations method
+    GendGenericCommandToCustomConnector(qProvider: string,
+                                        qCommand: QCommand,
+                                        qMethod: string,
+                                        qParameters: Array<string>,
+                                        qAppendConnection: string): Promise<any>  {
+        const deferred = new Deferred<any>();
+        this.deferred.promise.then( handle => {
+            this.globalService.wsSend({
+                'jsonrpc': '2.0',
+                'id': this.globalService.getNextEnumerator(),
+                'method': 'SendGenericCommandToCustomConnector',
+                'handle': handle,
+                'params': {
+                    qProvider: qProvider,
+                    qCommand: qCommand,
+                    qMethod: qMethod,
+                    qParameters: qParameters,
+                    qAppendConnection: qAppendConnection
+                }
+            }, [(message: any) => {
+                deferred.resolve(message);
+            }]);
+        });
+        return deferred.promise;
+    }
 
-SendGenericCommandToCustomConnector method
+    setAppProperties(qProp: QAppProperties): Promise<any>  {
+        const deferred = new Deferred<any>();
+        this.deferred.promise.then( handle => {
+            this.globalService.wsSend({
+                'jsonrpc': '2.0',
+                'id': this.globalService.getNextEnumerator(),
+                'method': 'SetAppProperties',
+                'handle': handle,
+                'params': {
+                    qProp: qProp
+                }
+            }, [(message: any) => {
+                deferred.resolve(message);
+            }]);
+        });
+        return deferred.promise;
+    }
 
-SetAppProperties method
 
-SetFavoriteVariables method
+    setFavoriteVariables(qNames: Array<string>): Promise<any>  {
+        const deferred = new Deferred<any>();
+        this.deferred.promise.then( handle => {
+            this.globalService.wsSend({
+                'jsonrpc': '2.0',
+                'id': this.globalService.getNextEnumerator(),
+                'method': 'SetFavoriteVariables',
+                'handle': handle,
+                'params': {
+                    qNames: qNames
+                }
+            }, [(message: any) => {
+                deferred.resolve(message);
+            }]);
+        });
+        return deferred.promise;
+    }
 
-SetFetchLimit method
+    setFetchLimit(qLimit: number): Promise<any>  {
+        const deferred = new Deferred<any>();
+        this.deferred.promise.then( handle => {
+            this.globalService.wsSend({
+                'jsonrpc': '2.0',
+                'id': this.globalService.getNextEnumerator(),
+                'method': 'SetFetchLimit',
+                'handle': handle,
+                'params': {
+                    qLimit: qLimit
+                }
+            }, [(message: any) => {
+                deferred.resolve(message);
+            }]);
+        });
+        return deferred.promise;
+    }
 
-SetLooselyCoupledVector method
+    setScript(qScript: string): Promise<any>  {
+        const deferred = new Deferred<any>();
+        this.deferred.promise.then( handle => {
+            this.globalService.wsSend({
+                'jsonrpc': '2.0',
+                'id': this.globalService.getNextEnumerator(),
+                'method': 'SetScript',
+                'handle': handle,
+                'params': {
+                    qScript: qScript
+                }
+            }, [(message: any) => {
+                deferred.resolve(message);
+            }]);
+        });
+        return deferred.promise;
+    }
 
-SetScriptBreakpoints method
+    setScriptBreakpoints(qBreakpoints: Array<QEditorBreakpoint>): Promise<any>  {
+        const deferred = new Deferred<any>();
+        this.deferred.promise.then( handle => {
+            this.globalService.wsSend({
+                'jsonrpc': '2.0',
+                'id': this.globalService.getNextEnumerator(),
+                'method': 'SetScriptBreakpoints',
+                'handle': handle,
+                'params': {
+                    qBreakpoints: qBreakpoints
+                }
+            }, [(message: any) => {
+                deferred.resolve(message);
+            }]);
+        });
+        return deferred.promise;
+    }
 
-SetScript method
+    undo(): Promise<any>  {
+        const deferred = new Deferred<any>();
+        this.deferred.promise.then( handle => {
+            this.globalService.wsSend({
+                'jsonrpc': '2.0',
+                'id': this.globalService.getNextEnumerator(),
+                'method': 'Undo',
+                'handle': handle,
+                'params': {
+                }
+            }, [(message: any) => {
+                deferred.resolve(message);
+            }]);
+        });
+        return deferred.promise;
+    }
 
-SetViewDlgSaveInfo method
-
-Undo method
-
-UnlockAll method
-
-     */
+    unlockAll(qStateName: string): Promise<any>  {
+        const deferred = new Deferred<any>();
+        this.deferred.promise.then( handle => {
+            this.globalService.wsSend({
+                'jsonrpc': '2.0',
+                'id': this.globalService.getNextEnumerator(),
+                'method': 'UnlockAll',
+                'handle': handle,
+                'params': {
+                    qStateName: qStateName
+                }
+            }, [(message: any) => {
+                deferred.resolve(message);
+            }]);
+        });
+        return deferred.promise;
+    }
 }
