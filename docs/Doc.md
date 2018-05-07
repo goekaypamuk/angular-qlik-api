@@ -10,8 +10,8 @@ All standart methods defined by Qlik Doc class return a promise.
 
 ```typescript
 import {Component} from '@angular/core';
-import QlikGlobalService from 'qlik-global.service';
-import Document from './class/document.class';
+import QlikGlobalService from 'angular-qlik-api';
+import Document from 'angular-qlik-api';
 
 @Component({
   selector: 'app-root'

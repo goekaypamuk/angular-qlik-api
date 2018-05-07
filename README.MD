@@ -1,6 +1,6 @@
 # angular-qlik-api
 
-AngulerQlikEngineApi is the angular wrapper for Qlik Engine API. It facilitates the usage and handles the synchronization.
+AngulerQlikApi is the angular wrapper for Qlik Engine API. It facilitates the usage and handles the synchronization.
 
 
 The Qlik Engine API is a WebSocket protocol that uses JSON to pass information between the Qlik Sense engine and the clients. The Qlik Engine API consists of a set of objects representing apps, lists, and so on. These objects are organized in a hierarchical structure. When you send requests to the API, you perform actions on these objects.
@@ -21,6 +21,7 @@ To work with the Qlik Engine API, you can use any language or tool that supports
 ###### Qlik Classes
 - [Use Global class methods](https://github.com/goekaypamuk/angular-qlik-api/blob/pag-develop/docs/Global.md)
 - [Use Doc class methods](https://github.com/goekaypamuk/angular-qlik-api/blob/pag-develop/docs/Doc.md)
+- [Use Bookmark class methods](https://github.com/goekaypamuk/angular-qlik-api/blob/pag-develop/docs/Bookmark.md)
 
 ## Installation
 
@@ -100,7 +101,7 @@ export class MyApp implements OnDestroy {
 
 - [x] Global Class Methods
 - [x] App Class Methods
-- [ ] GenericBookmark Methods
+- [x] GenericBookmark Methods
 - [ ] GenericDimension Class Methods
 - [ ] GenericObject Class Methods
 - [ ] GenericMeasure Class Methods
