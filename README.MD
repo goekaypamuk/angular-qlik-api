@@ -31,7 +31,7 @@ To install this library, run:
 $ npm install angular-qlik-api -save
 ```
 
-## Consuming AngulerQlikEngineApi library
+## Consuming AngulerQlikApi library
 
 Once you have published your library to npm, you can import your library in any Angular application by running:
 
