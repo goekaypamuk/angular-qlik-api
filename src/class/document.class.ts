@@ -21,6 +21,7 @@ import {QSearchObjectOptions} from '../interface/q-search-object-options.interfa
 import {QCommand} from '../enum/q-command.enum';
 import {QAppProperties} from '../interface/q-app-properties.interface';
 import {QEditorBreakpoint} from '../interface/q-editor-breakpoint.interface';
+import {Bookmark} from './bookmark.class';
 
 export class Document {
     globalService: any;
@@ -29,6 +30,7 @@ export class Document {
     deferred: Deferred<number>;
     hyperCubeList: any = {};
     listList: any = {};
+    bookmarkList: any = {};
     constructor(docId: string, service: any) {
         this.globalService = service;
         this.id = this.globalService.getNextEnumerator();
@@ -349,22 +351,25 @@ export class Document {
         return deferred.promise;
     }
 
-    createBookmark(qGenericBookmarkProperties: QGenericBookmarkProperties): Promise<any>  {
-        const deferred = new Deferred<any>();
+    createBookmark(qGenericBookmarkProperties: QGenericBookmarkProperties): Bookmark  {
+        const bmId = this.globalService.getNextEnumerator();
+        this.bookmarkList[bmId] = new Bookmark(this.deferred, this.globalService, this, bmId);
         this.deferred.promise.then( handle => {
             this.globalService.wsSend({
                 'jsonrpc': '2.0',
-                'id': this.globalService.getNextEnumerator(),
+                'id': bmId,
                 'method': 'CreateBookmark',
                 'handle': handle,
                 'params': {
                     qProp: qGenericBookmarkProperties
                 }
-            }, [(message: any) => {
-                    deferred.resolve(message);
-                }]);
+            }, [this.bookmarkCreated.bind(this)]);
         });
-        return deferred.promise;
+        return this.hyperCubeList[bmId];
+    }
+
+    private bookmarkCreated(m) {
+        this.bookmarkList[m.id].setHandle(m.result.qReturn.qHandle);
     }
 
     createConnection(qConnection: QConnection): Promise<any>  {
@@ -474,6 +479,7 @@ export class Document {
         });
         return deferred.promise;
     }
+
     createSessionVariable(qGenericVariableProperties: QGenericVariableProperties): Promise<any>  {
         const deferred = new Deferred<any>();
         this.deferred.promise.then( handle => {

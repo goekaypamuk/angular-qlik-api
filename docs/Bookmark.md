@@ -1,17 +1,17 @@
-# Document _(Class)_
+# Bookmark _(Class)_
 
-This Calss has all the methods that apply at Doc Class level and some additional methods provided by this library to facilitate the usage.
+This Calss has all the methods that apply at Bookmark Class level and some additional methods provided by this library to facilitate the usage.
 
 You can find full list and all details of all Doc class methods on [Qlik Help Website](https://help.qlik.com/en-US/sense-developer/April2018/apis/EngineAPI/index.html)
 
 ## Example
 
-All standart methods defined by Qlik Doc class return a promise. 
+All standart methods defined by Qlik Bookmark class return a promise. To access the _Bookmark_ class you need to use the _getBookmark_ or _createBookmark_ methods on _Doc_ class. These methods return a _Bookmark_ object containing all methods on _Bookmark_ class.
 
 ```typescript
 import {Component} from '@angular/core';
-import QlikGlobalService from 'angular-qlik-api';
-import Document from 'angular-qlik-api';
+import {QlikGlobalService, Document, Bookmark} from 'angular-qlik-api';
+
 
 @Component({
   selector: 'app-root'
@@ -19,6 +19,7 @@ import Document from 'angular-qlik-api';
 export class MyApp  {
 
   myDoc: Document;
+  myBookmark: Bookmark;
   constructor(qlikGlobal: QlikGlobalService ) {
       
         // Opens and returns a Document Class. 
@@ -26,15 +27,11 @@ export class MyApp  {
         this.myDoc = qlikGlobal.openDoc('sales discovery.qvf');
     
         // Clear all selection in sales discovery.qvf
-        this.myDoc.clearAll().then( message => {
-            console.log(message);
-        });
+        this.myBookmark = this.myDoc.getBookmark('example_id');
         
-        // Lock all selection in state $ 
-        this.myDoc.lockAll('$').then( message => {
-            console.log(message);
+        this.myBookmark.apply().then( cb => {
+            console.log(cb)
         });
- 
   }
 }
 ```

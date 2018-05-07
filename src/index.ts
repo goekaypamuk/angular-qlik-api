@@ -32,6 +32,7 @@ export * from './interface/q-library-measure-def.interface';
 export * from './interface/q-lineage-info.interface';
 export * from './interface/q-meta.interface';
 export * from './interface/q-object-options.interface';
+export * from './interface/q-patches.interface';
 export * from './interface/q-search-combination.interface';
 export * from './interface/q-search-group-item-options.interface';
 export * from './interface/q-search-group-options.interface';
@@ -53,6 +54,7 @@ export * from './enum/q-grouping.enum';
 export * from './enum/q-logon.enum';
 export * from './enum/q-matching-field-mode.enum';
 export * from './enum/q-mode.enum';
+export * from './enum/q-op.enum';
 @NgModule({
   imports: [
     CommonModule

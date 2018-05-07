@@ -1,6 +1,6 @@
 # angular-qlik-api
 
-AngulerQlikEngineApi is the angular wrapper for Qlik Engine API. It facilitates the usage and handles the synchronization.
+AngulerQlikApi is the angular wrapper for Qlik Engine API. It facilitates the usage and handles the synchronization.
 
 
 The Qlik Engine API is a WebSocket protocol that uses JSON to pass information between the Qlik Sense engine and the clients. The Qlik Engine API consists of a set of objects representing apps, lists, and so on. These objects are organized in a hierarchical structure. When you send requests to the API, you perform actions on these objects.
