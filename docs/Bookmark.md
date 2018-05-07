@@ -26,12 +26,18 @@ export class MyApp  {
         // this.myDoc variable references to a Doc object where you can invoke from now on doc class methods.  
         this.myDoc = qlikGlobal.openDoc('sales discovery.qvf');
     
-        // Clear all selection in sales discovery.qvf
-        this.myBookmark = this.myDoc.getBookmark('example_id');
+        // get the list of all Bookmarks from a given Qlik Document
+        this.myDoc.getBookmarks().then( cb => {
+                console.log(cb);
+            });
         
-        this.myBookmark.apply().then( cb => {
-            console.log(cb)
-        });
+        // get bookmark object from current document
+        // variable myBookmark contains a Bookmark class containing bookmark methods
+        this.myBookmark = this.myDoc.getBookmark('JKVD');
+        
+        // Apply the selection of the bookmark
+        // will automatically refreshes all hypercubes and list objects
+        this.myBookmark.apply();
   }
 }
 ```

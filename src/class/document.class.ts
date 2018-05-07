@@ -86,6 +86,11 @@ export class Document {
         }
     }
 
+    private bookmarkCreated(m) {
+      console.log(m)
+        this.bookmarkList[m.id].setHandle(m.result.qReturn.qHandle);
+    }
+
     abortModal(qAccept: boolean): Promise<any> {
         const deferred = new Deferred<any>();
         this.deferred.promise.then( handle => {
@@ -366,10 +371,6 @@ export class Document {
             }, [this.bookmarkCreated.bind(this)]);
         });
         return this.hyperCubeList[bmId];
-    }
-
-    private bookmarkCreated(m) {
-        this.bookmarkList[m.id].setHandle(m.result.qReturn.qHandle);
     }
 
     createConnection(qConnection: QConnection): Promise<any>  {
@@ -899,7 +900,7 @@ export class Document {
         return deferred.promise;
     }
 
-    GetAssociationScores(qTable1: string, qTable2: string): Promise<any>  {
+    getAssociationScores(qTable1: string, qTable2: string): Promise<any>  {
         const deferred = new Deferred<any>();
         this.deferred.promise.then( handle => {
             this.globalService.wsSend({
@@ -918,25 +919,27 @@ export class Document {
         return deferred.promise;
     }
 
-    getBookmark(qId: string): Promise<any>  {
+    getBookmark(qId: string): Bookmark  {
+        const bmId = this.globalService.getNextEnumerator();
+        this.bookmarkList[bmId] = new Bookmark(this.deferred, this.globalService, this, bmId);
         const deferred = new Deferred<any>();
         this.deferred.promise.then( handle => {
             this.globalService.wsSend({
                 'jsonrpc': '2.0',
-                'id': this.globalService.getNextEnumerator(),
+                'id': bmId,
                 'method': 'GetBookmark',
                 'handle': handle,
                 'params': {
                     qId: qId
                 }
-            }, [(message: any) => {
-                    deferred.resolve(message);
-                }]);
+            }, [this.bookmarkCreated.bind(this)]);
         });
-        return deferred.promise;
+        return this.bookmarkList[bmId];
     }
 
-    getBookmarks(qId: string): Promise<any>  {
+    getBookmarks(qTypes: Array<string> = ['bookmark'], qData = {'qMeta': {}}): Promise<any>  {
+        const bmId = this.globalService.getNextEnumerator();
+        this.bookmarkList[bmId] = new Bookmark(this.deferred, this.globalService, this, bmId);
         const deferred = new Deferred<any>();
         this.deferred.promise.then( handle => {
             this.globalService.wsSend({
@@ -945,11 +948,14 @@ export class Document {
                 'method': 'GetBookmarks',
                 'handle': handle,
                 'params': {
-                    qId: qId
+                  qOptions: {
+                    qTypes : qTypes,
+                    qData: qData
+                  }
                 }
             }, [(message: any) => {
-                    deferred.resolve(message);
-                }]);
+                deferred.resolve(message);
+            }]);
         });
         return deferred.promise;
     }

@@ -1,8 +1,7 @@
 import {Deferred} from './deferred.class';
 import {Document} from './document.class';
-import {QConnection} from '../interface/q-connection.interface';
 import {QPatches} from '../interface/q-patches.interface';
-import {QGenericBookmarkProperties} from '../';
+import {QGenericBookmarkProperties} from '../interface/q-generic-bookmark-properties.interface';
 
 export class Bookmark {
     definition: any = {
@@ -63,6 +62,7 @@ export class Bookmark {
                 'params': {
                 }
             }, [(message: any) => {
+                this.outerDoc.refreshAll();
                 deferred.resolve(message);
             }]);
         });

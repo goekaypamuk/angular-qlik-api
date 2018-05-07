@@ -21,6 +21,7 @@ To work with the Qlik Engine API, you can use any language or tool that supports
 ###### Qlik Classes
 - [Use Global class methods](https://github.com/goekaypamuk/angular-qlik-api/blob/pag-develop/docs/Global.md)
 - [Use Doc class methods](https://github.com/goekaypamuk/angular-qlik-api/blob/pag-develop/docs/Doc.md)
+- [Use Bookmark class methods](https://github.com/goekaypamuk/angular-qlik-api/blob/pag-develop/docs/Bookmark.md)
 
 ## Installation
 
@@ -100,7 +101,7 @@ export class MyApp implements OnDestroy {
 
 - [x] Global Class Methods
 - [x] App Class Methods
-- [ ] GenericBookmark Methods
+- [x] GenericBookmark Methods
 - [ ] GenericDimension Class Methods
 - [ ] GenericObject Class Methods
 - [ ] GenericMeasure Class Methods
