@@ -1203,14 +1203,14 @@ export class Document {
         this.deferred.promise.then( handle => {
             this.globalService.wsSend({
                 'jsonrpc': '2.0',
-                'id': this.globalService.getNextEnumerator(),
+                'id': bmId,
                 'method': 'GetField',
                 'handle': handle,
                 'params': {
                     qFieldName: qFieldName,
                     qStateName: qStateName
                 }
-            }, [this.bookmarkCreated.bind(this)]
+            }, [this.fieldCreated.bind(this)]
             );
         });
         return this.fieldList[bmId];

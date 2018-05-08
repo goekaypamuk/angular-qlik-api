@@ -1,5 +1,6 @@
 import {Deferred} from './deferred.class';
 import {Document} from './document.class';
+import {QFieldValue} from '../interface/q-field-value.interface';
 
 export class Field {
     globalService: any;
@@ -140,6 +141,7 @@ export class Field {
                     qSoftLock: qSoftLock
                 }
             }, [(message: any) => {
+                this.outerDoc.refreshAll();
                 deferred.resolve(message);
             }]);
         });
@@ -158,6 +160,7 @@ export class Field {
                     qSoftLock: qSoftLock
                 }
             }, [(message: any) => {
+                this.outerDoc.refreshAll();
                 deferred.resolve(message);
             }]);
         });
@@ -176,6 +179,7 @@ export class Field {
                     qSoftLock: qSoftLock
                 }
             }, [(message: any) => {
+                this.outerDoc.refreshAll();
                 deferred.resolve(message);
             }]);
         });
@@ -194,19 +198,20 @@ export class Field {
                     qSoftLock: qSoftLock
                 }
             }, [(message: any) => {
+                this.outerDoc.refreshAll();
                 deferred.resolve(message);
             }]);
         });
         return deferred.promise;
     }
 
-    select(qMatch: string, qSoftLock = false, qExcludedValuesMode: number): Promise<any>  {
+    select(qMatch: string, qSoftLock = false, qExcludedValuesMode?: number): Promise<any>  {
         const deferred = new Deferred<any>();
         this.deferred.promise.then( handle => {
             this.globalService.wsSend({
                 'jsonrpc': '2.0',
                 'id': this.globalService.getNextEnumerator(),
-                'method': 'select',
+                'method': 'Select',
                 'handle': handle,
                 'params': {
                     qMatch: qMatch,
@@ -214,6 +219,7 @@ export class Field {
                     qExcludedValuesMode: qExcludedValuesMode
                 }
             }, [(message: any) => {
+                this.outerDoc.refreshAll();
                 deferred.resolve(message);
             }]);
         });
@@ -232,20 +238,14 @@ export class Field {
                     qSoftLock: qSoftLock
                 }
             }, [(message: any) => {
+                this.outerDoc.refreshAll();
                 deferred.resolve(message);
             }]);
         });
         return deferred.promise;
     }
 
-    /**
-     *
-     * @param {Array<number>} qValues
-     * @param {boolean} qToggleMode
-     * @param {boolean} qSoftLock
-     * @returns {Promise<any>}
-     */
-    selectValues(qValues: Array<number>, qToggleMode: boolean, qSoftLock = false ): Promise<any>  {
+    selectValues(qFieldValues: Array<QFieldValue>, qToggleMode: boolean, qSoftLock = false ): Promise<any>  {
         const deferred = new Deferred<any>();
         this.deferred.promise.then( handle => {
             this.globalService.wsSend({
@@ -254,9 +254,86 @@ export class Field {
                 'method': 'SelectValues',
                 'handle': handle,
                 'params': {
-                    qValues: qValues,
+                    qFieldValues: qFieldValues,
                     qToggleMode: qToggleMode,
                     qSoftLock: qSoftLock
+                }
+            }, [(message: any) => {
+                this.outerDoc.refreshAll();
+                deferred.resolve(message);
+            }]);
+        });
+        return deferred.promise;
+    }
+
+    setAndMode(qAndMode: boolean): Promise<any>  {
+        const deferred = new Deferred<any>();
+        this.deferred.promise.then( handle => {
+            this.globalService.wsSend({
+                'jsonrpc': '2.0',
+                'id': this.globalService.getNextEnumerator(),
+                'method': 'SetAndMode',
+                'handle': handle,
+                'params': {
+                    qAndMode: qAndMode
+                }
+            }, [(message: any) => {
+                deferred.resolve(message);
+            }]);
+        });
+        return deferred.promise;
+    }
+
+    setNxProperties(qOneAndOnlyOne: boolean): Promise<any>  {
+        const deferred = new Deferred<any>();
+        this.deferred.promise.then( handle => {
+            this.globalService.wsSend({
+                'jsonrpc': '2.0',
+                'id': this.globalService.getNextEnumerator(),
+                'method': 'SetNxProperties',
+                'handle': handle,
+                'params': {
+                    qProperties: {
+                        qOneAndOnlyOne: qOneAndOnlyOne
+                    }
+                }
+            }, [(message: any) => {
+                deferred.resolve(message);
+            }]);
+        });
+        return deferred.promise;
+    }
+
+    toggleSelect(qMatch: string, qSoftLock = false, qExcludedValuesMode?: number): Promise<any>  {
+        const deferred = new Deferred<any>();
+        this.deferred.promise.then( handle => {
+            this.globalService.wsSend({
+                'jsonrpc': '2.0',
+                'id': this.globalService.getNextEnumerator(),
+                'method': 'ToggleSelect',
+                'handle': handle,
+                'params': {
+                    qMatch: qMatch,
+                    qSoftLock: qSoftLock,
+                    qExcludedValuesMode: qExcludedValuesMode
+                }
+            }, [(message: any) => {
+                this.outerDoc.refreshAll();
+                deferred.resolve(message);
+            }]);
+        });
+        return deferred.promise;
+    }
+
+    unlock(): Promise<any>  {
+        const deferred = new Deferred<any>();
+        this.deferred.promise.then( handle => {
+            this.globalService.wsSend({
+                'jsonrpc': '2.0',
+                'id': this.globalService.getNextEnumerator(),
+                'method': 'Unlock',
+                'handle': handle,
+                'params': {
                 }
             }, [(message: any) => {
                 deferred.resolve(message);

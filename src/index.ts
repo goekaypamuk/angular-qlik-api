@@ -11,6 +11,7 @@ export * from './class/bookmark.class';
 export * from './class/deferred.class';
 export * from './class/dimension.class';
 export * from './class/document.class';
+export * from './class/field.class';
 export * from './class/hyper-cube.class';
 export * from './class/list.class';
 export * from './class/measure.class';

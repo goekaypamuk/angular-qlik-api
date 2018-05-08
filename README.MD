@@ -22,6 +22,7 @@ To work with the Qlik Engine API, you can use any language or tool that supports
 - [Use Global class methods](https://github.com/goekaypamuk/angular-qlik-api/blob/pag-develop/docs/Global.md)
 - [Use Doc class methods](https://github.com/goekaypamuk/angular-qlik-api/blob/pag-develop/docs/Doc.md)
 - [Use Bookmark class methods](https://github.com/goekaypamuk/angular-qlik-api/blob/pag-develop/docs/Bookmark.md)
+- [Use Field class methods](https://github.com/goekaypamuk/angular-qlik-api/blob/pag-develop/docs/Field.md)
 
 ## Installation
 
@@ -31,7 +32,7 @@ To install this library, run:
 $ npm install angular-qlik-api -save
 ```
 
-## Consuming AngulerQlikApi library
+## Consuming AngularQlikApi library
 
 Once you have published your library to npm, you can import your library in any Angular application by running:
 
@@ -107,7 +108,7 @@ export class MyApp implements OnDestroy {
 - [ ] GenericMeasure Class Methods
 - [ ] GenericDimension Class Methods
 - [ ] GenericVariable Class Methods
-- [ ] Field Class Methods
+- [x] Field Class Methods
 - [ ] Variable Class Methods
 
 Initially, a hypercube builder has been added to the library but it may change completely in future releases!
