@@ -4,34 +4,6 @@ import {QPatches} from '../interface/q-patches.interface';
 import {QGenericBookmarkProperties} from '../interface/q-generic-bookmark-properties.interface';
 
 export class Bookmark {
-    definition: any = {
-        'jsonrpc': '2.0',
-        'id': null,
-        'method': 'CreateSessionObject',
-        'handle': null,
-        'params': [
-            {
-                'qInfo': {
-                    'qType': 'Chart'
-                },
-                'qHyperCubeDef': {
-                    'qInitialDataFetch': [
-                        {
-                            'qHeight': 2000,
-                            'qWidth': 1
-                        }
-                    ],
-                    'qDimensions': [],
-                    'qMeasures': [],
-                    'qSuppressZero': false,
-                    'qSuppressMissing': false,
-                    'qMode': 'S',
-                    'qInterColumnSortOrder': [],
-                    'qStateName': '$'
-                }
-            }
-        ]
-    };
     globalService: any;
     doc: Deferred<number>;
     deferred: Deferred<number>;

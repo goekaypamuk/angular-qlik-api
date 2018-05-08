@@ -22,6 +22,7 @@ import {QCommand} from '../enum/q-command.enum';
 import {QAppProperties} from '../interface/q-app-properties.interface';
 import {QEditorBreakpoint} from '../interface/q-editor-breakpoint.interface';
 import {Bookmark} from './bookmark.class';
+import {Field} from './field.class';
 
 export class Document {
     globalService: any;
@@ -31,6 +32,7 @@ export class Document {
     hyperCubeList: any = {};
     listList: any = {};
     bookmarkList: any = {};
+    fieldList: any = {};
     constructor(docId: string, service: any) {
         this.globalService = service;
         this.id = this.globalService.getNextEnumerator();
@@ -87,8 +89,11 @@ export class Document {
     }
 
     private bookmarkCreated(m) {
-      console.log(m)
         this.bookmarkList[m.id].setHandle(m.result.qReturn.qHandle);
+    }
+
+    private fieldCreated(m) {
+        this.fieldList[m.id].setHandle(m.result.qReturn.qHandle);
     }
 
     abortModal(qAccept: boolean): Promise<any> {
@@ -938,8 +943,6 @@ export class Document {
     }
 
     getBookmarks(qTypes: Array<string> = ['bookmark'], qData = {'qMeta': {}}): Promise<any>  {
-        const bmId = this.globalService.getNextEnumerator();
-        this.bookmarkList[bmId] = new Bookmark(this.deferred, this.globalService, this, bmId);
         const deferred = new Deferred<any>();
         this.deferred.promise.then( handle => {
             this.globalService.wsSend({
@@ -1194,26 +1197,23 @@ export class Document {
         return deferred.promise;
     }
 
-    /**
-     *
-     */
-    getField(qFieldName: string, qStateName?: string): Promise<any>  {
-        const deferred = new Deferred<any>();
+    getField(qFieldName: string, qStateName?: string): Field  {
+        const bmId = this.globalService.getNextEnumerator();
+        this.fieldList[bmId] = new Field(this.deferred, this.globalService, this, bmId);
         this.deferred.promise.then( handle => {
             this.globalService.wsSend({
                 'jsonrpc': '2.0',
-                'id': this.globalService.getNextEnumerator(),
+                'id': bmId,
                 'method': 'GetField',
                 'handle': handle,
                 'params': {
                     qFieldName: qFieldName,
                     qStateName: qStateName
                 }
-            }, [(message: any) => {
-                    deferred.resolve(message);
-                }]);
+            }, [this.fieldCreated.bind(this)]
+            );
         });
-        return deferred.promise;
+        return this.fieldList[bmId];
     }
 
     getFieldDescription(qFieldName: string): Promise<any>  {

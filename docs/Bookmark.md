@@ -1,6 +1,6 @@
 # Bookmark _(Class)_
 
-This Calss has all the methods that apply at Bookmark Class level and some additional methods provided by this library to facilitate the usage.
+This Class has all the methods that apply at Bookmark Class level and some additional methods provided by this library to facilitate the usage.
 
 You can find full list and all details of all Doc class methods on [Qlik Help Website](https://help.qlik.com/en-US/sense-developer/April2018/apis/EngineAPI/index.html)
 

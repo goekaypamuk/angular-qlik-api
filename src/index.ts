@@ -7,13 +7,15 @@ import  {HyperCubeLoggerComponent } from './components/hyper-cube-logger/hyper-c
 
 export * from './components/hyper-cube-logger/hyper-cube-logger.component';
 export * from './qlik-global.service';
-export * from './class/qlik-config.class';
+export * from './class/bookmark.class';
 export * from './class/deferred.class';
 export * from './class/dimension.class';
 export * from './class/document.class';
+export * from './class/field.class';
 export * from './class/hyper-cube.class';
 export * from './class/list.class';
 export * from './class/measure.class';
+export * from './class/qlik-config.class';
 export * from './interface/q-app-properties.interface';
 export * from './interface/q-connection.interface';
 export * from './interface/q-editor-breakpoint.interface';
