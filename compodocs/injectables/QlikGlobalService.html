@@ -1,0 +1,4490 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>angular-qlik-api</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">angular-qlik-api</a>
+            <button type="button" class="btn btn-default btn-menu fa fa-bars" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+            <div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search">
+</div>
+            <nav>
+
+    <ul class="list">
+
+        <li class="title">
+            <a href="index.html" data-type="index-link">angular-qlik-api</a>
+        </li>
+
+        <li class="divider"></li>
+
+
+        <li class="chapter">
+            <a data-type="chapter-link" href="index.html"><span class="fa fa-home"></span>Getting started</a>
+            <ul class="links">
+                    <li class="link">
+                        <a 
+                            
+                             href="overview.html" 
+                             href="overview.html" 
+                            data-type="chapter-link">
+                            <span class="fa fa-fw fa-th"></span>Overview
+                        </a>
+                    </li>
+                    <li class="link">
+                      <a href="index.html" data-type="chapter-link"><span class="fa fa-file-text-o"></span>README</a>
+                    </li>
+                    <li class="link">
+                            <a href="license.html"
+                        data-type="chapter-link">
+                            <span class="fa fa-fw fa-file-text-o"></span>LICENSE
+                        </a>
+                    </li>
+            </ul>
+        </li>
+
+
+        <li class="chapter modules">
+            <a data-type="chapter-link" href="modules.html">
+                <div class="menu-toggler linked" data-toggle="collapse"
+                        data-target="#xs-modules-links"
+                >
+                    <span class="fa fa-fw fa-archive"></span>
+                    <span class="link-name">Modules</span>
+                    <span class="fa fa-angle-down"></span>
+                </div>
+            </a>
+            <ul class="links collapse"
+                    id="xs-modules-links"
+                >
+                    <li class="link">
+                        <a href="modules/AngularQlikApiModule.html" data-type="entity-link">AngularQlikApiModule</a>
+                            <li class="chapter inner">
+                                <div class="simple menu-toggler" data-toggle="collapse"
+                                        data-target="#xs-components-links-module-AngularQlikApiModule-cc50dd54-d999-475f-bfb1-726cc85473ff"
+                                    >
+                                    <span class="fa fa-fw fa-cogs"></span>
+                                    <span>Components</span>
+                                    <span class="fa fa-angle-down"></span>
+                                </div>
+                                <ul class="links collapse"
+                                        id="xs-components-links-module-AngularQlikApiModule-cc50dd54-d999-475f-bfb1-726cc85473ff"
+                                    >
+                                        <li class="link">
+                                            <a href="components/HyperCubeLoggerComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules">HyperCubeLoggerComponent</a>
+                                        </li>
+                                </ul>
+                            </li>
+                    </li>
+            </ul>
+        </li>
+
+
+
+        <li class="chapter">
+            <div class="simple menu-toggler" data-toggle="collapse"
+                    data-target="#xs-classes-links"
+                >
+                <span class="fa fa-fw fa-file-code-o"></span>
+                <span>Classes</span>
+                <span class="fa fa-angle-down"></span>
+            </div>
+            <ul class="links collapse"
+                    id="xs-classes-links"
+                >
+                    <li class="link">
+                        <a href="classes/Bookmark.html" data-type="entity-link">Bookmark</a>
+                    </li>
+                    <li class="link">
+                        <a href="classes/Connection.html" data-type="entity-link">Connection</a>
+                    </li>
+                    <li class="link">
+                        <a href="classes/Deferred.html" data-type="entity-link">Deferred</a>
+                    </li>
+                    <li class="link">
+                        <a href="classes/Dimension.html" data-type="entity-link">Dimension</a>
+                    </li>
+                    <li class="link">
+                        <a href="classes/Document.html" data-type="entity-link">Document</a>
+                    </li>
+                    <li class="link">
+                        <a href="classes/Field.html" data-type="entity-link">Field</a>
+                    </li>
+                    <li class="link">
+                        <a href="classes/GenericMeasure.html" data-type="entity-link">GenericMeasure</a>
+                    </li>
+                    <li class="link">
+                        <a href="classes/HyperCube.html" data-type="entity-link">HyperCube</a>
+                    </li>
+                    <li class="link">
+                        <a href="classes/List.html" data-type="entity-link">List</a>
+                    </li>
+                    <li class="link">
+                        <a href="classes/Measure.html" data-type="entity-link">Measure</a>
+                    </li>
+                    <li class="link">
+                        <a href="classes/QlikConfig.html" data-type="entity-link">QlikConfig</a>
+                    </li>
+            </ul>
+        </li>
+
+                <li class="chapter">
+                    <div class="simple menu-toggler" data-toggle="collapse"
+                            data-target="#xs-injectables-links"
+                        >
+                        <span class="fa fa-fw fa-long-arrow-down"></span>
+                        <span>Injectables</span>
+                        <span class="fa fa-angle-down"></span>
+                    </div>
+                    <ul class="links collapse"
+                            id="xs-injectables-links"
+                        >
+                            <li class="link">
+                                <a href="injectables/QlikGlobalService.html" data-type="entity-link">QlikGlobalService</a>
+                            </li>
+                    </ul>
+                </li>
+
+
+        <li class="chapter">
+            <div class="simple menu-toggler" data-toggle="collapse"
+                    data-target="#xs-interfaces-links"
+                >
+                <span class="fa fa-fw fa-info"></span>
+                <span>Interfaces</span>
+                <span class="fa fa-angle-down"></span>
+            </div>
+            <ul class="links collapse"
+                    id="xs-interfaces-links"
+                >
+                    <li class="link">
+                        <a href="interfaces/QAppProperties.html" data-type="entity-link">QAppProperties</a>
+                    </li>
+                    <li class="link">
+                        <a href="interfaces/QConnection.html" data-type="entity-link">QConnection</a>
+                    </li>
+                    <li class="link">
+                        <a href="interfaces/QEditorBreakpoint.html" data-type="entity-link">QEditorBreakpoint</a>
+                    </li>
+                    <li class="link">
+                        <a href="interfaces/QFieldAttributes.html" data-type="entity-link">QFieldAttributes</a>
+                    </li>
+                    <li class="link">
+                        <a href="interfaces/QFieldValue.html" data-type="entity-link">QFieldValue</a>
+                    </li>
+                    <li class="link">
+                        <a href="interfaces/QFileDataFormat.html" data-type="entity-link">QFileDataFormat</a>
+                    </li>
+                    <li class="link">
+                        <a href="interfaces/QFilterInfo.html" data-type="entity-link">QFilterInfo</a>
+                    </li>
+                    <li class="link">
+                        <a href="interfaces/QGenericBookmarkProperties.html" data-type="entity-link">QGenericBookmarkProperties</a>
+                    </li>
+                    <li class="link">
+                        <a href="interfaces/QGenericDimensionProperties.html" data-type="entity-link">QGenericDimensionProperties</a>
+                    </li>
+                    <li class="link">
+                        <a href="interfaces/QGenericMeasureProperties.html" data-type="entity-link">QGenericMeasureProperties</a>
+                    </li>
+                    <li class="link">
+                        <a href="interfaces/QGenericObjectProperties.html" data-type="entity-link">QGenericObjectProperties</a>
+                    </li>
+                    <li class="link">
+                        <a href="interfaces/QGenericVariableProperties.html" data-type="entity-link">QGenericVariableProperties</a>
+                    </li>
+                    <li class="link">
+                        <a href="interfaces/QInfo.html" data-type="entity-link">QInfo</a>
+                    </li>
+                    <li class="link">
+                        <a href="interfaces/QLibraryDimensionDef.html" data-type="entity-link">QLibraryDimensionDef</a>
+                    </li>
+                    <li class="link">
+                        <a href="interfaces/QLibraryMEasureDef.html" data-type="entity-link">QLibraryMEasureDef</a>
+                    </li>
+                    <li class="link">
+                        <a href="interfaces/QLineageInfo.html" data-type="entity-link">QLineageInfo</a>
+                    </li>
+                    <li class="link">
+                        <a href="interfaces/QMeta.html" data-type="entity-link">QMeta</a>
+                    </li>
+                    <li class="link">
+                        <a href="interfaces/QObjectOptions.html" data-type="entity-link">QObjectOptions</a>
+                    </li>
+                    <li class="link">
+                        <a href="interfaces/QPatches.html" data-type="entity-link">QPatches</a>
+                    </li>
+                    <li class="link">
+                        <a href="interfaces/QSearchCombinationOptions.html" data-type="entity-link">QSearchCombinationOptions</a>
+                    </li>
+                    <li class="link">
+                        <a href="interfaces/QSearchGroupItemOptions.html" data-type="entity-link">QSearchGroupItemOptions</a>
+                    </li>
+                    <li class="link">
+                        <a href="interfaces/QSearchGroupOptions.html" data-type="entity-link">QSearchGroupOptions</a>
+                    </li>
+                    <li class="link">
+                        <a href="interfaces/QSearchObjectOptions.html" data-type="entity-link">QSearchObjectOptions</a>
+                    </li>
+                    <li class="link">
+                        <a href="interfaces/QSearchPage.html" data-type="entity-link">QSearchPage</a>
+                    </li>
+                    <li class="link">
+                        <a href="interfaces/QSize.html" data-type="entity-link">QSize</a>
+                    </li>
+                    <li class="link">
+                        <a href="interfaces/QlikConfigInterface.html" data-type="entity-link">QlikConfigInterface</a>
+                    </li>
+            </ul>
+        </li>
+
+
+        <li class="chapter">
+            <div class="simple menu-toggler" data-toggle="collapse"
+                    data-target="#xs-miscellaneous-links"
+                >
+                <span class="fa fa-fw fa-cubes"></span>
+                <span>Miscellaneous</span>
+                <span class="fa fa-angle-down"></span>
+            </div>
+            <ul class="links collapse"
+                    id="xs-miscellaneous-links"
+                >
+                    <li class="link">
+                      <a href="miscellaneous/enumerations.html" data-type="entity-link">Enums</a>
+                    </li>
+            </ul>
+        </li>
+
+
+        <li class="chapter">
+            <a data-type="chapter-link" href="coverage.html"><span class="fa fa-fw fa-tasks"></span>Documentation coverage</a>
+        </li>
+
+
+    </ul>
+
+</nav>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <nav>
+
+    <ul class="list">
+
+        <li class="title">
+            <a href="index.html" data-type="index-link">angular-qlik-api</a>
+        </li>
+
+        <li class="divider"></li>
+
+            <div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search">
+</div>
+
+        <li class="chapter">
+            <a data-type="chapter-link" href="index.html"><span class="fa fa-home"></span>Getting started</a>
+            <ul class="links">
+                    <li class="link">
+                        <a 
+                            
+                             href="overview.html" 
+                             href="overview.html" 
+                            data-type="chapter-link">
+                            <span class="fa fa-fw fa-th"></span>Overview
+                        </a>
+                    </li>
+                    <li class="link">
+                      <a href="index.html" data-type="chapter-link"><span class="fa fa-file-text-o"></span>README</a>
+                    </li>
+                    <li class="link">
+                            <a href="license.html"
+                        data-type="chapter-link">
+                            <span class="fa fa-fw fa-file-text-o"></span>LICENSE
+                        </a>
+                    </li>
+            </ul>
+        </li>
+
+
+        <li class="chapter modules">
+            <a data-type="chapter-link" href="modules.html">
+                <div class="menu-toggler linked" data-toggle="collapse"
+                        data-target="#modules-links"
+                >
+                    <span class="fa fa-fw fa-archive"></span>
+                    <span class="link-name">Modules</span>
+                    <span class="fa fa-angle-down"></span>
+                </div>
+            </a>
+            <ul class="links collapse"
+                    id="modules-links"
+>
+                    <li class="link">
+                        <a href="modules/AngularQlikApiModule.html" data-type="entity-link">AngularQlikApiModule</a>
+                            <li class="chapter inner">
+                                <div class="simple menu-toggler" data-toggle="collapse"
+                                        data-target="#components-links-module-AngularQlikApiModule-cc50dd54-d999-475f-bfb1-726cc85473ff"
+>
+                                    <span class="fa fa-fw fa-cogs"></span>
+                                    <span>Components</span>
+                                    <span class="fa fa-angle-down"></span>
+                                </div>
+                                <ul class="links collapse"
+                                        id="components-links-module-AngularQlikApiModule-cc50dd54-d999-475f-bfb1-726cc85473ff"
+>
+                                        <li class="link">
+                                            <a href="components/HyperCubeLoggerComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules">HyperCubeLoggerComponent</a>
+                                        </li>
+                                </ul>
+                            </li>
+                    </li>
+            </ul>
+        </li>
+
+
+
+        <li class="chapter">
+            <div class="simple menu-toggler" data-toggle="collapse"
+                    data-target="#classes-links"
+>
+                <span class="fa fa-fw fa-file-code-o"></span>
+                <span>Classes</span>
+                <span class="fa fa-angle-down"></span>
+            </div>
+            <ul class="links collapse"
+                    id="classes-links"
+>
+                    <li class="link">
+                        <a href="classes/Bookmark.html" data-type="entity-link">Bookmark</a>
+                    </li>
+                    <li class="link">
+                        <a href="classes/Connection.html" data-type="entity-link">Connection</a>
+                    </li>
+                    <li class="link">
+                        <a href="classes/Deferred.html" data-type="entity-link">Deferred</a>
+                    </li>
+                    <li class="link">
+                        <a href="classes/Dimension.html" data-type="entity-link">Dimension</a>
+                    </li>
+                    <li class="link">
+                        <a href="classes/Document.html" data-type="entity-link">Document</a>
+                    </li>
+                    <li class="link">
+                        <a href="classes/Field.html" data-type="entity-link">Field</a>
+                    </li>
+                    <li class="link">
+                        <a href="classes/GenericMeasure.html" data-type="entity-link">GenericMeasure</a>
+                    </li>
+                    <li class="link">
+                        <a href="classes/HyperCube.html" data-type="entity-link">HyperCube</a>
+                    </li>
+                    <li class="link">
+                        <a href="classes/List.html" data-type="entity-link">List</a>
+                    </li>
+                    <li class="link">
+                        <a href="classes/Measure.html" data-type="entity-link">Measure</a>
+                    </li>
+                    <li class="link">
+                        <a href="classes/QlikConfig.html" data-type="entity-link">QlikConfig</a>
+                    </li>
+            </ul>
+        </li>
+
+                <li class="chapter">
+                    <div class="simple menu-toggler" data-toggle="collapse"
+                            data-target="#injectables-links"
+>
+                        <span class="fa fa-fw fa-long-arrow-down"></span>
+                        <span>Injectables</span>
+                        <span class="fa fa-angle-down"></span>
+                    </div>
+                    <ul class="links collapse"
+                            id="injectables-links"
+>
+                            <li class="link">
+                                <a href="injectables/QlikGlobalService.html" data-type="entity-link">QlikGlobalService</a>
+                            </li>
+                    </ul>
+                </li>
+
+
+        <li class="chapter">
+            <div class="simple menu-toggler" data-toggle="collapse"
+                    data-target="#interfaces-links"
+>
+                <span class="fa fa-fw fa-info"></span>
+                <span>Interfaces</span>
+                <span class="fa fa-angle-down"></span>
+            </div>
+            <ul class="links collapse"
+                    id="interfaces-links"
+>
+                    <li class="link">
+                        <a href="interfaces/QAppProperties.html" data-type="entity-link">QAppProperties</a>
+                    </li>
+                    <li class="link">
+                        <a href="interfaces/QConnection.html" data-type="entity-link">QConnection</a>
+                    </li>
+                    <li class="link">
+                        <a href="interfaces/QEditorBreakpoint.html" data-type="entity-link">QEditorBreakpoint</a>
+                    </li>
+                    <li class="link">
+                        <a href="interfaces/QFieldAttributes.html" data-type="entity-link">QFieldAttributes</a>
+                    </li>
+                    <li class="link">
+                        <a href="interfaces/QFieldValue.html" data-type="entity-link">QFieldValue</a>
+                    </li>
+                    <li class="link">
+                        <a href="interfaces/QFileDataFormat.html" data-type="entity-link">QFileDataFormat</a>
+                    </li>
+                    <li class="link">
+                        <a href="interfaces/QFilterInfo.html" data-type="entity-link">QFilterInfo</a>
+                    </li>
+                    <li class="link">
+                        <a href="interfaces/QGenericBookmarkProperties.html" data-type="entity-link">QGenericBookmarkProperties</a>
+                    </li>
+                    <li class="link">
+                        <a href="interfaces/QGenericDimensionProperties.html" data-type="entity-link">QGenericDimensionProperties</a>
+                    </li>
+                    <li class="link">
+                        <a href="interfaces/QGenericMeasureProperties.html" data-type="entity-link">QGenericMeasureProperties</a>
+                    </li>
+                    <li class="link">
+                        <a href="interfaces/QGenericObjectProperties.html" data-type="entity-link">QGenericObjectProperties</a>
+                    </li>
+                    <li class="link">
+                        <a href="interfaces/QGenericVariableProperties.html" data-type="entity-link">QGenericVariableProperties</a>
+                    </li>
+                    <li class="link">
+                        <a href="interfaces/QInfo.html" data-type="entity-link">QInfo</a>
+                    </li>
+                    <li class="link">
+                        <a href="interfaces/QLibraryDimensionDef.html" data-type="entity-link">QLibraryDimensionDef</a>
+                    </li>
+                    <li class="link">
+                        <a href="interfaces/QLibraryMEasureDef.html" data-type="entity-link">QLibraryMEasureDef</a>
+                    </li>
+                    <li class="link">
+                        <a href="interfaces/QLineageInfo.html" data-type="entity-link">QLineageInfo</a>
+                    </li>
+                    <li class="link">
+                        <a href="interfaces/QMeta.html" data-type="entity-link">QMeta</a>
+                    </li>
+                    <li class="link">
+                        <a href="interfaces/QObjectOptions.html" data-type="entity-link">QObjectOptions</a>
+                    </li>
+                    <li class="link">
+                        <a href="interfaces/QPatches.html" data-type="entity-link">QPatches</a>
+                    </li>
+                    <li class="link">
+                        <a href="interfaces/QSearchCombinationOptions.html" data-type="entity-link">QSearchCombinationOptions</a>
+                    </li>
+                    <li class="link">
+                        <a href="interfaces/QSearchGroupItemOptions.html" data-type="entity-link">QSearchGroupItemOptions</a>
+                    </li>
+                    <li class="link">
+                        <a href="interfaces/QSearchGroupOptions.html" data-type="entity-link">QSearchGroupOptions</a>
+                    </li>
+                    <li class="link">
+                        <a href="interfaces/QSearchObjectOptions.html" data-type="entity-link">QSearchObjectOptions</a>
+                    </li>
+                    <li class="link">
+                        <a href="interfaces/QSearchPage.html" data-type="entity-link">QSearchPage</a>
+                    </li>
+                    <li class="link">
+                        <a href="interfaces/QSize.html" data-type="entity-link">QSize</a>
+                    </li>
+                    <li class="link">
+                        <a href="interfaces/QlikConfigInterface.html" data-type="entity-link">QlikConfigInterface</a>
+                    </li>
+            </ul>
+        </li>
+
+
+        <li class="chapter">
+            <div class="simple menu-toggler" data-toggle="collapse"
+                    data-target="#miscellaneous-links"
+>
+                <span class="fa fa-fw fa-cubes"></span>
+                <span>Miscellaneous</span>
+                <span class="fa fa-angle-down"></span>
+            </div>
+            <ul class="links collapse"
+                    id="miscellaneous-links"
+>
+                    <li class="link">
+                      <a href="miscellaneous/enumerations.html" data-type="entity-link">Enums</a>
+                    </li>
+            </ul>
+        </li>
+
+
+        <li class="chapter">
+            <a data-type="chapter-link" href="coverage.html"><span class="fa fa-fw fa-tasks"></span>Documentation coverage</a>
+        </li>
+
+
+    </ul>
+
+</nav>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content injectable">
+                   <div class="content-data">
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li>Injectables</li>
+  <li>QlikGlobalService</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+    <li class="active">
+        <a href="#info" id="info-tab" role="tab" data-toggle="tab" data-link="info">Info</a>
+    </li>
+
+
+    <li>
+        <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+    </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info">
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>src/qlik-global.service.ts</code>
+        </p>
+
+
+
+            <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#docList">docList</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#enumerator">enumerator</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#ws">ws</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#wsPromise">wsPromise</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#wsQue">wsQue</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#abortAll">abortAll</a>
+                            </li>
+                            <li>
+                                <a href="#allowCreateApp">allowCreateApp</a>
+                            </li>
+                            <li>
+                                <a href="#cancelReload">cancelReload</a>
+                            </li>
+                            <li>
+                                <a href="#cancelRequest">cancelRequest</a>
+                            </li>
+                            <li>
+                                <a href="#configureReload">configureReload</a>
+                            </li>
+                            <li>
+                                <a href="#CopyApp">CopyApp</a>
+                            </li>
+                            <li>
+                                <a href="#createApp">createApp</a>
+                            </li>
+                            <li>
+                                <a href="#createDocEx">createDocEx</a>
+                            </li>
+                            <li>
+                                <a href="#createSessionApp">createSessionApp</a>
+                            </li>
+                            <li>
+                                <a href="#createSessionAppFromApp">createSessionAppFromApp</a>
+                            </li>
+                            <li>
+                                <a href="#deleteApp">deleteApp</a>
+                            </li>
+                            <li>
+                                <a href="#engineVersion">engineVersion</a>
+                            </li>
+                            <li>
+                                <a href="#exportApp">exportApp</a>
+                            </li>
+                            <li>
+                                <a href="#getActiveDoc">getActiveDoc</a>
+                            </li>
+                            <li>
+                                <a href="#getAppEntry">getAppEntry</a>
+                            </li>
+                            <li>
+                                <a href="#getAuthenticatedUser">getAuthenticatedUser</a>
+                            </li>
+                            <li>
+                                <a href="#getBaseBNF">getBaseBNF</a>
+                            </li>
+                            <li>
+                                <a href="#getBaseBNFHash">getBaseBNFHash</a>
+                            </li>
+                            <li>
+                                <a href="#getBNF">getBNF</a>
+                            </li>
+                            <li>
+                                <a href="#getCustomConnectors">getCustomConnectors</a>
+                            </li>
+                            <li>
+                                <a href="#getDatabasesFromConnectionString">getDatabasesFromConnectionString</a>
+                            </li>
+                            <li>
+                                <a href="#getDefaultAppFolder">getDefaultAppFolder</a>
+                            </li>
+                            <li>
+                                <a href="#getDocList">getDocList</a>
+                            </li>
+                            <li>
+                                <a href="#getFolderItemsForPath">getFolderItemsForPath</a>
+                            </li>
+                            <li>
+                                <a href="#getFunctions">getFunctions</a>
+                            </li>
+                            <li>
+                                <a href="#getInteract">getInteract</a>
+                            </li>
+                            <li>
+                                <a href="#getLogicalDriveStrings">getLogicalDriveStrings</a>
+                            </li>
+                            <li>
+                                <a href="#getNextEnumerator">getNextEnumerator</a>
+                            </li>
+                            <li>
+                                <a href="#getOdbcDsns">getOdbcDsns</a>
+                            </li>
+                            <li>
+                                <a href="#getOleDbProviders">getOleDbProviders</a>
+                            </li>
+                            <li>
+                                <a href="#getProgress">getProgress</a>
+                            </li>
+                            <li>
+                                <a href="#getSupportedCodePages">getSupportedCodePages</a>
+                            </li>
+                            <li>
+                                <a href="#getUniqueID">getUniqueID</a>
+                            </li>
+                            <li>
+                                <a href="#interactDone">interactDone</a>
+                            </li>
+                            <li>
+                                <a href="#isDesktopMode">isDesktopMode</a>
+                            </li>
+                            <li>
+                                <a href="#isPersonalMode">isPersonalMode</a>
+                            </li>
+                            <li>
+                                <a href="#isValidConnectionString">isValidConnectionString</a>
+                            </li>
+                            <li>
+                                <a href="#openDoc">openDoc</a>
+                            </li>
+                            <li>
+                                <a href="#oSName">oSName</a>
+                            </li>
+                            <li>
+                                <a href="#oSVersion">oSVersion</a>
+                            </li>
+                            <li>
+                                <a href="#productVersion">productVersion</a>
+                            </li>
+                            <li>
+                                <a href="#qTProduct">qTProduct</a>
+                            </li>
+                            <li>
+                                <a href="#qvVersion">qvVersion</a>
+                            </li>
+                            <li>
+                                <a href="#reloadExtensionList">reloadExtensionList</a>
+                            </li>
+                            <li>
+                                <a href="#replaceAppFromID">replaceAppFromID</a>
+                            </li>
+                            <li>
+                                <a href="#shutdownProcess">shutdownProcess</a>
+                            </li>
+                            <li>
+                                <a href="#wsSend">wsSend</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+            <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(qlikConfig: <a href="../classes/QlikConfig.html">QlikConfig</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/qlik-global.service.ts:16</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                    <td>qlikConfig</td>
+                                                  
+                                                        <td>
+                                                                    <code><a href="../classes/QlikConfig.html" target="_self" >QlikConfig</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            no
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+            <section>
+    
+        <h3 id="methods">
+            Methods
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="abortAll"></a>
+                        <span class="name">
+                            <b>
+                            abortAll
+                            </b>
+                            <a href="#abortAll"><span class="fa fa-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>abortAll()</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="54" class="link-to-prism">src/qlik-global.service.ts:54</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div class="io-description"><p>Global Class Method implementation</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Returns : </b>    <code>Promise&lt;any&gt;</code>
+
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="allowCreateApp"></a>
+                        <span class="name">
+                            <b>
+                            allowCreateApp
+                            </b>
+                            <a href="#allowCreateApp"><span class="fa fa-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>allowCreateApp()</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="68" class="link-to-prism">src/qlik-global.service.ts:68</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Returns : </b>    <code>Promise&lt;any&gt;</code>
+
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="cancelReload"></a>
+                        <span class="name">
+                            <b>
+                            cancelReload
+                            </b>
+                            <a href="#cancelReload"><span class="fa fa-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>cancelReload()</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="82" class="link-to-prism">src/qlik-global.service.ts:82</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Returns : </b>    <code>Promise&lt;any&gt;</code>
+
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="cancelRequest"></a>
+                        <span class="name">
+                            <b>
+                            cancelRequest
+                            </b>
+                            <a href="#cancelRequest"><span class="fa fa-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>cancelRequest(qRequestId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="96" class="link-to-prism">src/qlik-global.service.ts:96</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>qRequestId</td>
+                                                        <td>
+                                                                    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            no
+                                                    </td>
+                                                    
+
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code>Promise&lt;any&gt;</code>
+
+                            </div>
+                                <div class="io-description">
+                                    
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="configureReload"></a>
+                        <span class="name">
+                            <b>
+                            configureReload
+                            </b>
+                            <a href="#configureReload"><span class="fa fa-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>configureReload(qCancelOnScriptError: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank">boolean</a>, qUseErrorData: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank">boolean</a>, qInteractOnError: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank">boolean</a>)</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="112" class="link-to-prism">src/qlik-global.service.ts:112</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>qCancelOnScriptError</td>
+                                                        <td>
+                                                                    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            no
+                                                    </td>
+                                                    
+
+                                                </tr>
+                                                <tr>
+                                                        <td>qUseErrorData</td>
+                                                        <td>
+                                                                    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            no
+                                                    </td>
+                                                    
+
+                                                </tr>
+                                                <tr>
+                                                        <td>qInteractOnError</td>
+                                                        <td>
+                                                                    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            no
+                                                    </td>
+                                                    
+
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code>Promise&lt;any&gt;</code>
+
+                            </div>
+                                <div class="io-description">
+                                    
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="CopyApp"></a>
+                        <span class="name">
+                            <b>
+                            CopyApp
+                            </b>
+                            <a href="#CopyApp"><span class="fa fa-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>CopyApp(qTargetAppId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, qSrcAppId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, qIds: Array<string>)</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="126" class="link-to-prism">src/qlik-global.service.ts:126</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>qTargetAppId</td>
+                                                        <td>
+                                                                    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            no
+                                                    </td>
+                                                    
+
+                                                </tr>
+                                                <tr>
+                                                        <td>qSrcAppId</td>
+                                                        <td>
+                                                                    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            no
+                                                    </td>
+                                                    
+
+                                                </tr>
+                                                <tr>
+                                                        <td>qIds</td>
+                                                        <td>
+                                                                    <code>Array&lt;string&gt;</code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            no
+                                                    </td>
+                                                    
+
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code>Promise&lt;any&gt;</code>
+
+                            </div>
+                                <div class="io-description">
+                                    
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="createApp"></a>
+                        <span class="name">
+                            <b>
+                            createApp
+                            </b>
+                            <a href="#createApp"><span class="fa fa-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>createApp(qAppName: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, qLocalizedScriptMainSection?: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="144" class="link-to-prism">src/qlik-global.service.ts:144</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>qAppName</td>
+                                                        <td>
+                                                                    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            no
+                                                    </td>
+                                                    
+
+                                                </tr>
+                                                <tr>
+                                                        <td>qLocalizedScriptMainSection</td>
+                                                        <td>
+                                                                    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            yes
+                                                    </td>
+                                                    
+
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code>Promise&lt;any&gt;</code>
+
+                            </div>
+                                <div class="io-description">
+                                    
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="createDocEx"></a>
+                        <span class="name">
+                            <b>
+                            createDocEx
+                            </b>
+                            <a href="#createDocEx"><span class="fa fa-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>createDocEx(qDocName: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, qUserName?: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, qPassword?: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, qSerial?: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, qLocalizedScriptMainSection?: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="161" class="link-to-prism">src/qlik-global.service.ts:161</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>qDocName</td>
+                                                        <td>
+                                                                    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            no
+                                                    </td>
+                                                    
+
+                                                </tr>
+                                                <tr>
+                                                        <td>qUserName</td>
+                                                        <td>
+                                                                    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            yes
+                                                    </td>
+                                                    
+
+                                                </tr>
+                                                <tr>
+                                                        <td>qPassword</td>
+                                                        <td>
+                                                                    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            yes
+                                                    </td>
+                                                    
+
+                                                </tr>
+                                                <tr>
+                                                        <td>qSerial</td>
+                                                        <td>
+                                                                    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            yes
+                                                    </td>
+                                                    
+
+                                                </tr>
+                                                <tr>
+                                                        <td>qLocalizedScriptMainSection</td>
+                                                        <td>
+                                                                    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            yes
+                                                    </td>
+                                                    
+
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code>Promise&lt;any&gt;</code>
+
+                            </div>
+                                <div class="io-description">
+                                    
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="createSessionApp"></a>
+                        <span class="name">
+                            <b>
+                            createSessionApp
+                            </b>
+                            <a href="#createSessionApp"><span class="fa fa-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>createSessionApp()</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="185" class="link-to-prism">src/qlik-global.service.ts:185</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Returns : </b>    <code>Promise&lt;any&gt;</code>
+
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="createSessionAppFromApp"></a>
+                        <span class="name">
+                            <b>
+                            createSessionAppFromApp
+                            </b>
+                            <a href="#createSessionAppFromApp"><span class="fa fa-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>createSessionAppFromApp(qSrcAppId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="200" class="link-to-prism">src/qlik-global.service.ts:200</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>qSrcAppId</td>
+                                                        <td>
+                                                                    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            no
+                                                    </td>
+                                                    
+
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code>Promise&lt;any&gt;</code>
+
+                            </div>
+                                <div class="io-description">
+                                    
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="deleteApp"></a>
+                        <span class="name">
+                            <b>
+                            deleteApp
+                            </b>
+                            <a href="#deleteApp"><span class="fa fa-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>deleteApp(qAppId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="216" class="link-to-prism">src/qlik-global.service.ts:216</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>qAppId</td>
+                                                        <td>
+                                                                    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            no
+                                                    </td>
+                                                    
+
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code>Promise&lt;any&gt;</code>
+
+                            </div>
+                                <div class="io-description">
+                                    
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="engineVersion"></a>
+                        <span class="name">
+                            <b>
+                            engineVersion
+                            </b>
+                            <a href="#engineVersion"><span class="fa fa-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>engineVersion()</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="232" class="link-to-prism">src/qlik-global.service.ts:232</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Returns : </b>    <code>Promise&lt;any&gt;</code>
+
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="exportApp"></a>
+                        <span class="name">
+                            <b>
+                            exportApp
+                            </b>
+                            <a href="#exportApp"><span class="fa fa-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>exportApp(qTargetPath: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, qSrcAppId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, qIds: Array<string>)</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="247" class="link-to-prism">src/qlik-global.service.ts:247</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>qTargetPath</td>
+                                                        <td>
+                                                                    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            no
+                                                    </td>
+                                                    
+
+                                                </tr>
+                                                <tr>
+                                                        <td>qSrcAppId</td>
+                                                        <td>
+                                                                    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            no
+                                                    </td>
+                                                    
+
+                                                </tr>
+                                                <tr>
+                                                        <td>qIds</td>
+                                                        <td>
+                                                                    <code>Array&lt;string&gt;</code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            no
+                                                    </td>
+                                                    
+
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code>Promise&lt;any&gt;</code>
+
+                            </div>
+                                <div class="io-description">
+                                    
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="getActiveDoc"></a>
+                        <span class="name">
+                            <b>
+                            getActiveDoc
+                            </b>
+                            <a href="#getActiveDoc"><span class="fa fa-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>getActiveDoc()</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="267" class="link-to-prism">src/qlik-global.service.ts:267</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Returns : </b>    <code>Promise&lt;any&gt;</code>
+
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="getAppEntry"></a>
+                        <span class="name">
+                            <b>
+                            getAppEntry
+                            </b>
+                            <a href="#getAppEntry"><span class="fa fa-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>getAppEntry(qAppID: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="282" class="link-to-prism">src/qlik-global.service.ts:282</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>qAppID</td>
+                                                        <td>
+                                                                    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            no
+                                                    </td>
+                                                    
+
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code>Promise&lt;any&gt;</code>
+
+                            </div>
+                                <div class="io-description">
+                                    
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="getAuthenticatedUser"></a>
+                        <span class="name">
+                            <b>
+                            getAuthenticatedUser
+                            </b>
+                            <a href="#getAuthenticatedUser"><span class="fa fa-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>getAuthenticatedUser(qAppID: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="298" class="link-to-prism">src/qlik-global.service.ts:298</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>qAppID</td>
+                                                        <td>
+                                                                    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            no
+                                                    </td>
+                                                    
+
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code>Promise&lt;any&gt;</code>
+
+                            </div>
+                                <div class="io-description">
+                                    
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="getBaseBNF"></a>
+                        <span class="name">
+                            <b>
+                            getBaseBNF
+                            </b>
+                            <a href="#getBaseBNF"><span class="fa fa-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>getBaseBNF(qBnfType: <a href="../undefineds/QBnfType.html">QBnfType</a>)</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="312" class="link-to-prism">src/qlik-global.service.ts:312</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>qBnfType</td>
+                                                        <td>
+                                                                    <code><a href="../miscellaneous/enumerations.html#QBnfType" target="_self" >QBnfType</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            no
+                                                    </td>
+                                                    
+
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code>Promise&lt;any&gt;</code>
+
+                            </div>
+                                <div class="io-description">
+                                    
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="getBaseBNFHash"></a>
+                        <span class="name">
+                            <b>
+                            getBaseBNFHash
+                            </b>
+                            <a href="#getBaseBNFHash"><span class="fa fa-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>getBaseBNFHash(qBnfType: <a href="../undefineds/QBnfType.html">QBnfType</a>)</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="328" class="link-to-prism">src/qlik-global.service.ts:328</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>qBnfType</td>
+                                                        <td>
+                                                                    <code><a href="../miscellaneous/enumerations.html#QBnfType" target="_self" >QBnfType</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            no
+                                                    </td>
+                                                    
+
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code>Promise&lt;any&gt;</code>
+
+                            </div>
+                                <div class="io-description">
+                                    
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="getBNF"></a>
+                        <span class="name">
+                            <b>
+                            getBNF
+                            </b>
+                            <a href="#getBNF"><span class="fa fa-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>getBNF(qBnfType: <a href="../undefineds/QBnfType.html">QBnfType</a>)</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="344" class="link-to-prism">src/qlik-global.service.ts:344</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>qBnfType</td>
+                                                        <td>
+                                                                    <code><a href="../miscellaneous/enumerations.html#QBnfType" target="_self" >QBnfType</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            no
+                                                    </td>
+                                                    
+
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code>Promise&lt;any&gt;</code>
+
+                            </div>
+                                <div class="io-description">
+                                    
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="getCustomConnectors"></a>
+                        <span class="name">
+                            <b>
+                            getCustomConnectors
+                            </b>
+                            <a href="#getCustomConnectors"><span class="fa fa-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>getCustomConnectors(qReloadList: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank">boolean</a>)</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="361" class="link-to-prism">src/qlik-global.service.ts:361</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>qReloadList</td>
+                                                        <td>
+                                                                    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            no
+                                                    </td>
+                                                    
+
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code>Promise&lt;any&gt;</code>
+
+                            </div>
+                                <div class="io-description">
+                                    
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="getDatabasesFromConnectionString"></a>
+                        <span class="name">
+                            <b>
+                            getDatabasesFromConnectionString
+                            </b>
+                            <a href="#getDatabasesFromConnectionString"><span class="fa fa-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>getDatabasesFromConnectionString(qConnection: <a href="../classes/Connection.html">Connection</a>)</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="377" class="link-to-prism">src/qlik-global.service.ts:377</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>qConnection</td>
+                                                        <td>
+                                                                    <code><a href="../classes/Connection.html" target="_self" >Connection</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            no
+                                                    </td>
+                                                    
+
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code>Promise&lt;any&gt;</code>
+
+                            </div>
+                                <div class="io-description">
+                                    
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="getDefaultAppFolder"></a>
+                        <span class="name">
+                            <b>
+                            getDefaultAppFolder
+                            </b>
+                            <a href="#getDefaultAppFolder"><span class="fa fa-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>getDefaultAppFolder()</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="393" class="link-to-prism">src/qlik-global.service.ts:393</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Returns : </b>    <code>Promise&lt;any&gt;</code>
+
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="getDocList"></a>
+                        <span class="name">
+                            <b>
+                            getDocList
+                            </b>
+                            <a href="#getDocList"><span class="fa fa-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>getDocList()</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="408" class="link-to-prism">src/qlik-global.service.ts:408</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Returns : </b>    <code>Promise&lt;any&gt;</code>
+
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="getFolderItemsForPath"></a>
+                        <span class="name">
+                            <b>
+                            getFolderItemsForPath
+                            </b>
+                            <a href="#getFolderItemsForPath"><span class="fa fa-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>getFolderItemsForPath(qPath: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="422" class="link-to-prism">src/qlik-global.service.ts:422</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>qPath</td>
+                                                        <td>
+                                                                    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            no
+                                                    </td>
+                                                    
+
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code>Promise&lt;any&gt;</code>
+
+                            </div>
+                                <div class="io-description">
+                                    
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="getFunctions"></a>
+                        <span class="name">
+                            <b>
+                            getFunctions
+                            </b>
+                            <a href="#getFunctions"><span class="fa fa-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>getFunctions(qGroup?: <a href="../undefineds/QGroup.html">QGroup</a>)</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="438" class="link-to-prism">src/qlik-global.service.ts:438</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>qGroup</td>
+                                                        <td>
+                                                                    <code><a href="../miscellaneous/enumerations.html#QGroup" target="_self" >QGroup</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            yes
+                                                    </td>
+                                                    
+
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code>Promise&lt;any&gt;</code>
+
+                            </div>
+                                <div class="io-description">
+                                    
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="getInteract"></a>
+                        <span class="name">
+                            <b>
+                            getInteract
+                            </b>
+                            <a href="#getInteract"><span class="fa fa-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>getInteract(qRequestId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="454" class="link-to-prism">src/qlik-global.service.ts:454</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>qRequestId</td>
+                                                        <td>
+                                                                    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            no
+                                                    </td>
+                                                    
+
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code>Promise&lt;any&gt;</code>
+
+                            </div>
+                                <div class="io-description">
+                                    
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="getLogicalDriveStrings"></a>
+                        <span class="name">
+                            <b>
+                            getLogicalDriveStrings
+                            </b>
+                            <a href="#getLogicalDriveStrings"><span class="fa fa-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>getLogicalDriveStrings()</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="470" class="link-to-prism">src/qlik-global.service.ts:470</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Returns : </b>    <code>Promise&lt;any&gt;</code>
+
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="getNextEnumerator"></a>
+                        <span class="name">
+                            <b>
+                            getNextEnumerator
+                            </b>
+                            <a href="#getNextEnumerator"><span class="fa fa-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>getNextEnumerator()</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="46" class="link-to-prism">src/qlik-global.service.ts:46</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="getOdbcDsns"></a>
+                        <span class="name">
+                            <b>
+                            getOdbcDsns
+                            </b>
+                            <a href="#getOdbcDsns"><span class="fa fa-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>getOdbcDsns()</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="484" class="link-to-prism">src/qlik-global.service.ts:484</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Returns : </b>    <code>Promise&lt;any&gt;</code>
+
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="getOleDbProviders"></a>
+                        <span class="name">
+                            <b>
+                            getOleDbProviders
+                            </b>
+                            <a href="#getOleDbProviders"><span class="fa fa-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>getOleDbProviders()</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="498" class="link-to-prism">src/qlik-global.service.ts:498</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Returns : </b>    <code>Promise&lt;any&gt;</code>
+
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="getProgress"></a>
+                        <span class="name">
+                            <b>
+                            getProgress
+                            </b>
+                            <a href="#getProgress"><span class="fa fa-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>getProgress(qRequestId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="512" class="link-to-prism">src/qlik-global.service.ts:512</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>qRequestId</td>
+                                                        <td>
+                                                                    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            no
+                                                    </td>
+                                                    
+
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code>Promise&lt;any&gt;</code>
+
+                            </div>
+                                <div class="io-description">
+                                    
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="getSupportedCodePages"></a>
+                        <span class="name">
+                            <b>
+                            getSupportedCodePages
+                            </b>
+                            <a href="#getSupportedCodePages"><span class="fa fa-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>getSupportedCodePages()</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="528" class="link-to-prism">src/qlik-global.service.ts:528</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Returns : </b>    <code>Promise&lt;any&gt;</code>
+
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="getUniqueID"></a>
+                        <span class="name">
+                            <b>
+                            getUniqueID
+                            </b>
+                            <a href="#getUniqueID"><span class="fa fa-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>getUniqueID()</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="542" class="link-to-prism">src/qlik-global.service.ts:542</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Returns : </b>    <code>Promise&lt;any&gt;</code>
+
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="interactDone"></a>
+                        <span class="name">
+                            <b>
+                            interactDone
+                            </b>
+                            <a href="#interactDone"><span class="fa fa-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>interactDone(qRequestId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, qResult: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="556" class="link-to-prism">src/qlik-global.service.ts:556</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>qRequestId</td>
+                                                        <td>
+                                                                    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            no
+                                                    </td>
+                                                    
+
+                                                </tr>
+                                                <tr>
+                                                        <td>qResult</td>
+                                                        <td>
+                                                                    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            no
+                                                    </td>
+                                                    
+
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code>Promise&lt;any&gt;</code>
+
+                            </div>
+                                <div class="io-description">
+                                    
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="isDesktopMode"></a>
+                        <span class="name">
+                            <b>
+                            isDesktopMode
+                            </b>
+                            <a href="#isDesktopMode"><span class="fa fa-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>isDesktopMode()</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="574" class="link-to-prism">src/qlik-global.service.ts:574</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Returns : </b>    <code>Promise&lt;any&gt;</code>
+
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="isPersonalMode"></a>
+                        <span class="name">
+                            <b>
+                            isPersonalMode
+                            </b>
+                            <a href="#isPersonalMode"><span class="fa fa-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>isPersonalMode()</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="588" class="link-to-prism">src/qlik-global.service.ts:588</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Returns : </b>    <code>Promise&lt;any&gt;</code>
+
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="isValidConnectionString"></a>
+                        <span class="name">
+                            <b>
+                            isValidConnectionString
+                            </b>
+                            <a href="#isValidConnectionString"><span class="fa fa-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>isValidConnectionString(qConnection: <a href="../classes/Connection.html">Connection</a>)</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="602" class="link-to-prism">src/qlik-global.service.ts:602</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>qConnection</td>
+                                                        <td>
+                                                                    <code><a href="../classes/Connection.html" target="_self" >Connection</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            no
+                                                    </td>
+                                                    
+
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code>Promise&lt;any&gt;</code>
+
+                            </div>
+                                <div class="io-description">
+                                    
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="openDoc"></a>
+                        <span class="name">
+                            <b>
+                            openDoc
+                            </b>
+                            <a href="#openDoc"><span class="fa fa-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>openDoc(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="618" class="link-to-prism">src/qlik-global.service.ts:618</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>id</td>
+                                                        <td>
+                                                                    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            no
+                                                    </td>
+                                                    
+
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="../classes/Document.html" target="_self" >Document</a></code>
+
+                            </div>
+                                <div class="io-description">
+                                    
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="oSName"></a>
+                        <span class="name">
+                            <b>
+                            oSName
+                            </b>
+                            <a href="#oSName"><span class="fa fa-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>oSName()</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="625" class="link-to-prism">src/qlik-global.service.ts:625</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Returns : </b>    <code>Promise&lt;any&gt;</code>
+
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="oSVersion"></a>
+                        <span class="name">
+                            <b>
+                            oSVersion
+                            </b>
+                            <a href="#oSVersion"><span class="fa fa-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>oSVersion()</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="639" class="link-to-prism">src/qlik-global.service.ts:639</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Returns : </b>    <code>Promise&lt;any&gt;</code>
+
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="productVersion"></a>
+                        <span class="name">
+                            <b>
+                            productVersion
+                            </b>
+                            <a href="#productVersion"><span class="fa fa-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>productVersion()</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="653" class="link-to-prism">src/qlik-global.service.ts:653</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Returns : </b>    <code>Promise&lt;any&gt;</code>
+
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="qTProduct"></a>
+                        <span class="name">
+                            <b>
+                            qTProduct
+                            </b>
+                            <a href="#qTProduct"><span class="fa fa-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>qTProduct()</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="667" class="link-to-prism">src/qlik-global.service.ts:667</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Returns : </b>    <code>Promise&lt;any&gt;</code>
+
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="qvVersion"></a>
+                        <span class="name">
+                            <b>
+                            qvVersion
+                            </b>
+                            <a href="#qvVersion"><span class="fa fa-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>qvVersion()</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="681" class="link-to-prism">src/qlik-global.service.ts:681</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Returns : </b>    <code>Promise&lt;any&gt;</code>
+
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="reloadExtensionList"></a>
+                        <span class="name">
+                            <b>
+                            reloadExtensionList
+                            </b>
+                            <a href="#reloadExtensionList"><span class="fa fa-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>reloadExtensionList()</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="695" class="link-to-prism">src/qlik-global.service.ts:695</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Returns : </b>    <code>Promise&lt;any&gt;</code>
+
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="replaceAppFromID"></a>
+                        <span class="name">
+                            <b>
+                            replaceAppFromID
+                            </b>
+                            <a href="#replaceAppFromID"><span class="fa fa-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>replaceAppFromID(qTargetAppId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, qSrcAppID: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, qIds?: Array<string>)</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="709" class="link-to-prism">src/qlik-global.service.ts:709</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>qTargetAppId</td>
+                                                        <td>
+                                                                    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            no
+                                                    </td>
+                                                    
+
+                                                </tr>
+                                                <tr>
+                                                        <td>qSrcAppID</td>
+                                                        <td>
+                                                                    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            no
+                                                    </td>
+                                                    
+
+                                                </tr>
+                                                <tr>
+                                                        <td>qIds</td>
+                                                        <td>
+                                                                    <code>Array&lt;string&gt;</code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            yes
+                                                    </td>
+                                                    
+
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code>Promise&lt;any&gt;</code>
+
+                            </div>
+                                <div class="io-description">
+                                    
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="shutdownProcess"></a>
+                        <span class="name">
+                            <b>
+                            shutdownProcess
+                            </b>
+                            <a href="#shutdownProcess"><span class="fa fa-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>shutdownProcess()</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="727" class="link-to-prism">src/qlik-global.service.ts:727</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Returns : </b>    <code>Promise&lt;any&gt;</code>
+
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="wsSend"></a>
+                        <span class="name">
+                            <b>
+                            wsSend
+                            </b>
+                            <a href="#wsSend"><span class="fa fa-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>wsSend(obj: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>, callback: Array<Function>)</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="39" class="link-to-prism">src/qlik-global.service.ts:39</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>obj</td>
+                                                        <td>
+                                                                    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            no
+                                                    </td>
+                                                    
+
+                                                </tr>
+                                                <tr>
+                                                        <td>callback</td>
+                                                        <td>
+                                                                    <code>Array&lt;Function&gt;</code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            no
+                                                    </td>
+                                                    
+
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                            </div>
+                                <div class="io-description">
+                                    
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+            <section>
+    
+        <h3 id="inputs">
+            Properties
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="docList"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Private</span>
+                            docList
+                            </b>
+                            <a href="#docList"><span class="fa fa-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <span class="modifier-icon fa fa-reset"></span><code>docList:     <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/qlik-global.service.ts:15</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="enumerator"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Private</span>
+                            enumerator
+                            </b>
+                            <a href="#enumerator"><span class="fa fa-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <span class="modifier-icon fa fa-reset"></span><code>enumerator:     <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>0</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/qlik-global.service.ts:12</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="ws"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Private</span>
+                            ws
+                            </b>
+                            <a href="#ws"><span class="fa fa-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <span class="modifier-icon fa fa-reset"></span><code>ws:     <code>WebSocket</code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>WebSocket</code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/qlik-global.service.ts:13</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="wsPromise"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Private</span>
+                            wsPromise
+                            </b>
+                            <a href="#wsPromise"><span class="fa fa-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <span class="modifier-icon fa fa-reset"></span><code>wsPromise:     <code><a href="../classes/Deferred.html" target="_self" >Deferred&lt;any&gt;</a></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="../classes/Deferred.html" target="_self" >Deferred&lt;any&gt;</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/qlik-global.service.ts:14</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="wsQue"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Private</span>
+                            wsQue
+                            </b>
+                            <a href="#wsQue"><span class="fa fa-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <span class="modifier-icon fa fa-reset"></span><code>wsQue:     <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>{}</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/qlik-global.service.ts:16</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+</section>
+
+    </div>
+
+
+    <div class="tab-pane fade tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Inject, Injectable } from &#x27;@angular/core&#x27;;
+import { Deferred } from &#x27;./class/deferred.class&#x27;;
+import { QlikConfig } from &#x27;./class/qlik-config.class&#x27;;
+import { Document } from &#x27;./class/document.class&#x27;;
+import {QBnfType} from &#x27;./enum/q-bnf-type.enum&#x27;;
+import {Connection} from &#x27;./class/connection.class&#x27;;
+import {QGroup} from &#x27;./enum/q-group.enum&#x27;;
+
+
+@Injectable()
+export class QlikGlobalService {
+    private enumerator &#x3D; 0;
+    private ws: WebSocket;
+    private wsPromise: Deferred&lt;any&gt;;
+    private docList: any;
+    private wsQue: any &#x3D; {};
+
+    constructor(@Inject(&#x27;qlikConfig&#x27;) private qlikConfig: QlikConfig) {
+        let webSocketLink &#x3D; qlikConfig.getWebsocketConnectionLink();
+
+        this.docList &#x3D; {};
+        this.wsPromise &#x3D; new Deferred();
+
+        this.ws &#x3D; new WebSocket(webSocketLink);
+        this.ws.onopen &#x3D; (m) &#x3D;&gt; {
+            this.wsPromise.resolve(true);
+        };
+
+        this.ws.onmessage &#x3D; (ev) &#x3D;&gt; {
+            const data &#x3D; JSON.parse(ev.data);
+            if (this.wsQue[data.id] !&#x3D;&#x3D; undefined) {
+                this.wsQue[data.id].forEach( (func) &#x3D;&gt; {
+                    func(data);
+                });
+            }
+        };
+    }
+
+    wsSend(obj: any, callback: Array&lt;Function&gt;) {
+        this.wsQue[obj.id] &#x3D; callback;
+        this.wsPromise.promise.then( _ &#x3D;&gt; {
+            this.ws.send(JSON.stringify(obj));
+        });
+    }
+
+    getNextEnumerator(): number {
+        return this.enumerator++;
+    }
+
+    /**
+     * Global Class Method implementation
+     **/
+
+    abortAll(): Promise&lt;any&gt; {
+        const deferred &#x3D; new Deferred&lt;any&gt;();
+        this.wsSend({
+            &#x27;jsonrpc&#x27;: &#x27;2.0&#x27;,
+            &#x27;id&#x27;: this.getNextEnumerator(),
+            &#x27;method&#x27;: &#x27;AbortAll&#x27;,
+            &#x27;handle&#x27;: -1,
+            &#x27;params&#x27;: []
+        }, [(message: any) &#x3D;&gt; {
+            deferred.resolve(true);
+        }]);
+        return deferred.promise;
+    }
+
+    allowCreateApp(): Promise&lt;any&gt; {
+        const deferred &#x3D; new Deferred&lt;any&gt;();
+        this.wsSend({
+            &#x27;jsonrpc&#x27;: &#x27;2.0&#x27;,
+            &#x27;id&#x27;: this.getNextEnumerator(),
+            &#x27;method&#x27;: &#x27;AllowCreateApp&#x27;,
+            &#x27;handle&#x27;: -1,
+            &#x27;params&#x27;: []
+        }, [(message: any) &#x3D;&gt; {
+            deferred.resolve(message);
+        }]);
+        return deferred.promise;
+    }
+
+    cancelReload(): Promise&lt;any&gt; {
+        const deferred &#x3D; new Deferred&lt;any&gt;();
+        this.wsSend({
+            &#x27;jsonrpc&#x27;: &#x27;2.0&#x27;,
+            &#x27;id&#x27;: this.getNextEnumerator(),
+            &#x27;method&#x27;: &#x27;CancelReload&#x27;,
+            &#x27;handle&#x27;: -1,
+            &#x27;params&#x27;: []
+        }, [(message: any) &#x3D;&gt; {
+            deferred.resolve(message);
+        }]);
+        return deferred.promise;
+    }
+
+    cancelRequest(qRequestId: number): Promise&lt;any&gt; {
+        const deferred &#x3D; new Deferred&lt;any&gt;();
+        this.wsSend({
+            &#x27;jsonrpc&#x27;: &#x27;2.0&#x27;,
+            &#x27;id&#x27;: this.getNextEnumerator(),
+            &#x27;method&#x27;: &#x27;CancelRequest&#x27;,
+            &#x27;handle&#x27;: -1,
+            &#x27;params&#x27;: [
+                qRequestId
+            ]
+        }, [(message: any) &#x3D;&gt; {
+            deferred.resolve(message);
+        }]);
+        return deferred.promise;
+    }
+
+    configureReload(qCancelOnScriptError: boolean, qUseErrorData: boolean, qInteractOnError: boolean): Promise&lt;any&gt; {
+        const deferred &#x3D; new Deferred&lt;any&gt;();
+        this.wsSend({
+            &#x27;jsonrpc&#x27;: &#x27;2.0&#x27;,
+            &#x27;id&#x27;: this.getNextEnumerator(),
+            &#x27;method&#x27;: &#x27;ConfigureReload&#x27;,
+            &#x27;handle&#x27;: -1,
+            &#x27;params&#x27;: []
+        }, [(message: any) &#x3D;&gt; {
+            deferred.resolve(message);
+        }]);
+        return deferred.promise;
+    }
+
+    CopyApp(qTargetAppId: string, qSrcAppId: string, qIds: Array&lt;string&gt; ): Promise&lt;any&gt; {
+        const deferred &#x3D; new Deferred&lt;any&gt;();
+        this.wsSend({
+            &#x27;jsonrpc&#x27;: &#x27;2.0&#x27;,
+            &#x27;id&#x27;: this.getNextEnumerator(),
+            &#x27;method&#x27;: &#x27;CopyApp&#x27;,
+            &#x27;handle&#x27;: -1,
+            &#x27;params&#x27;: [
+                qTargetAppId,
+                qSrcAppId,
+                qIds
+            ]
+        }, [(message: any) &#x3D;&gt; {
+            deferred.resolve(message);
+        }]);
+        return deferred.promise;
+    }
+
+    createApp(qAppName: string, qLocalizedScriptMainSection?: string): Promise&lt;any&gt; {
+        const deferred &#x3D; new Deferred&lt;any&gt;();
+        this.wsSend({
+            &#x27;jsonrpc&#x27;: &#x27;2.0&#x27;,
+            &#x27;id&#x27;: this.getNextEnumerator(),
+            &#x27;method&#x27;: &#x27;CreateApp&#x27;,
+            &#x27;handle&#x27;: -1,
+            &#x27;params&#x27;: [
+                qAppName,
+                qLocalizedScriptMainSection || null
+            ]
+        }, [(message: any) &#x3D;&gt; {
+            deferred.resolve(message);
+        }]);
+        return deferred.promise;
+    }
+
+    createDocEx(qDocName: string,
+                qUserName?: string,
+                qPassword?: string,
+                qSerial?: string,
+                qLocalizedScriptMainSection?: string): Promise&lt;any&gt; {
+        const deferred &#x3D; new Deferred&lt;any&gt;();
+        this.wsSend({
+            &#x27;jsonrpc&#x27;: &#x27;2.0&#x27;,
+            &#x27;id&#x27;: this.getNextEnumerator(),
+            &#x27;method&#x27;: &#x27;CreateDocEx&#x27;,
+            &#x27;handle&#x27;: -1,
+            &#x27;params&#x27;:  {
+                &#x27;qDocName&#x27;: qDocName,
+                &#x27;qUserName&#x27;: qUserName || &#x27;&#x27;,
+                &#x27;qPassword&#x27;: qPassword || &#x27;&#x27;,
+                &#x27;qSerial&#x27;: qSerial || &#x27;&#x27;,
+                &#x27;qLocalizedScriptMainSection&#x27;: qLocalizedScriptMainSection || &#x27;&#x27;
+            }
+        }, [(message: any) &#x3D;&gt; {
+            deferred.resolve(message);
+        }]);
+        return deferred.promise;
+    }
+
+    createSessionApp(): Promise&lt;any&gt; {
+        const deferred &#x3D; new Deferred&lt;any&gt;();
+        this.wsSend({
+            &#x27;jsonrpc&#x27;: &#x27;2.0&#x27;,
+            &#x27;id&#x27;: this.getNextEnumerator(),
+            &#x27;method&#x27;: &#x27;CreateSessionApp&#x27;,
+            &#x27;handle&#x27;: -1,
+            &#x27;params&#x27;: [
+            ]
+        }, [(message: any) &#x3D;&gt; {
+            deferred.resolve(message);
+        }]);
+        return deferred.promise;
+    }
+
+    createSessionAppFromApp(qSrcAppId: string): Promise&lt;any&gt; {
+        const deferred &#x3D; new Deferred&lt;any&gt;();
+        this.wsSend({
+            &#x27;jsonrpc&#x27;: &#x27;2.0&#x27;,
+            &#x27;id&#x27;: this.getNextEnumerator(),
+            &#x27;method&#x27;: &#x27;CreateSessionAppFromApp&#x27;,
+            &#x27;handle&#x27;: -1,
+            &#x27;params&#x27;: [
+                qSrcAppId
+            ]
+        }, [(message: any) &#x3D;&gt; {
+            deferred.resolve(message);
+        }]);
+        return deferred.promise;
+    }
+
+    deleteApp(qAppId: string): Promise&lt;any&gt; {
+        const deferred &#x3D; new Deferred&lt;any&gt;();
+        this.wsSend({
+            &#x27;jsonrpc&#x27;: &#x27;2.0&#x27;,
+            &#x27;id&#x27;: this.getNextEnumerator(),
+            &#x27;method&#x27;: &#x27;DeleteApp&#x27;,
+            &#x27;handle&#x27;: -1,
+            &#x27;params&#x27;: [
+                qAppId
+            ]
+        }, [(message: any) &#x3D;&gt; {
+            deferred.resolve(message);
+        }]);
+        return deferred.promise;
+    }
+
+    engineVersion(): Promise&lt;any&gt; {
+        const deferred &#x3D; new Deferred&lt;any&gt;();
+        this.wsSend({
+            &#x27;jsonrpc&#x27;: &#x27;2.0&#x27;,
+            &#x27;id&#x27;: this.getNextEnumerator(),
+            &#x27;method&#x27;: &#x27;EngineVersion&#x27;,
+            &#x27;handle&#x27;: -1,
+            &#x27;params&#x27;: [
+            ]
+        }, [(message: any) &#x3D;&gt; {
+            deferred.resolve(message);
+        }]);
+        return deferred.promise;
+    }
+
+    exportApp(qTargetPath: string,
+                qSrcAppId: string,
+                qIds: Array&lt;string&gt;): Promise&lt;any&gt; {
+        const deferred &#x3D; new Deferred&lt;any&gt;();
+        this.wsSend({
+            &#x27;jsonrpc&#x27;: &#x27;2.0&#x27;,
+            &#x27;id&#x27;: this.getNextEnumerator(),
+            &#x27;method&#x27;: &#x27;ExportApp&#x27;,
+            &#x27;handle&#x27;: -1,
+            &#x27;params&#x27;:  {
+                &#x27;qTargetPath&#x27;: qTargetPath,
+                &#x27;qSrcAppId&#x27;: qSrcAppId,
+                &#x27;qIds&#x27;: qIds
+            }
+        }, [(message: any) &#x3D;&gt; {
+            deferred.resolve(message);
+        }]);
+        return deferred.promise;
+    }
+
+    getActiveDoc(): Promise&lt;any&gt; {
+        const deferred &#x3D; new Deferred&lt;any&gt;();
+        this.wsSend({
+            &#x27;jsonrpc&#x27;: &#x27;2.0&#x27;,
+            &#x27;id&#x27;: this.getNextEnumerator(),
+            &#x27;method&#x27;: &#x27;GetActiveDoc&#x27;,
+            &#x27;handle&#x27;: -1,
+            &#x27;params&#x27;: [
+            ]
+        }, [(message: any) &#x3D;&gt; {
+            deferred.resolve(message);
+        }]);
+        return deferred.promise;
+    }
+
+    getAppEntry(qAppID: string): Promise&lt;any&gt; {
+        const deferred &#x3D; new Deferred&lt;any&gt;();
+        this.wsSend({
+            &#x27;jsonrpc&#x27;: &#x27;2.0&#x27;,
+            &#x27;id&#x27;: this.getNextEnumerator(),
+            &#x27;method&#x27;: &#x27;GetAppEntry&#x27;,
+            &#x27;handle&#x27;: -1,
+            &#x27;params&#x27;: {
+                &#x27;qAppID&#x27;: qAppID
+            }
+        }, [(message: any) &#x3D;&gt; {
+            deferred.resolve(message);
+        }]);
+        return deferred.promise;
+    }
+
+    getAuthenticatedUser(qAppID: string): Promise&lt;any&gt; {
+        const deferred &#x3D; new Deferred&lt;any&gt;();
+        this.wsSend({
+            &#x27;jsonrpc&#x27;: &#x27;2.0&#x27;,
+            &#x27;id&#x27;: this.getNextEnumerator(),
+            &#x27;method&#x27;: &#x27;GetAuthenticatedUser&#x27;,
+            &#x27;handle&#x27;: -1,
+            &#x27;params&#x27;: []
+        }, [(message: any) &#x3D;&gt; {
+            deferred.resolve(message);
+        }]);
+        return deferred.promise;
+    }
+
+    getBaseBNF(qBnfType: QBnfType): Promise&lt;any&gt; {
+        const deferred &#x3D; new Deferred&lt;any&gt;();
+        this.wsSend({
+            &#x27;jsonrpc&#x27;: &#x27;2.0&#x27;,
+            &#x27;id&#x27;: this.getNextEnumerator(),
+            &#x27;method&#x27;: &#x27;GetBaseBNF&#x27;,
+            &#x27;handle&#x27;: -1,
+            &#x27;params&#x27;: [
+                qBnfType
+            ]
+        }, [(message: any) &#x3D;&gt; {
+            deferred.resolve(message);
+        }]);
+        return deferred.promise;
+    }
+
+    getBaseBNFHash(qBnfType: QBnfType): Promise&lt;any&gt; {
+        const deferred &#x3D; new Deferred&lt;any&gt;();
+        this.wsSend({
+            &#x27;jsonrpc&#x27;: &#x27;2.0&#x27;,
+            &#x27;id&#x27;: this.getNextEnumerator(),
+            &#x27;method&#x27;: &#x27;GetBaseBNFHash&#x27;,
+            &#x27;handle&#x27;: -1,
+            &#x27;params&#x27;: [
+                qBnfType
+            ]
+        }, [(message: any) &#x3D;&gt; {
+            deferred.resolve(message);
+        }]);
+        return deferred.promise;
+    }
+
+    getBNF(qBnfType: QBnfType): Promise&lt;any&gt; {
+        const deferred &#x3D; new Deferred&lt;any&gt;();
+        this.wsSend({
+            &#x27;jsonrpc&#x27;: &#x27;2.0&#x27;,
+            &#x27;id&#x27;: this.getNextEnumerator(),
+            &#x27;method&#x27;: &#x27;GetBNF&#x27;,
+            &#x27;handle&#x27;: -1,
+            &#x27;params&#x27;: [
+                qBnfType
+            ]
+        }, [(message: any) &#x3D;&gt; {
+            deferred.resolve(message);
+        }]);
+        return deferred.promise;
+    }
+
+
+    getCustomConnectors(qReloadList: boolean): Promise&lt;any&gt; {
+        const deferred &#x3D; new Deferred&lt;any&gt;();
+        this.wsSend({
+            &#x27;jsonrpc&#x27;: &#x27;2.0&#x27;,
+            &#x27;id&#x27;: this.getNextEnumerator(),
+            &#x27;method&#x27;: &#x27;GetCustomConnectors&#x27;,
+            &#x27;handle&#x27;: -1,
+            &#x27;params&#x27;: {
+                qReloadList: qReloadList
+            }
+        }, [(message: any) &#x3D;&gt; {
+            deferred.resolve(message);
+        }]);
+        return deferred.promise;
+    }
+
+    getDatabasesFromConnectionString(qConnection: Connection): Promise&lt;any&gt; {
+        const deferred &#x3D; new Deferred&lt;any&gt;();
+        this.wsSend({
+            &#x27;jsonrpc&#x27;: &#x27;2.0&#x27;,
+            &#x27;id&#x27;: this.getNextEnumerator(),
+            &#x27;method&#x27;: &#x27;GetDatabasesFromConnectionString&#x27;,
+            &#x27;handle&#x27;: -1,
+            &#x27;params&#x27;: {
+                qConnection: qConnection
+            }
+        }, [(message: any) &#x3D;&gt; {
+            deferred.resolve(message);
+        }]);
+        return deferred.promise;
+    }
+
+    getDefaultAppFolder(): Promise&lt;any&gt; {
+        const deferred &#x3D; new Deferred&lt;any&gt;();
+        this.wsSend({
+            &#x27;jsonrpc&#x27;: &#x27;2.0&#x27;,
+            &#x27;id&#x27;: this.getNextEnumerator(),
+            &#x27;method&#x27;: &#x27;GetDefaultAppFolder&#x27;,
+            &#x27;handle&#x27;: -1,
+            &#x27;params&#x27;: {
+            }
+        }, [(message: any) &#x3D;&gt; {
+            deferred.resolve(message);
+        }]);
+        return deferred.promise;
+    }
+
+    getDocList(): Promise&lt;any&gt; {
+        const deferred &#x3D; new Deferred&lt;any&gt;();
+        this.wsSend({
+            &#x27;jsonrpc&#x27;: &#x27;2.0&#x27;,
+            &#x27;id&#x27;: this.getNextEnumerator(),
+            &#x27;method&#x27;: &#x27;GetDocList&#x27;,
+            &#x27;handle&#x27;: -1,
+            &#x27;params&#x27;: []
+        }, [(message: any) &#x3D;&gt; {
+            deferred.resolve(message);
+        }]);
+        return deferred.promise;
+    }
+
+    getFolderItemsForPath (qPath: string): Promise&lt;any&gt; {
+        const deferred &#x3D; new Deferred&lt;any&gt;();
+        this.wsSend({
+            &#x27;jsonrpc&#x27;: &#x27;2.0&#x27;,
+            &#x27;id&#x27;: this.getNextEnumerator(),
+            &#x27;method&#x27;: &#x27;GetFolderItemsForPath&#x27;,
+            &#x27;handle&#x27;: -1,
+            &#x27;params&#x27;: {
+                qPath: qPath
+            }
+        }, [(message: any) &#x3D;&gt; {
+            deferred.resolve(message);
+        }]);
+        return deferred.promise;
+    }
+
+    getFunctions (qGroup?: QGroup): Promise&lt;any&gt; {
+        const deferred &#x3D; new Deferred&lt;any&gt;();
+        this.wsSend({
+            &#x27;jsonrpc&#x27;: &#x27;2.0&#x27;,
+            &#x27;id&#x27;: this.getNextEnumerator(),
+            &#x27;method&#x27;: &#x27;GetFunctions&#x27;,
+            &#x27;handle&#x27;: -1,
+            &#x27;params&#x27;: {
+                qGroup: qGroup || QGroup.ALL
+            }
+        }, [(message: any) &#x3D;&gt; {
+            deferred.resolve(message);
+        }]);
+        return deferred.promise;
+    }
+
+    getInteract (qRequestId: number): Promise&lt;any&gt; {
+        const deferred &#x3D; new Deferred&lt;any&gt;();
+        this.wsSend({
+            &#x27;jsonrpc&#x27;: &#x27;2.0&#x27;,
+            &#x27;id&#x27;: this.getNextEnumerator(),
+            &#x27;method&#x27;: &#x27;GetInteract&#x27;,
+            &#x27;handle&#x27;: -1,
+            &#x27;params&#x27;: {
+                qRequestId: qRequestId
+            }
+        }, [(message: any) &#x3D;&gt; {
+            deferred.resolve(message);
+        }]);
+        return deferred.promise;
+    }
+
+    getLogicalDriveStrings (): Promise&lt;any&gt; {
+        const deferred &#x3D; new Deferred&lt;any&gt;();
+        this.wsSend({
+            &#x27;jsonrpc&#x27;: &#x27;2.0&#x27;,
+            &#x27;id&#x27;: this.getNextEnumerator(),
+            &#x27;method&#x27;: &#x27;GetLogicalDriveStrings&#x27;,
+            &#x27;handle&#x27;: -1,
+            &#x27;params&#x27;: {}
+        }, [(message: any) &#x3D;&gt; {
+            deferred.resolve(message);
+        }]);
+        return deferred.promise;
+    }
+
+    getOdbcDsns (): Promise&lt;any&gt; {
+        const deferred &#x3D; new Deferred&lt;any&gt;();
+        this.wsSend({
+            &#x27;jsonrpc&#x27;: &#x27;2.0&#x27;,
+            &#x27;id&#x27;: this.getNextEnumerator(),
+            &#x27;method&#x27;: &#x27;GetOdbcDsns&#x27;,
+            &#x27;handle&#x27;: -1,
+            &#x27;params&#x27;: {}
+        }, [(message: any) &#x3D;&gt; {
+            deferred.resolve(message);
+        }]);
+        return deferred.promise;
+    }
+
+    getOleDbProviders (): Promise&lt;any&gt; {
+        const deferred &#x3D; new Deferred&lt;any&gt;();
+        this.wsSend({
+            &#x27;jsonrpc&#x27;: &#x27;2.0&#x27;,
+            &#x27;id&#x27;: this.getNextEnumerator(),
+            &#x27;method&#x27;: &#x27;GetOleDbProviders&#x27;,
+            &#x27;handle&#x27;: -1,
+            &#x27;params&#x27;: {}
+        }, [(message: any) &#x3D;&gt; {
+            deferred.resolve(message);
+        }]);
+        return deferred.promise;
+    }
+
+    getProgress (qRequestId: number): Promise&lt;any&gt; {
+        const deferred &#x3D; new Deferred&lt;any&gt;();
+        this.wsSend({
+            &#x27;jsonrpc&#x27;: &#x27;2.0&#x27;,
+            &#x27;id&#x27;: this.getNextEnumerator(),
+            &#x27;method&#x27;: &#x27;GetProgress&#x27;,
+            &#x27;handle&#x27;: -1,
+            &#x27;params&#x27;: {
+                qRequestId: qRequestId
+            }
+        }, [(message: any) &#x3D;&gt; {
+            deferred.resolve(message);
+        }]);
+        return deferred.promise;
+    }
+
+    getSupportedCodePages (): Promise&lt;any&gt; {
+        const deferred &#x3D; new Deferred&lt;any&gt;();
+        this.wsSend({
+            &#x27;jsonrpc&#x27;: &#x27;2.0&#x27;,
+            &#x27;id&#x27;: this.getNextEnumerator(),
+            &#x27;method&#x27;: &#x27;GetSupportedCodePages&#x27;,
+            &#x27;handle&#x27;: -1,
+            &#x27;params&#x27;: {}
+        }, [(message: any) &#x3D;&gt; {
+            deferred.resolve(message);
+        }]);
+        return deferred.promise;
+    }
+
+    getUniqueID (): Promise&lt;any&gt; {
+        const deferred &#x3D; new Deferred&lt;any&gt;();
+        this.wsSend({
+            &#x27;jsonrpc&#x27;: &#x27;2.0&#x27;,
+            &#x27;id&#x27;: this.getNextEnumerator(),
+            &#x27;method&#x27;: &#x27;GetUniqueID&#x27;,
+            &#x27;handle&#x27;: -1,
+            &#x27;params&#x27;: {}
+        }, [(message: any) &#x3D;&gt; {
+            deferred.resolve(message);
+        }]);
+        return deferred.promise;
+    }
+
+    interactDone (qRequestId: number, qResult: number ): Promise&lt;any&gt; {
+        const deferred &#x3D; new Deferred&lt;any&gt;();
+        this.wsSend({
+            &#x27;jsonrpc&#x27;: &#x27;2.0&#x27;,
+            &#x27;id&#x27;: this.getNextEnumerator(),
+            &#x27;method&#x27;: &#x27;InteractDone&#x27;,
+            &#x27;handle&#x27;: -1,
+            &#x27;params&#x27;: {
+                InteractDef: {
+                    qResult: qResult
+                }
+            }
+        }, [(message: any) &#x3D;&gt; {
+            deferred.resolve(message);
+        }]);
+        return deferred.promise;
+    }
+
+    isDesktopMode (): Promise&lt;any&gt; {
+        const deferred &#x3D; new Deferred&lt;any&gt;();
+        this.wsSend({
+            &#x27;jsonrpc&#x27;: &#x27;2.0&#x27;,
+            &#x27;id&#x27;: this.getNextEnumerator(),
+            &#x27;method&#x27;: &#x27;IsDesktopMode&#x27;,
+            &#x27;handle&#x27;: -1,
+            &#x27;params&#x27;: {}
+        }, [(message: any) &#x3D;&gt; {
+            deferred.resolve(message);
+        }]);
+        return deferred.promise;
+    }
+
+    isPersonalMode (): Promise&lt;any&gt; {
+        const deferred &#x3D; new Deferred&lt;any&gt;();
+        this.wsSend({
+            &#x27;jsonrpc&#x27;: &#x27;2.0&#x27;,
+            &#x27;id&#x27;: this.getNextEnumerator(),
+            &#x27;method&#x27;: &#x27;IsPersonalMode&#x27;,
+            &#x27;handle&#x27;: -1,
+            &#x27;params&#x27;: {}
+        }, [(message: any) &#x3D;&gt; {
+            deferred.resolve(message);
+        }]);
+        return deferred.promise;
+    }
+
+    isValidConnectionString (qConnection: Connection): Promise&lt;any&gt; {
+        const deferred &#x3D; new Deferred&lt;any&gt;();
+        this.wsSend({
+            &#x27;jsonrpc&#x27;: &#x27;2.0&#x27;,
+            &#x27;id&#x27;: this.getNextEnumerator(),
+            &#x27;method&#x27;: &#x27;IsValidConnectionString&#x27;,
+            &#x27;handle&#x27;: -1,
+            &#x27;params&#x27;: {
+                qConnection: qConnection
+            }
+        }, [(message: any) &#x3D;&gt; {
+            deferred.resolve(message);
+        }]);
+        return deferred.promise;
+    }
+
+    openDoc(id: string): Document {
+        if (this.docList[id] &#x3D;&#x3D;&#x3D; undefined) {
+            this.docList[id] &#x3D; new Document(id, this);
+        }
+        return this.docList[id];
+    }
+
+    oSName (): Promise&lt;any&gt; {
+        const deferred &#x3D; new Deferred&lt;any&gt;();
+        this.wsSend({
+            &#x27;jsonrpc&#x27;: &#x27;2.0&#x27;,
+            &#x27;id&#x27;: this.getNextEnumerator(),
+            &#x27;method&#x27;: &#x27;OSName&#x27;,
+            &#x27;handle&#x27;: -1,
+            &#x27;params&#x27;: {}
+        }, [(message: any) &#x3D;&gt; {
+            deferred.resolve(message);
+        }]);
+        return deferred.promise;
+    }
+
+    oSVersion (): Promise&lt;any&gt; {
+        const deferred &#x3D; new Deferred&lt;any&gt;();
+        this.wsSend({
+            &#x27;jsonrpc&#x27;: &#x27;2.0&#x27;,
+            &#x27;id&#x27;: this.getNextEnumerator(),
+            &#x27;method&#x27;: &#x27;OSVersion&#x27;,
+            &#x27;handle&#x27;: -1,
+            &#x27;params&#x27;: {}
+        }, [(message: any) &#x3D;&gt; {
+            deferred.resolve(message);
+        }]);
+        return deferred.promise;
+    }
+
+    productVersion (): Promise&lt;any&gt; {
+        const deferred &#x3D; new Deferred&lt;any&gt;();
+        this.wsSend({
+            &#x27;jsonrpc&#x27;: &#x27;2.0&#x27;,
+            &#x27;id&#x27;: this.getNextEnumerator(),
+            &#x27;method&#x27;: &#x27;ProductVersion&#x27;,
+            &#x27;handle&#x27;: -1,
+            &#x27;params&#x27;: {}
+        }, [(message: any) &#x3D;&gt; {
+            deferred.resolve(message);
+        }]);
+        return deferred.promise;
+    }
+
+    qTProduct (): Promise&lt;any&gt; {
+        const deferred &#x3D; new Deferred&lt;any&gt;();
+        this.wsSend({
+            &#x27;jsonrpc&#x27;: &#x27;2.0&#x27;,
+            &#x27;id&#x27;: this.getNextEnumerator(),
+            &#x27;method&#x27;: &#x27;QTProduct&#x27;,
+            &#x27;handle&#x27;: -1,
+            &#x27;params&#x27;: {}
+        }, [(message: any) &#x3D;&gt; {
+            deferred.resolve(message);
+        }]);
+        return deferred.promise;
+    }
+
+    qvVersion (): Promise&lt;any&gt; {
+        const deferred &#x3D; new Deferred&lt;any&gt;();
+        this.wsSend({
+            &#x27;jsonrpc&#x27;: &#x27;2.0&#x27;,
+            &#x27;id&#x27;: this.getNextEnumerator(),
+            &#x27;method&#x27;: &#x27;QvVersion&#x27;,
+            &#x27;handle&#x27;: -1,
+            &#x27;params&#x27;: {}
+        }, [(message: any) &#x3D;&gt; {
+            deferred.resolve(message);
+        }]);
+        return deferred.promise;
+    }
+
+    reloadExtensionList (): Promise&lt;any&gt; {
+        const deferred &#x3D; new Deferred&lt;any&gt;();
+        this.wsSend({
+            &#x27;jsonrpc&#x27;: &#x27;2.0&#x27;,
+            &#x27;id&#x27;: this.getNextEnumerator(),
+            &#x27;method&#x27;: &#x27;ReloadExtensionList&#x27;,
+            &#x27;handle&#x27;: -1,
+            &#x27;params&#x27;: {}
+        }, [(message: any) &#x3D;&gt; {
+            deferred.resolve(message);
+        }]);
+        return deferred.promise;
+    }
+
+    replaceAppFromID (qTargetAppId: string, qSrcAppID: string, qIds?: Array&lt;string&gt;): Promise&lt;any&gt; {
+        const deferred &#x3D; new Deferred&lt;any&gt;();
+        this.wsSend({
+            &#x27;jsonrpc&#x27;: &#x27;2.0&#x27;,
+            &#x27;id&#x27;: this.getNextEnumerator(),
+            &#x27;method&#x27;: &#x27;ReplaceAppFromID&#x27;,
+            &#x27;handle&#x27;: -1,
+            &#x27;params&#x27;: {
+                qTargetAppId: qTargetAppId,
+                qSrcAppID: qSrcAppID,
+                qIds: qIds || []
+            }
+        }, [(message: any) &#x3D;&gt; {
+            deferred.resolve(message);
+        }]);
+        return deferred.promise;
+    }
+
+    shutdownProcess (): Promise&lt;any&gt; {
+        const deferred &#x3D; new Deferred&lt;any&gt;();
+        this.wsSend({
+            &#x27;jsonrpc&#x27;: &#x27;2.0&#x27;,
+            &#x27;id&#x27;: this.getNextEnumerator(),
+            &#x27;method&#x27;: &#x27;ShutdownProcess&#x27;,
+            &#x27;handle&#x27;: -1,
+            &#x27;params&#x27;: {}
+        }, [(message: any) &#x3D;&gt; {
+            deferred.resolve(message);
+        }]);
+        return deferred.promise;
+    }
+}
+</code></pre>
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+        <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_URL = 'QlikGlobalService.html';
+        </script>
+
+       <script src="../js/search/search.js"></script>
+       <script src="../js/search/lunr.min.js"></script>
+       <script src="../js/search/search-lunr.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+       <script src="../js/search/search_index.js"></script>
+
+
+    </body>
+</html>

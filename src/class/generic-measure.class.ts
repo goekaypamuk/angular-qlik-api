@@ -1,42 +1,25 @@
-import {Deferred} from './deferred.class';
 import {Document} from './document.class';
+import {Deferred} from './deferred.class';
 import {QPatches} from '../interface/q-patches.interface';
-import {QGenericBookmarkProperties} from '../interface/q-generic-bookmark-properties.interface';
+import {QGenericMeasureProperties} from '../';
+import {QLinkedObjectInfo} from '../interface/q-linked-object-info.interface';
 
-export class Bookmark {
+export class GenericMeasure {
     globalService: any;
     doc: Deferred<number>;
     deferred: Deferred<number>;
     outerDoc: Document;
-    bookmarkOuterId: string;
-    constructor(deferred: Deferred<number>, globalService: any, doc: Document, bookmarkOuterId: string) {
+    bookMeasureId: string;
+    constructor(deferred: Deferred<number>, globalService: any, doc: Document, bookMeasureId: string) {
         this.outerDoc = doc;
         this.deferred = new Deferred();
         this.doc = deferred;
         this.globalService = globalService;
-        this.bookmarkOuterId = bookmarkOuterId;
+        this.bookMeasureId = bookMeasureId;
     }
 
     setHandle(handle: number): void {
         this.deferred.resolve(handle);
-    }
-
-    apply(): Promise<any>  {
-        const deferred = new Deferred<any>();
-        this.deferred.promise.then( handle => {
-            this.globalService.wsSend({
-                'jsonrpc': '2.0',
-                'id': this.globalService.getNextEnumerator(),
-                'method': 'Apply',
-                'handle': handle,
-                'params': {
-                }
-            }, [(message: any) => {
-                this.outerDoc.refreshAll();
-                deferred.resolve(message);
-            }]);
-        });
-        return deferred.promise;
     }
 
     applyPatches(qPatches: QPatches): Promise<any>  {
@@ -51,6 +34,7 @@ export class Bookmark {
                     qPatches: qPatches
                 }
             }, [(message: any) => {
+                this.outerDoc.refreshAll();
                 deferred.resolve(message);
             }]);
         });
@@ -68,13 +52,14 @@ export class Bookmark {
                 'params': {
                 }
             }, [(message: any) => {
+                this.outerDoc.refreshAll();
                 deferred.resolve(message);
             }]);
         });
         return deferred.promise;
     }
 
-    getLayout(): Promise<any>  {
+    getLayout(qLayout: QGenericMeasureProperties): Promise<any>  {
         const deferred = new Deferred<any>();
         this.deferred.promise.then( handle => {
             this.globalService.wsSend({
@@ -85,6 +70,44 @@ export class Bookmark {
                 'params': {
                 }
             }, [(message: any) => {
+                this.outerDoc.refreshAll();
+                deferred.resolve(message);
+            }]);
+        });
+        return deferred.promise;
+    }
+
+    getLinkedObjects(qItems: Array<QLinkedObjectInfo>): Promise<any>  {
+        const deferred = new Deferred<any>();
+        this.deferred.promise.then( handle => {
+            this.globalService.wsSend({
+                'jsonrpc': '2.0',
+                'id': this.globalService.getNextEnumerator(),
+                'method': 'GetLinkedObjects',
+                'handle': handle,
+                'params': {
+                    qItems: qItems
+                }
+            }, [(message: any) => {
+                this.outerDoc.refreshAll();
+                deferred.resolve(message);
+            }]);
+        });
+        return deferred.promise;
+    }
+
+    getMeasure(): Promise<any>  {
+        const deferred = new Deferred<any>();
+        this.deferred.promise.then( handle => {
+            this.globalService.wsSend({
+                'jsonrpc': '2.0',
+                'id': this.globalService.getNextEnumerator(),
+                'method': 'GetMeasure',
+                'handle': handle,
+                'params': {
+                }
+            }, [(message: any) => {
+                this.outerDoc.refreshAll();
                 deferred.resolve(message);
             }]);
         });
@@ -97,11 +120,12 @@ export class Bookmark {
             this.globalService.wsSend({
                 'jsonrpc': '2.0',
                 'id': this.globalService.getNextEnumerator(),
-                'method': 'getProperties',
+                'method': 'GetProperties',
                 'handle': handle,
                 'params': {
                 }
             }, [(message: any) => {
+                this.outerDoc.refreshAll();
                 deferred.resolve(message);
             }]);
         });
@@ -119,13 +143,14 @@ export class Bookmark {
                 'params': {
                 }
             }, [(message: any) => {
+                this.outerDoc.refreshAll();
                 deferred.resolve(message);
             }]);
         });
         return deferred.promise;
     }
 
-    setProperties(qProp: QGenericBookmarkProperties): Promise<any>  {
+    setProperties(qProp: QGenericMeasureProperties): Promise<any>  {
         const deferred = new Deferred<any>();
         this.deferred.promise.then( handle => {
             this.globalService.wsSend({
@@ -134,8 +159,10 @@ export class Bookmark {
                 'method': 'SetProperties',
                 'handle': handle,
                 'params': {
+                    qProp: qProp
                 }
             }, [(message: any) => {
+                this.outerDoc.refreshAll();
                 deferred.resolve(message);
             }]);
         });
@@ -153,6 +180,7 @@ export class Bookmark {
                 'params': {
                 }
             }, [(message: any) => {
+                this.outerDoc.refreshAll();
                 deferred.resolve(message);
             }]);
         });

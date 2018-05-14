@@ -23,6 +23,7 @@ import {QAppProperties} from '../interface/q-app-properties.interface';
 import {QEditorBreakpoint} from '../interface/q-editor-breakpoint.interface';
 import {Bookmark} from './bookmark.class';
 import {Field} from './field.class';
+import {GenericMeasure} from './generic-measure.class';
 
 export class Document {
     globalService: any;
@@ -93,6 +94,10 @@ export class Document {
     }
 
     private fieldCreated(m) {
+        this.fieldList[m.id].setHandle(m.result.qReturn.qHandle);
+    }
+
+    private measure(m) {
         this.fieldList[m.id].setHandle(m.result.qReturn.qHandle);
     }
 
@@ -432,22 +437,23 @@ export class Document {
         return deferred.promise;
     }
 
-    createMeasure(qGenericMeasureProperties: QGenericMeasureProperties): Promise<any>  {
-        const deferred = new Deferred<any>();
+    createMeasure(qGenericMeasureProperties: QGenericMeasureProperties): GenericMeasure  {
+        const mid = this.globalService.getNextEnumerator();
+        const gm = new GenericMeasure(this.deferred, this.globalService, this, mid);
         this.deferred.promise.then( handle => {
             this.globalService.wsSend({
                 'jsonrpc': '2.0',
-                'id': this.globalService.getNextEnumerator(),
-                'method': 'CreateMeasure',
+                'id': mid,
+                'method': 'GetMeasure',
                 'handle': handle,
                 'params': {
-                    qProp: qGenericMeasureProperties
+                    qGenericMeasureProperties: qGenericMeasureProperties
                 }
             }, [(message: any) => {
-                    deferred.resolve(message);
-                }]);
+                gm.setHandle(message.result.qReturn.qHandle);
+            }]);
         });
-        return deferred.promise;
+        return gm;
     }
 
     createObject(qGenericObjectProperties: QGenericObjectProperties): Promise<any>  {
@@ -1461,19 +1467,58 @@ export class Document {
         return deferred.promise;
     }
 
-    getMeasure(qId: string): Promise<any>  {
-        const deferred = new Deferred<any>();
+    getMeasure(qId: string): GenericMeasure  {
+        const mid = this.globalService.getNextEnumerator();
+        const gm = new GenericMeasure(this.deferred, this.globalService, this, mid);
         this.deferred.promise.then( handle => {
             this.globalService.wsSend({
                 'jsonrpc': '2.0',
-                'id': this.globalService.getNextEnumerator(),
+                'id': mid,
                 'method': 'GetMeasure',
                 'handle': handle,
                 'params': {
                     qId: qId
                 }
             }, [(message: any) => {
-                deferred.resolve(message);
+                gm.setHandle(message.result.qReturn.qHandle);
+            }]);
+        });
+        return gm;
+    }
+
+    getMeasureList(): Promise<any>  {
+        const deferred = new Deferred<any>();
+        this.deferred.promise.then( handle => {
+            this.globalService.wsSend({
+                'jsonrpc': '2.0',
+                'id': this.globalService.getNextEnumerator(),
+                'method': 'CreateSessionObject',
+                'handle': handle,
+                'params': [
+                    {
+                        'qInfo': {
+                            'qType': 'MeasureList'
+                        },
+                        'qMeasureListDef': {
+                            'qType': 'measure',
+                            'qData': {
+                                'title': '/title',
+                                'tags': '/tags',
+                                'measure': '/qMeasure'
+                            }
+                        }
+                    }
+                ]
+            }, [(message: any) => {
+                this.globalService.wsSend({
+                    'method': 'GetLayout',
+                    'handle': message.result.qReturn.qHandle,
+                    'params': [],
+                    'outKey': -1,
+                    'id': this.globalService.getNextEnumerator()
+                }, [(msg: any) => {
+                    deferred.resolve(msg);
+                }]);
             }]);
         });
         return deferred.promise;

@@ -6,7 +6,11 @@ You can find full list and all details of all Doc class methods on [Qlik Help We
 
 ## Example
 
-All standart methods defined by Qlik Doc class return a promise. 
+All standart methods defined by Qlik Doc class return a promise except:
+- __createMeasure__(qGenericMeasureProperties: QGenericMeasureProperties): GenericMeasure
+- __getMeasure__(qId: string): GenericMeasure
+- __getBookmark__(qId: string): Bookmark 
+- __getField__(qFieldName: string, qStateName?: string): Field 
 
 ```typescript
 import {Component} from '@angular/core';
@@ -37,4 +41,16 @@ export class MyApp  {
  
   }
 }
+```
+
+## Custom Methods
+
+Additional to the standard Doc class methods you will find following methods in Doc class
+
+```
+/**
+  * Returns a list of measures from the current Doc object.
+  * @returns {Promise<any>}
+  */
+  getMeasureList(): Promise<any>
 ```
