@@ -24,6 +24,7 @@ import {QEditorBreakpoint} from '../interface/q-editor-breakpoint.interface';
 import {Bookmark} from './bookmark.class';
 import {Field} from './field.class';
 import {GenericMeasure} from './generic-measure.class';
+import {GenericDimension} from './generic-dimension.class';
 
 export class Document {
     globalService: any;
@@ -1150,22 +1151,23 @@ export class Document {
     /**
      * s
      */
-    getDimension(qId: string): Promise<any>  {
-        const deferred = new Deferred<any>();
+    getDimension(qId: string): GenericDimension  {
+        const mid = this.globalService.getNextEnumerator();
+        const gm = new GenericDimension(this.deferred, this.globalService, this, mid);
         this.deferred.promise.then( handle => {
             this.globalService.wsSend({
                 'jsonrpc': '2.0',
-                'id': this.globalService.getNextEnumerator(),
+                'id': mid,
                 'method': 'GetDimension',
                 'handle': handle,
                 'params': {
-                    qId: qId,
+                    qId: qId
                 }
             }, [(message: any) => {
-                    deferred.resolve(message);
-                }]);
+                gm.setHandle(message.result.qReturn.qHandle);
+            }]);
         });
-        return deferred.promise;
+        return gm;
     }
 
     getEmptyScript(qLocalizedMainSection?: string): Promise<any>  {

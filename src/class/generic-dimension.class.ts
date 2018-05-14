@@ -1,21 +1,21 @@
 import {Document} from './document.class';
 import {Deferred} from './deferred.class';
 import {QPatches} from '../interface/q-patches.interface';
-import {QGenericMeasureProperties} from '../';
+import {QGenericDimensionProperties} from '../';
 import {QLinkedObjectInfo} from '../interface/q-linked-object-info.interface';
 
-export class GenericMeasure {
+export class GenericDimension {
     globalService: any;
     doc: Deferred<number>;
     deferred: Deferred<number>;
     outerDoc: Document;
-    genericMeasureId: string;
-    constructor(deferred: Deferred<number>, globalService: any, doc: Document, genericMeasureId: string) {
+    genericDimensionId: string;
+    constructor(deferred: Deferred<number>, globalService: any, doc: Document, genericDimensionId: string) {
         this.outerDoc = doc;
         this.deferred = new Deferred();
         this.doc = deferred;
         this.globalService = globalService;
-        this.genericMeasureId = genericMeasureId;
+        this.genericDimensionId = genericDimensionId;
     }
 
     setHandle(handle: number): void {
@@ -41,6 +41,23 @@ export class GenericMeasure {
         return deferred.promise;
     }
 
+    getDimension(): Promise<any>  {
+        const deferred = new Deferred<any>();
+        this.deferred.promise.then( handle => {
+            this.globalService.wsSend({
+                'jsonrpc': '2.0',
+                'id': this.globalService.getNextEnumerator(),
+                'method': 'GetDimension',
+                'handle': handle,
+                'params': {
+                }
+            }, [(message: any) => {
+                deferred.resolve(message);
+            }]);
+        });
+        return deferred.promise;
+    }
+
     getInfo(): Promise<any>  {
         const deferred = new Deferred<any>();
         this.deferred.promise.then( handle => {
@@ -58,15 +75,16 @@ export class GenericMeasure {
         return deferred.promise;
     }
 
-    getLayout(qLayout: QGenericMeasureProperties): Promise<any>  {
+    getLayout(qLayout: QGenericDimensionProperties): Promise<any>  {
         const deferred = new Deferred<any>();
         this.deferred.promise.then( handle => {
             this.globalService.wsSend({
                 'jsonrpc': '2.0',
                 'id': this.globalService.getNextEnumerator(),
-                'method': 'GetLayout',
+                'method': 'GetInfo',
                 'handle': handle,
                 'params': {
+                    qLayout: qLayout
                 }
             }, [(message: any) => {
                 deferred.resolve(message);
@@ -93,24 +111,7 @@ export class GenericMeasure {
         return deferred.promise;
     }
 
-    getMeasure(): Promise<any>  {
-        const deferred = new Deferred<any>();
-        this.deferred.promise.then( handle => {
-            this.globalService.wsSend({
-                'jsonrpc': '2.0',
-                'id': this.globalService.getNextEnumerator(),
-                'method': 'GetMeasure',
-                'handle': handle,
-                'params': {
-                }
-            }, [(message: any) => {
-                deferred.resolve(message);
-            }]);
-        });
-        return deferred.promise;
-    }
-
-    getProperties(): Promise<any>  {
+    getProperties(qLayout: QGenericDimensionProperties): Promise<any>  {
         const deferred = new Deferred<any>();
         this.deferred.promise.then( handle => {
             this.globalService.wsSend({
@@ -119,6 +120,7 @@ export class GenericMeasure {
                 'method': 'GetProperties',
                 'handle': handle,
                 'params': {
+                    qLayout: qLayout
                 }
             }, [(message: any) => {
                 deferred.resolve(message);
@@ -144,7 +146,7 @@ export class GenericMeasure {
         return deferred.promise;
     }
 
-    setProperties(qProp: QGenericMeasureProperties): Promise<any>  {
+    setProperties(qProp: QGenericDimensionProperties): Promise<any>  {
         const deferred = new Deferred<any>();
         this.deferred.promise.then( handle => {
             this.globalService.wsSend({
@@ -156,7 +158,6 @@ export class GenericMeasure {
                     qProp: qProp
                 }
             }, [(message: any) => {
-                this.outerDoc.refreshAll();
                 deferred.resolve(message);
             }]);
         });
