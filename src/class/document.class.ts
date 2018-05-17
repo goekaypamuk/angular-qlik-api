@@ -96,6 +96,9 @@ export class Document {
         this.fieldList[m.id].setHandle(m.result.qReturn.qHandle);
     }
 
+    /**
+     *  Aborts any selection mode in an app. For more information about selection mode.
+     */
     abortModal(qAccept: boolean): Promise<any> {
         const deferred = new Deferred<any>();
         this.deferred.promise.then( handle => {
