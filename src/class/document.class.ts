@@ -117,6 +117,9 @@ export class Document {
         return deferred.promise;
     }
 
+    /**
+     * Adds a field on the fly.
+     */
     addFieldFromExpression(qName: string, qExpr: string): Promise<any> {
         const deferred = new Deferred<any>();
         this.deferred.promise.then( handle => {
