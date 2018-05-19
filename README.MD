@@ -103,10 +103,9 @@ export class MyApp implements OnDestroy {
 - [x] Global Class Methods
 - [x] App Class Methods
 - [x] GenericBookmark Methods
-- [ ] GenericDimension Class Methods
+- [x] GenericDimension Class Methods
 - [ ] GenericObject Class Methods
-- [ ] GenericMeasure Class Methods
-- [ ] GenericDimension Class Methods
+- [x] GenericMeasure Class Methods
 - [ ] GenericVariable Class Methods
 - [x] Field Class Methods
 - [ ] Variable Class Methods

@@ -25,6 +25,7 @@ import {Bookmark} from './bookmark.class';
 import {Field} from './field.class';
 import {GenericMeasure} from './generic-measure.class';
 import {GenericDimension} from './generic-dimension.class';
+import {QGrouping} from '../';
 
 export class Document {
     globalService: any;
@@ -408,7 +409,7 @@ export class Document {
             this.globalService.wsSend({
                 'jsonrpc': '2.0',
                 'id': this.globalService.getNextEnumerator(),
-                'method': 'createDimension',
+                'method': 'CreateDimension',
                 'handle': handle,
                 'params': {
                     qProp: qGenericDimensionProperties
@@ -438,23 +439,22 @@ export class Document {
         return deferred.promise;
     }
 
-    createMeasure(qGenericMeasureProperties: QGenericMeasureProperties): GenericMeasure  {
-        const mid = this.globalService.getNextEnumerator();
-        const gm = new GenericMeasure(this.deferred, this.globalService, this, mid);
+    createMeasure(qGenericMeasureProperties: QGenericMeasureProperties): Promise<any>  {
+      const deferred = new Deferred<any>();
         this.deferred.promise.then( handle => {
             this.globalService.wsSend({
                 'jsonrpc': '2.0',
-                'id': mid,
-                'method': 'GetMeasure',
+                'id': this.globalService.getNextEnumerator(),
+                'method': 'CreateMeasure',
                 'handle': handle,
                 'params': {
                     qGenericMeasureProperties: qGenericMeasureProperties
                 }
             }, [(message: any) => {
-                gm.setHandle(message.result.qReturn.qHandle);
+                deferred.resolve(message);
             }]);
         });
-        return gm;
+        return deferred.promise;
     }
 
     createObject(qGenericObjectProperties: QGenericObjectProperties): Promise<any>  {
@@ -1149,25 +1149,24 @@ export class Document {
     }
 
     /**
-     * s
+     *
      */
-    getDimension(qId: string): GenericDimension  {
-        const mid = this.globalService.getNextEnumerator();
-        const gm = new GenericDimension(this.deferred, this.globalService, this, mid);
+    getDimension(qId: string): Promise<any>  {
+        const deferred = new Deferred<any>();
         this.deferred.promise.then( handle => {
             this.globalService.wsSend({
                 'jsonrpc': '2.0',
-                'id': mid,
+                'id': this.globalService.getNextEnumerator(),
                 'method': 'GetDimension',
                 'handle': handle,
                 'params': {
                     qId: qId
                 }
             }, [(message: any) => {
-                gm.setHandle(message.result.qReturn.qHandle);
+              deferred.resolve(message);
             }]);
         });
-        return gm;
+      return deferred.promise;
     }
 
     getEmptyScript(qLocalizedMainSection?: string): Promise<any>  {
@@ -1469,58 +1468,19 @@ export class Document {
         return deferred.promise;
     }
 
-    getMeasure(qId: string): GenericMeasure  {
-        const mid = this.globalService.getNextEnumerator();
-        const gm = new GenericMeasure(this.deferred, this.globalService, this, mid);
+    getMeasure(qId: string): Promise<any>  {
+        const deferred = new Deferred<any>();
         this.deferred.promise.then( handle => {
             this.globalService.wsSend({
                 'jsonrpc': '2.0',
-                'id': mid,
+                'id': this.globalService.getNextEnumerator(),
                 'method': 'GetMeasure',
                 'handle': handle,
                 'params': {
                     qId: qId
                 }
             }, [(message: any) => {
-                gm.setHandle(message.result.qReturn.qHandle);
-            }]);
-        });
-        return gm;
-    }
-
-    getMeasureList(): Promise<any>  {
-        const deferred = new Deferred<any>();
-        this.deferred.promise.then( handle => {
-            this.globalService.wsSend({
-                'jsonrpc': '2.0',
-                'id': this.globalService.getNextEnumerator(),
-                'method': 'CreateSessionObject',
-                'handle': handle,
-                'params': [
-                    {
-                        'qInfo': {
-                            'qType': 'MeasureList'
-                        },
-                        'qMeasureListDef': {
-                            'qType': 'measure',
-                            'qData': {
-                                'title': '/title',
-                                'tags': '/tags',
-                                'measure': '/qMeasure'
-                            }
-                        }
-                    }
-                ]
-            }, [(message: any) => {
-                this.globalService.wsSend({
-                    'method': 'GetLayout',
-                    'handle': message.result.qReturn.qHandle,
-                    'params': [],
-                    'outKey': -1,
-                    'id': this.globalService.getNextEnumerator()
-                }, [(msg: any) => {
-                    deferred.resolve(msg);
-                }]);
+              deferred.resolve(message);
             }]);
         });
         return deferred.promise;
@@ -2179,4 +2139,161 @@ export class Document {
         });
         return deferred.promise;
     }
+
+  $getMeasureList(): Promise<any>  {
+    const deferred = new Deferred<any>();
+    this.deferred.promise.then( handle => {
+      this.globalService.wsSend({
+        'jsonrpc': '2.0',
+        'id': this.globalService.getNextEnumerator(),
+        'method': 'CreateSessionObject',
+        'handle': handle,
+        'params': [
+          {
+            'qInfo': {
+              'qType': 'MeasureList'
+            },
+            'qMeasureListDef': {
+              'qType': 'measure',
+              'qData': {
+                'title': '/title',
+                'tags': '/tags',
+                'measure': '/qMeasure'
+              }
+            }
+          }
+        ]
+      }, [(message: any) => {
+        this.globalService.wsSend({
+          'method': 'GetLayout',
+          'handle': message.result.qReturn.qHandle,
+          'params': [],
+          'outKey': -1,
+          'id': this.globalService.getNextEnumerator()
+        }, [(msg: any) => {
+          deferred.resolve(msg);
+        }]);
+      }]);
+    });
+    return deferred.promise;
+  }
+
+  $getMeasure(qId: string): GenericMeasure  {
+    const mid = this.globalService.getNextEnumerator();
+    const gm = new GenericMeasure(this.deferred, this.globalService, this, mid);
+    this.deferred.promise.then( handle => {
+      this.globalService.wsSend({
+        'jsonrpc': '2.0',
+        'id': mid,
+        'method': 'GetMeasure',
+        'handle': handle,
+        'params': {
+          qId: qId
+        }
+      }, [(message: any) => {
+        gm.setHandle(message.result.qReturn.qHandle);
+      }]);
+    });
+    return gm;
+  }
+
+  $createMeasure(qGenericMeasureProperties: QGenericMeasureProperties): GenericMeasure  {
+    const mid = this.globalService.getNextEnumerator();
+    const gm = new GenericMeasure(this.deferred, this.globalService, this, mid);
+    this.deferred.promise.then( handle => {
+      this.globalService.wsSend({
+        'jsonrpc': '2.0',
+        'id': mid,
+        'method': 'CreateMeasure',
+        'handle': handle,
+        'params': {
+          qGenericMeasureProperties: qGenericMeasureProperties
+        }
+      }, [(message: any) => {
+        gm.setHandle(message.result.qReturn.qHandle);
+      }]);
+    });
+    return gm;
+  }
+
+  $getDimensionList(): Promise<any>  {
+    const deferred = new Deferred<any>();
+    this.deferred.promise.then( handle => {
+      this.globalService.wsSend({
+        'jsonrpc': '2.0',
+        'id': this.globalService.getNextEnumerator(),
+        'method': 'CreateSessionObject',
+        'handle': handle,
+        'params': [
+          {
+            'qInfo': {
+              'qType': 'DimensionList'
+            },
+            'qDimensionListDef': {
+              'qType': 'dimension',
+              'qData': {
+                'title': '/title',
+                'tags': '/tags',
+                'grouping': '/qDim/qGrouping',
+                'info': '/qDimInfos'
+              }
+            }
+          }
+        ]
+      }, [(message: any) => {
+        this.globalService.wsSend({
+          'method': 'GetLayout',
+          'handle': message.result.qReturn.qHandle,
+          'params': [],
+          'outKey': -1,
+          'id': this.globalService.getNextEnumerator()
+        }, [(msg: any) => {
+          deferred.resolve(msg);
+        }]);
+      }]);
+    });
+    return deferred.promise;
+  }
+
+  $getDimension(qId: string): GenericDimension  {
+    const mid = this.globalService.getNextEnumerator();
+    const gm = new GenericDimension(this.deferred, this.globalService, this, mid);
+    this.deferred.promise.then( handle => {
+      this.globalService.wsSend({
+        'jsonrpc': '2.0',
+        'id': mid,
+        'method': 'GetDimension',
+        'handle': handle,
+        'params': {
+          qId: qId
+        }
+      }, [(message: any) => {
+        gm.$$setHandle(message.result.qReturn.qHandle);
+      }]);
+    });
+    return gm;
+  }
+
+  $createDimension(): GenericDimension  {
+    const id = this.globalService.getNextEnumerator();
+    const gDim = new GenericDimension(this.deferred, this.globalService, this, id);
+    this.deferred.promise.then( handle => {
+      this.globalService.wsSend({
+        'jsonrpc': '2.0',
+        'id': id,
+        'method': 'CreateDimension',
+        'handle': handle,
+        'params': {
+          qProp: {
+            qDim: {qFieldDefs: [], qFieldLabels: [], qGrouping: QGrouping.NO_GROUPING },
+            qInfo: {qType: 'dimension', qId: ''},
+            qMetaDef: {}
+          }
+        }
+      }, [(message: any) => {
+        gDim.$$setHandle(message.result.qReturn.qHandle);
+      }]);
+    });
+    return gDim;
+  }
 }

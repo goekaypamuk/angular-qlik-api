@@ -3,15 +3,20 @@ import { CommonModule } from '@angular/common';
 
 import { QlikConfig } from './class/qlik-config.class';
 import { QlikGlobalService } from './qlik-global.service';
-import  {HyperCubeLoggerComponent } from './components/hyper-cube-logger/hyper-cube-logger.component';
+import {HyperCubeLoggerComponent} from './components/hyper-cube-logger/hyper-cube-logger.component';
+import {GenericDimensionComponent} from './components/aqa-generic-dimension/aqa-generic-dimension.component';
+import {FormsModule} from '@angular/forms';
+import {GenericMeasureComponent} from './components/aqa-generic-measure/aqa-generic-measure.component';
 
 export * from './components/hyper-cube-logger/hyper-cube-logger.component';
+export * from './components/aqa-generic-dimension/aqa-generic-dimension.component';
 export * from './qlik-global.service';
 export * from './class/bookmark.class';
 export * from './class/deferred.class';
 export * from './class/dimension.class';
 export * from './class/document.class';
 export * from './class/field.class';
+export * from './class/generic-dimension.class';
 export * from './class/generic-measure.class';
 export * from './class/hyper-cube.class';
 export * from './class/list.class';
@@ -59,13 +64,18 @@ export * from './enum/q-matching-field-mode.enum';
 export * from './enum/q-mode.enum';
 @NgModule({
   imports: [
-    CommonModule
+    CommonModule,
+    FormsModule
   ],
   declarations: [
       HyperCubeLoggerComponent,
+      GenericDimensionComponent,
+      GenericMeasureComponent
   ],
   exports: [
       HyperCubeLoggerComponent,
+      GenericDimensionComponent,
+      GenericMeasureComponent
   ]
 })
 export class AngularQlikApiModule {
