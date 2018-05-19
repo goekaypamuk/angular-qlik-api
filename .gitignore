@@ -38,3 +38,5 @@ dist/*
 # Internal Docs
 .compodocs
 .compodocs/*
+.doc
+.doc/*
