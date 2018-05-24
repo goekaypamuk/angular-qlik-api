@@ -1,8 +1,8 @@
 import {QInfo} from './q-info.interface';
-import {QLibraryMEasureDef} from './q-library-measure-def.interface';
+import {QLibraryMeasureDef} from './q-library-measure-def.interface';
 
 export interface QGenericMeasureProperties {
-    qInfo: QInfo;
-    qMeasure: QLibraryMEasureDef;
+    qInfo?: QInfo;
+    qMeasure?: QLibraryMeasureDef;
     qMetaDef?: any;
 }

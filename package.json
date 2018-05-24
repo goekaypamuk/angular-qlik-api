@@ -1,6 +1,6 @@
 {
   "name": "angular-qlik-api",
-  "version": "0.1.8",
+  "version": "0.1.9",
   "scripts": {
     "build": "gulp build",
     "build:watch": "gulp",
@@ -12,7 +12,8 @@
     "lite": "lite-server",
     "playground:build": "tsc -p playground -w",
     "playground": "concurrently \"npm run build:watch\" \"npm run playground:build\" \"npm run lite\"",
-    "test": "tsc && karma start"
+    "test": "tsc && karma start",
+    "docts": "typedoc --target ES6 --theme markdown --out ./doc ./src/class"
   },
   "repository": {
     "type": "git",
@@ -23,7 +24,10 @@
     "email": "goekaypamuk@gmail.com"
   },
   "keywords": [
-    "angular" , "Qlik" , "Qlik Sense", "Engine API"
+    "angular",
+    "Qlik",
+    "Qlik Sense",
+    "Engine API"
   ],
   "license": "MIT",
   "bugs": {
@@ -66,10 +70,17 @@
     "systemjs": "^0.20.12",
     "ts-node": "~3.2.0",
     "tslint": "~5.7.0",
+    "typedoc-plugin-markdown": "^1.1.9",
     "typescript": "~2.4.2",
     "zone.js": "^0.8.14"
   },
   "engines": {
     "node": ">=6.0.0"
+  },
+  "typings": [
+    "./src/index.d.ts"
+  ],
+  "dependencies": {
+    "@angular/forms": "^6.0.2"
   }
 }

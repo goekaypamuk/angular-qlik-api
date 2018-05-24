@@ -7,11 +7,9 @@ export class Bookmark {
     globalService: any;
     doc: Deferred<number>;
     deferred: Deferred<number>;
-    callback: Array<Function>;
     outerDoc: Document;
     bookmarkOuterId: string;
     constructor(deferred: Deferred<number>, globalService: any, doc: Document, bookmarkOuterId: string) {
-        this.callback = [];
         this.outerDoc = doc;
         this.deferred = new Deferred();
         this.doc = deferred;

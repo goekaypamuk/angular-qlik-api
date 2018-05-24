@@ -19,10 +19,12 @@ Typical situations where you would use the Qlik Engine API include:
 To work with the Qlik Engine API, you can use any language or tool that supports WebSockets and can parse JSON. JavaScript is a common and obvious choice, because of its built-in JSON support, and because there are a number of libraries available to make it easier to work with WebSockets.
 
 ###### Qlik Classes
-- [Use Global class methods](https://github.com/goekaypamuk/angular-qlik-api/blob/pag-develop/docs/Global.md)
-- [Use Doc class methods](https://github.com/goekaypamuk/angular-qlik-api/blob/pag-develop/docs/Doc.md)
-- [Use Bookmark class methods](https://github.com/goekaypamuk/angular-qlik-api/blob/pag-develop/docs/Bookmark.md)
-- [Use Field class methods](https://github.com/goekaypamuk/angular-qlik-api/blob/pag-develop/docs/Field.md)
+- [Use Global class methods](https://github.com/goekaypamuk/angular-qlik-api/blob/master/docs/Global.md)
+- [Use Doc class methods](https://github.com/goekaypamuk/angular-qlik-api/blob/master/docs/Doc.md)
+- [Use Bookmark class methods](https://github.com/goekaypamuk/angular-qlik-api/blob/master/docs/Bookmark.md)
+- [Use Field class methods](https://github.com/goekaypamuk/angular-qlik-api/blob/master/docs/Field.md)
+- [Use GenericDimension class methods](https://github.com/goekaypamuk/angular-qlik-api/blob/master/docs/GenericDimension.md)
+- [Use GenericMeasure class methods](https://github.com/goekaypamuk/angular-qlik-api/blob/master/docs/GenericMeasure.md)
 
 ## Installation
 
@@ -103,10 +105,9 @@ export class MyApp implements OnDestroy {
 - [x] Global Class Methods
 - [x] App Class Methods
 - [x] GenericBookmark Methods
-- [ ] GenericDimension Class Methods
+- [x] GenericDimension Class Methods
 - [ ] GenericObject Class Methods
-- [ ] GenericMeasure Class Methods
-- [ ] GenericDimension Class Methods
+- [x] GenericMeasure Class Methods
 - [ ] GenericVariable Class Methods
 - [x] Field Class Methods
 - [ ] Variable Class Methods
@@ -132,4 +133,4 @@ If you like to contribute plase contact me: goekaypamuk@gmai.com
 
 ## License
 
-MIT © [Gökay Pamuk](mailto:goekaypamuk@gmail.com)
+[MIT ©](https://github.com/goekaypamuk/angular-qlik-api/blob/master/licence.md) [Gökay Pamuk](mailto:goekaypamuk@gmail.com)

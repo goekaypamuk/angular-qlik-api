@@ -1,0 +1,42 @@
+<div class="card" *ngIf="genericDimension !== undefined">
+
+  <div class="card-body">
+    <h5 class="card-title">{{genericDimension.qProp?.qDim.title}}</h5>
+    <p>
+      {{genericDimension.qProp?.qMetaDef.description}}
+    </p>
+    <hr/>
+
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="radio" readonly name="inlineRadioOptions" [ngModel]="genericDimension.qProp?.qDim.qGrouping" value="N">
+      <label class="form-check-label">None</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="radio" readonly name="inlineRadioOptions" [ngModel]="genericDimension.qProp?.qDim.qGrouping" value="H">
+      <label class="form-check-label">Drill-Down</label>
+    </div>
+
+    <div class="form-group mt-2">
+      <label>Coloring</label>
+      <input type="color" readonly class="form-control" [ngModel]="genericDimension.qProp?.qDim.coloring?.baseColor.color">
+    </div>
+
+    <div class="form-group mt-2">
+      <label>Field Definition(s)</label>
+      <input type="text" readonly class="form-control" [ngModel]="genericDimension.qProp?.qDim.qFieldDefs">
+    </div>
+
+    <div class="form-group mt-2">
+      <label>Field Label(s)</label>
+      <input type="text" readonly class="form-control" [ngModel]="genericDimension.qProp?.qDim.qFieldLabels">
+    </div>
+
+    <div class="form-group mt-2">
+      <label>Tags</label>
+      <div>
+        <span *ngFor="let tag of genericDimension.qProp?.qMetaDef.tags" class="badge badge-pill badge-secondary mr-1">{{tag}}</span>
+      </div>
+    </div>
+
+  </div>
+</div>
