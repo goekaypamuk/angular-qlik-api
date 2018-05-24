@@ -10,6 +10,7 @@ import {GenericMeasureComponent} from './components/aqa-generic-measure/aqa-gene
 
 export * from './components/hyper-cube-logger/hyper-cube-logger.component';
 export * from './components/aqa-generic-dimension/aqa-generic-dimension.component';
+export * from './components/aqa-generic-measure/aqa-generic-measure.component';
 export * from './qlik-global.service';
 export * from './class/bookmark.class';
 export * from './class/deferred.class';

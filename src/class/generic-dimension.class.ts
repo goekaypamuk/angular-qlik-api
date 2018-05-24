@@ -1,9 +1,10 @@
 import {Document} from './document.class';
 import {Deferred} from './deferred.class';
 import {QPatches} from '../interface/q-patches.interface';
-import {QGenericDimensionProperties, QGroup, QGrouping} from '../';
+import {QGenericDimensionProperties} from '../interface/q-generic-dimension-properties.interface';
 import {QLinkedObjectInfo} from '../interface/q-linked-object-info.interface';
 import {QOp} from '../enum/q-op.enum';
+import {QGrouping} from '../enum/q-grouping.enum';
 
 export class GenericDimension {
     qProp: QGenericDimensionProperties;

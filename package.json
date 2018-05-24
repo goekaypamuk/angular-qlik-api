@@ -1,6 +1,6 @@
 {
   "name": "angular-qlik-api",
-  "version": "0.1.8",
+  "version": "0.1.9",
   "scripts": {
     "build": "gulp build",
     "build:watch": "gulp",
@@ -79,5 +79,8 @@
   },
   "typings": [
     "./src/index.d.ts"
-  ]
+  ],
+  "dependencies": {
+    "@angular/forms": "^6.0.2"
+  }
 }

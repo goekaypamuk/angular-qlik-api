@@ -25,7 +25,7 @@ import {Bookmark} from './bookmark.class';
 import {Field} from './field.class';
 import {GenericMeasure} from './generic-measure.class';
 import {GenericDimension} from './generic-dimension.class';
-import {QGrouping} from '../';
+import {QGrouping} from '../enum/q-grouping.enum';
 
 export class Document {
     globalService: any;
@@ -2197,7 +2197,7 @@ export class Document {
     return gm;
   }
 
-  $createMeasure(qGenericMeasureProperties: QGenericMeasureProperties): GenericMeasure  {
+  $createMeasure(): GenericMeasure  {
     const mid = this.globalService.getNextEnumerator();
     const gm = new GenericMeasure(this.deferred, this.globalService, this, mid);
     this.deferred.promise.then( handle => {
@@ -2207,9 +2207,21 @@ export class Document {
         'method': 'CreateMeasure',
         'handle': handle,
         'params': {
-          qGenericMeasureProperties: qGenericMeasureProperties
+          qProp: {
+            qInfo: {
+              qId: '',
+              qType: 'measure'
+            },
+            qMeasure: {
+              'qLabel': 'x',
+              'qDef': 'sum(1)',
+            },
+            qMetaDef: {title: 'x'}
+          }
+          }
         }
-      }, [(message: any) => {
+        , [(message: any) => {
+        this.saveObjects();
         gm.setHandle(message.result.qReturn.qHandle);
       }]);
     });
@@ -2291,6 +2303,7 @@ export class Document {
           }
         }
       }, [(message: any) => {
+        this.saveObjects();
         gDim.$$setHandle(message.result.qReturn.qHandle);
       }]);
     });

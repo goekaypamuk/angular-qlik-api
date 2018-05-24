@@ -1,10 +1,42 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+<div class="card" *ngIf="genericMeasure !== undefined">
 
-</body>
-</html>
+  <div class="card-body">
+    <h5 class="card-title">{{genericMeasure.qProp?.qMeasure.qLabel}}</h5>
+    <p>
+      {{genericMeasure.qProp?.qMetaDef.description}}
+    </p>
+    <hr/>
+
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="radio" readonly name="inlineRadioOptions" [ngModel]="genericMeasure.qProp?.qMeasure.qGrouping" value="N">
+      <label class="form-check-label">None</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="radio" readonly name="inlineRadioOptions" [ngModel]="genericMeasure.qProp?.qMeasure.qGrouping" value="H">
+      <label class="form-check-label">Drill-Down</label>
+    </div>
+
+    <div class="form-group mt-2">
+      <label>Coloring</label>
+      <input type="color" readonly class="form-control" [ngModel]="genericMeasure.qProp?.qMeasure.coloring?.baseColor.color">
+    </div>
+
+    <div class="form-group mt-2">
+      <label>Definition</label>
+      <input type="text" readonly class="form-control" [ngModel]="genericMeasure.qProp?.qMeasure.qDef">
+    </div>
+
+    <div class="form-group mt-2">
+      <label>Label</label>
+      <input type="text" readonly class="form-control" [ngModel]="genericMeasure.qProp?.qMeasure.qLabel">
+    </div>
+
+    <div class="form-group mt-2">
+      <label>Tags</label>
+      <div>
+        <span *ngFor="let tag of genericMeasure.qProp?.qMetaDef.tags" class="badge badge-pill badge-secondary mr-1">{{tag}}</span>
+      </div>
+    </div>
+
+  </div>
+</div>

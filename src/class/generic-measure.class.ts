@@ -21,8 +21,8 @@ export class GenericMeasure {
     }
 
     setHandle(handle: number): void {
-        this.getProperties();
         this.deferred.resolve(handle);
+        this.getProperties();
     }
 
     /**
@@ -152,7 +152,9 @@ export class GenericMeasure {
                 'params': {
                 }
             }, [(message: any) => {
+              console.log(message)
                 this.qProp = message.result.qProp;
+                setTimeout(()=>{},1)
                 deferred.resolve(message);
             }]);
         });
